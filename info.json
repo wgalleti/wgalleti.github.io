@@ -1,0 +1,67 @@
+{
+    "app": {
+        "title": "William Galleti"
+    },
+    "header": {
+        "name": "William Galleti",
+        "title": "Desenvolvedor",
+        "formation": "Adminstração de Empresas",
+        "quick_bio": "Delphi, Python, PHP, JavaScript, Oracle",
+        "hobby": "Poker, Diablo3",
+        "linkedin": "https://www.linkedin.com/in/william-galleti-6b97a833/",
+        "github": "https://github.com/wGalelti"
+    },
+    "social": {
+        "twitter": "https://twitter.com/wGalleti",
+        "facebook": "https://facebook.com/wGalleti",
+        "instagram": ""
+    },
+    "about": {
+        "me": [
+            "Apaixonado por tecnologia gosto de ver dados transformados em informações.",
+            "Autodidático e flexivél, estou sempre procurando aprender novas tecnologias e sinto satisfação ao ver um produto sendo utilizado!"
+        ],
+        "skills": [
+            "Analista de sistemas nas areas de Suprimentos, Finanças, Comercial, Contabilidade",
+            "Desenvolvedor LSP(Linguagem Sênior de Programação) Sênior Sistemas",
+            "Analista e desenvolvedor de Integrações com plataforma Sênior Sistemas",
+            "Analista de sistemas nas áreas agrícolas (Grãos, Algodão) com sistemas GAtec e Unisystem",
+            "Desenvolvedor de Paineis(Dashboards WEB) agricolas consolidando informações agrícolas de gestão",
+            "Seis meses de experiência em desenvolvimento com Python com foco web (Django)",
+            "Experiencia com datascience python com Pandas e NumPy",
+            "Experiência em desenvolvimento web com PHP",
+            "Conhecimento médio em administração em banco de dados Oracle 10, 11G",
+            "Experiência em programação PLSQL Oracle (Queries, Scripts, etc)",
+            "Experiência em desenvolvimento web com JavaScript (Framework angularJS)"
+        ],
+        "experiences": [
+            "Seis anos de analise de sistemas Sênior Sistemas",
+            "Seis anos de analise de sistemas Gatec (Agricola, Beneficamento, Comercial)",
+            "Sete anos de analise de sistemas Unisystem (Almoxar, Compras, Financeiro, Fiscal, Algodão, Grãos)",
+            "Entre 2006 e 2010 Grupo Scheffer: Suporte infra-estrutura, suporte-Sistema, desenvolvimento de ferramentas complementares ao sistema, auxiliar de desenvolvimento de processos, etc.",
+            "Entre 2010 e 2011 Unisystem: Atendimento ao cliente, implantação de sistema, análise e definição de solução para problemas, documentação de solicitações e encaminhamento para desenvolvimento, comercial",
+            "De 2011 até o momento, Grupo Scheffer: Desenvolvimento de aplicações internas para suporte ao ERP e legados, administração de banco de dados, administração de servidores WEB, desenvolvimento de integrações entre ERP e outras plataformas, desenvolvimento de indicadores para BI, etc"
+        ],
+        "dev_tags": [
+            "Delphi",
+            "DevExpress",
+            "Oracle",
+            "PL-SQL",
+            "PHP",
+            "CodeIgnire",
+            "Laravel",
+            "JavaScript",
+            "AngularJS",
+            "Html5",
+            "Css3",
+            "Telerik Kendo UI",
+            "LSP",
+            "Python",
+            "Django",
+            "Pandas",
+            "DataScience",
+            "Devops"
+        ]
+    }
+    
+}
