@@ -79,6 +79,16 @@ a {
   font-size: 1.7em;
   line-height: 2em;
 }
+
+.title strong {
+  color: #909090;
+}
+
+.title strong::before {
+  content: "at ";
+  font-size: 12px;
+}
+
 .period {
   font-size: .8em;
   text-transform: uppercase;
@@ -124,6 +134,20 @@ a {
   padding-bottom: 20px;
   padding-bottom: 20px;
   margin-bottom: 20px;
+}
+
+.education h3 {
+  font-size: 1.7em;
+  line-height: 2em;
+}
+
+.education strong {
+  color: #909090;
+}
+
+.education strong::before {
+  content: "at ";
+  font-size: 12px;
 }
 
 .technical-curses {
@@ -175,4 +199,19 @@ a {
 
 .project {
   padding: 20px 0;
+}
+
+.project h3 {
+  font-size: 1.7em;
+  line-height: 2em;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .skills {
+    flex-direction: column;
+  }
+  .skill {
+    padding: 10px;
+  }
 }
