@@ -2,360 +2,219 @@
 <html lang="en">
 
 <head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content=" Website Personal">
-  <meta name="author" content="William Galleti">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>William Galleti</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/devicons/1.8.0/css/devicons.min.css" rel="stylesheet">
-  <link href="assets/css/app.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/app.css">
 </head>
 
-<body id="page-top">
+<body class="container">
+  <section class="info">
+    <div class="photo">
+      <img src="./assets/img/william.jpg" alt="">
+    </div>
+    <div class="bio">
+      <h1>William Galleti Conceição</h1>
+      <p>1988-05-30</p>
+      <p>Male</p>
+      <p>+1 (864) 376-7021</p>
+      <p>william.galleti@gmail.com</p>
+    </div>
+  </section>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-    <a class="navbar-brand js-scroll-trigger" href="#page-top">
-      <span class="d-block d-lg-none">William Galleti</span>
-      <span class="d-none d-lg-block">
-        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.jpg" alt="">
-      </span>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#about">Sobre</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#experience">Experiência</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#education">Educação</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#curses">Cursos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#skills">Habilidades</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#interests">Interesses</a>
-        </li>
+  <h2>Work Experience</h2>
+  <section class="work-experience">
+    <div class="work">
+      <div class="title">Tech Lead <strong>Hifuzion Software House</strong></div>
+      <div class="period">from 2019-04 to 2019-12 <small>8 months</small></div>
+      <div class="description">
+        <ul>
+          <li>Structuring web design architecture with Python backend and Javascript frontend to meet minimum customer needs and replace the erp that is on the win32 platform.</li>
+          <li>Prepare internal team to develop on the new platform.</li>
+        </ul> 
+        <div class="sub-description">
+          In this project, I used the Django framework to serve as an API on the backend, controlling permissions, tasks, database (PostgreSQL), etc. 
+          To build the views, we used the Vuejs framework, along with the components DevExtremeJS, Stimulus Report and Vuetify (Material Design).
+        </div>
+      </div> 
+    </div>
+
+    <div class="work">
+      <div class="title">Development Analyst <strong>Scheffer</strong></div>
+      <div class="period">from 2011-10 to 2019-03 <small>7 years and 5 months</small></div>
+      <div class="description">
+        <ul>
+          <li>Development of internal applications to complement ERP routines such as WEB Quotation, Management Budget, etc.</li>
+          <li>Maintain and evolve integration between ERP and other management systems, as well as develop integration dashboards to monitor failures and identify problems.</li>
+          <li>Develop information panels on technical and managerial operations such as harvest information, feather processing, bales transport, etc.</li>
+          <li>Development of routines and reports in the ERP Senior in LSP language.</li>
+          <li>Configurar e manter servidores web para funcionamento de aplicações internas e camada de middleware do ERP Sênior.</li>
+          <li>Transport information from the cotton industry, extracting information such as workload, humidity, fire risk, engines running from CLP Alan Bradley and sending it to a management dashboard.</li>
+          <li>Adapt new technologies to agribusiness, such as RFID in cotton (Project carried out in partnership with Khulman Labs in 2014), Harvest data collectors, equipment and applications in the field (SchefferCotton).</li>
+        </ul> 
+        <div class="sub-description">
+          At this stage of my career I specialized in web development with python and javascript to meet the needs of the company in a more dynamic way, as there was a lot of integration, a lot of data and little information for management.
+        </div>
+      </div> 
+    </div>
+
+    <div class="work">
+      <div class="title">Implementation Analyst <strong>Unisystem</strong></div>
+      <div class="period">from 2010-10 to 2011-10 <small>1 year</small></div>
+      <div class="description">
+        <ul>
+          <li>Deploy and document routines within the system serving local customers.</li>
+          <li>Document new routines for the development team, providing technical details for the operation to work, fitting into the system structure.</li>
+          <li>Development of management reports (Payments, Direct and indirect costs, Inventory Balance, etc.) in excel connected to the database due to some technology limitations.</li>
+          <li>Routine adaptation of clients' work to the system workflow.</li>
+          <li>Technical commercial visits to demonstrate and sell the systems.</li>
+        </ul> 
+        <div class="sub-description">
+          At this stage in my career, I focused a little more on the process side and learned to negotiate, however, it was not for long.
+        </div>
+      </div>
+    </div>
+
+    <div class="work">
+      <div class="title">Support Analyst <strong>Scheffer</strong></div>
+      <div class="period">from 2006-06 to 2010-01 <small>4 years and 7 months</small></div>
+      <div class="description">
+        <ul>
+          <li>Maintain computer infrastructure in operation (parts exchange, virus removal, network cables, etc.)</li>
+          <li>Control Internet access using BRMA firewall.</li>
+          <li>Create users and release access permissions.</li>
+          <li>Keep Totvs ERP server up and running, as well as perform backups and updates.</li>
+          <li>ADM software support for machines that frequently corrupted the database in MS acess.</li>
+        </ul> 
+        <div class="sub-description">
+          At this stage of my career I learned to start using databases (Oracle and SQLServer), use Linux, I learned my first programming language (PL-SQL).
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <h2>Education</h2>
+  <section class="education">
+    <h3>Business Administration <small>Universidade de Cuiaba</small></h3>
+    <div class="period">from 2006-04 to 2010-04 <small>4 years</small></div>
+  </section>
+
+  <h2>Professional Courses</h2>
+  <section class="technical-curses">
+    <div class="course">
+      <h3>Python Pro - from 0 to labor market</h3>
+      <p>In this course I improved my knowledge of object orientation, I had a new vision about delivering values ​​to the customer through technology, and I understood how important it is to be part of a community to share knowledge.</p>
+      <ul>
+        <li>Python</li>
+        <li>Pytest</li>
+        <li>Object Orientation</li>
+        <li>Patterns</li>
       </ul>
     </div>
-  </nav>
 
-  <div class="container-fluid p-0">
-    <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
-      <div class="my-auto">
-        <h1 class="mb-0">William
-          <span class="text-primary">Galleti</span>
-        </h1>
-        <div class="subheading mb-5">Sapezal, MT - Brasil (65) 9 9944-8004 ·
-          <a href="mailto:william.galleti@gmail.com">william.galleti@gmail.com</a>
-        </div>
-        <p>E aew?! Tudo beleza?</p>
-        <p>Tenho experiencias em projetos agro (soja, milho, algodão) e processos ERP (suprimentos, finanças,
-          contabilidade) e mais...</p>
-        <p>Esta é a minha página pessoal com meu repositório github, aqui você pode ver e seguir meus projetos,
-          templates, dicas e estudos. </p>
-        <ul class="list-inline list-social-icons mb-0">
-          <li class="list-inline-item">
-            <a href="https://www.facebook.com/william.galleti">
-              <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="https://twitter.com/wGalleti">
-              <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="https://www.linkedin.com/in/william-galleti-6b97a833/">
-              <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="https://github.com/wGalleti">
-              <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
+    <div class="course">
+      <h3>Welcome to the Django - Way beyond programming</h3>
+      <p>In this course I learned a lot about delivering value to the customer, the importance of automated tests and it was my initiation in the python language.</p>
+      <ul>
+        <li>Python</li>
+        <li>Django</li>
+        <li>ORM</li>
+        <li>Unittest</li>
+      </ul>
+    </div>
 
-    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
-      <div class="my-auto">
-        <h2 class="mb-5">Experiência</h2>
+    <div class="course">
+      <h3>NGMasters - AngularJS na pratica</h3>
+      <p>This course was my first contact with Javascript. I got to know the AngularJS framework and from there I started my career as a Full Stack developer.</p>
+      <ul>
+        <li>Javascript</li>
+        <li>AngularJS</li>
+      </ul>
+    </div>
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-          <div class="resume-content mr-auto">
-            <h3 class="mb-0">Analisa de Desenvolvimento</h3>
-            <div class="subheading mb-3">Scheffer</div>
-            <p>Participei do projeto de implantação do ERP Sênior e dos sistemas GAtec.
-              Durante esse periodo, desenvolvi aplicações para melhorar e simplificar processsos e também auxiliar
-              tomadas de decisões (dashboards).
-              Nesse periodo foram desenvolvidos alguns projetos que merecem destaque, como:
-              <ul>
-                <li>Gestor de Atividades</li>
-                <li>Dashboard de Beneficiamento de Algodão</li>
-                <li>Sistema de Classificação Visual de Algodão</li>
-                <li>Sistema de Emblocamento de Algodão</li>
-                <li><a href="https://drive.google.com/open?id=0B7yj1icaJQJAUDBiOFA4LVpIMzQ">Projeto Piloto de RFID</a></li>
-              </ul>
-            </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">Nov 2011 - Até o momento</span>
-          </div>
-        </div>
+    <div class="course">
+      <h3>Udemy.com</h3>
+      <ul>
+        <li>Anuglar8</li>
+        <li>Api with Django</li>
+        <li>VueJS</li>
+      </ul>
+    </div>
+  </section>
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-          <div class="resume-content mr-auto">
-            <h3 class="mb-0">Analista de implantação</h3>
-            <div class="subheading mb-3">Unisystem Sistemas Agricolas</div>
-            <p>
-              Acompanhar e implantar rotinas de sistemas com foco em agronegócio.
-            </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">Jun 2010 - Nov 2011</span>
-          </div>
-        </div>
+  <h2>Skills</h2>
+  <section class="skills">
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-          <div class="resume-content mr-auto">
-            <h3 class="mb-0">Analista de Suporte</h3>
-            <div class="subheading mb-3">Grupo Scheffer</div>
-            <p>
-              Atendimento Técnicos, suporte em geral em computudadores, impressoras, servidores e etc.
-            </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">Abri 2008 - Dez 2009</span>
-          </div>
-        </div>
-    </section>
+    <div class="skill">
+      <h3>Languages</h3>
+      <ul>
+        <li>Python</li>
+        <li>Javascript</li>
+        <li>Pascal/Delphi</li>
+        <li>PHP</li>
+        <li>LSP</li>
+        <li>PL-SQL</li>
+      </ul>
+    </div>
+    
+    <div class="skill">
+      <h3>Python</h3>
+      <ul>
+        <li>Jupyter</li>
+        <li>Django</li>
+        <li>Flask</li>
+        <li>SQLAlchemy</li>
+      </ul>
+    </div>
 
-    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
-      <div class="my-auto">
-        <h2 class="mb-5">Educação</h2>
+    <div class="skill">
+      <h3>Javascript</h3>
+      <ul>
+        <li>NodeJS</li>
+        <li>ES2016</li>
+        <li>VueJS</li>
+        <li>AdonisJS</li>
+        <li>AngularJS</li>
+      </ul>
+    </div>
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-          <div class="resume-content mr-auto">
-            <h3 class="mb-0">Unic - Universidade de Cuiabá</h3>
-            <div class="subheading mb-3">Administração de Empresas</div>
-            <p></p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">Jan 2006 - Dez 2009</span>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div class="skill">
+      <h3>PHP</h3>
+      <ul>
+        <li>CodeIgniter</li>
+        <li>Laravel</li>
+      </ul>
+    </div>
+    
 
-    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="curses">
-      <div class="my-auto">
-        <h2 class="mb-5">Cursos</h2>
+    <div class="skill">
+      <h3>Database Administration</h3>
+      <ul>
+        <li>Oracle 10G</li>
+        <li>Oracle 11G</li>
+        <li>MySQL</li>
+        <li>PostgreSQL</li>
+        <li>SQLite</li>
+      </ul>
+    </div>
+  </section>
 
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-          <div class="resume-content mr-auto">
-            <h3 class="mb-0">AngularJS</h3>
-            <div class="subheading mb-3">ngMasters</div>
-            <p>Conceitos de Javascript e muito AngularJS</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">2015</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-          <div class="resume-content mr-auto">
-            <h3 class="mb-0">Automatize-se, Python e Django</h3>
-            <div class="subheading mb-3">Welcome to the Django</div>
-            <p>Revolucionando a forma como você programa, dominando na prática todas
-              as estratégias de analise e desenvolvimento</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">2017</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-          <div class="resume-content mr-auto">
-            <h3 class="mb-0">Turma Guido Van Rossum</h3>
-            <div class="subheading mb-3">PYTHON PRO</div>
-            <p>Curso de Python para profissionais</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">2018</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-          <div class="resume-content mr-auto">
-            <h3 class="mb-0">Djavue</h3>
-            <div class="subheading mb-3">Evolutio</div>
-            <p>Curso de Django + Vuejs + Nuxt</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">2018</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
-      <div class="my-auto">
-        <h2 class="mb-5">Habilidades</h2>
-
-        <div class="subheading mb-3">Tecnologias &amp; Ferramentas</div>
-        <div class="subheading mb-3">Frontend</div>
-        <ul class="list-inline list-icons">
-          <li class="list-inline-item">
-            <i class="devicons devicons-html5"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="devicons devicons-css3"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="devicons devicons-javascript"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="devicons devicons-angular"></i>
-          </li>
-          <li class="list-inline-item">
-            <i style="font-size:24px; display: table-row-group;">VUEJS</i>
-          </li>
-          <li class="list-inline-item">
-            <i class="devicons devicons-jquery"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="devicons devicons-bootstrap"></i>
-          </li>
-        </ul>
-
-        <div class="subheading mb-3">Backend e Devops</div>
-        <ul class="list-inline list-icons">
-          <li class="list-inline-item">
-            <i class="devicons devicons-python"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="devicons devicons-django"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="devicons devicons-nodejs"></i>
-          </li>
-          <li class="list-inline-item">
-            <i style="font-size:24px; display: table-row-group;">C#</i>
-          </li>
-        </ul>
-
-        <div class="subheading mb-3">Banco de dados e Ferramentas</div>
-        <ul class="list-inline list-icons">
-          <li class="list-inline-item">
-            <i class="devicons devicons-mysql"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="devicons devicons-postgresql"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="devicons devicons-database"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="devicons devicons-git"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="devicons devicons-nginx"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="devicons devicons-aws"></i>
-          </li>
-          <li class="list-inline-item">
-            <i style="font-size:24px; display: table-row-group;">Heroku</i>
-          </li>
-          <li class="list-inline-item">
-            <i class="devicons devicons-linux"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="devicons devicons-terminal"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="devicons devicons-windows"></i>
-          </li>
-        </ul>
-
-        <div class="subheading mb-3">Mobile</div>
-        <ul class="list-inline list-icons">
-          <li class="list-inline-item">
-            <i class="devicons devicons-ionic"></i>
-          </li>
-        </ul>
-    </section>
-
-    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
-      <div class="my-auto">
-        <h2 class="mb-5">Interesses</h2>
-        <p>Quando não estou criando, gosto de treinando jiu jitsu, onde atualmente tenho 6 anos de treino e estou na
-          faixa marrom. Oss!!!</p>
-      </div>
-    </section>
-  </div>
-
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-  <script>
-    (function($) {
-      "use strict";
-
-      $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
-        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-          if (target.length) {
-            $('html, body').animate({
-              scrollTop: (target.offset().top)
-            }, 1000, "easeInOutExpo");
-            return false;
-          }
-        }
-      });
-
-      $('.js-scroll-trigger').click(function() {
-        $('.navbar-collapse').collapse('hide');
-      });
-
-      $('body').scrollspy({
-        target: '#sideNav'
-      });
-
-    })(jQuery);
-  </script>
+  <h2>Important projects</h2>
+  <section class="important-projects">
+    <h3>During my career, some projects were very important, both for professional growth and personal fulfillment.</h3>
+    <div class="project">
+      <h3 id="rfid">RFID</h3>
+      <p>In the RFID project, developed during 2014, the company Khulman performed the classification (strength, length, color of the fiber) of the plume samples, and the volume of samples, per harvest, exceeded 250 thousand units. To improve the flow within the laboratory, it would be necessary for the samples to arrive labeled by the customer / producer. For this, we developed a workflow of how the operation would be used and solved numerous internal problems with this project. A single thing that hindered us was the cost of rfid tags, which at the time was almost $ 1 per unit. In this operation, we needed 3 tags, multiplied by 250 thousand samples, the cost was high. Khulman did an impressive job, and participating in this project was a unique experience.</p>
+      <p><a href="https://drive.google.com/open?id=0B7yj1icaJQJAUDBiOFA4LVpIMzQ" target="_blank">Video Link</a></p>
+    </div>
+    <div class="project">
+      <h3 id="classification">Cotton Classification</h3>
+      <p>During the RFID project, we noticed a very big problem during the visual feather classification procedure, where the system to receive the values ​​of the classifications, had a delay of 5 days. This project was very remarkable, due to the approach of developing a solution directly with the users of the application, which, without a doubt, was the most successful project I have ever developed. Years passed after the development and it did not need support, improvements, etc.</p>
+    </div>
+  </section>
 </body>
 
 </html>
