@@ -11,7 +11,7 @@
     li {
       @apply duration-300;
       @apply hover:scale-125 hover:bg-metal hover:rounded-lg;
-      @apply h-20 w-20 p-3;
+      @apply w-12 h-12 md:h-20 md:w-20 p-1 md:p-3;
     }
   }
 }
