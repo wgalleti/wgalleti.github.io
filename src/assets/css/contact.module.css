@@ -1,0 +1,17 @@
+.content {
+  @apply bottom-0 w-screen h-[250px] p-4 flex flex-col items-center;
+  @apply bg-footer bg-bottom bg-no-repeat bg-cover;
+
+  h2 {
+    @apply my-2;
+  }
+  ul {
+    @apply flex gap-5 justify-center items-center h-full;
+
+    li {
+      @apply duration-300;
+      @apply hover:scale-125 hover:bg-metal hover:rounded-lg;
+      @apply h-20 w-20 p-3;
+    }
+  }
+}

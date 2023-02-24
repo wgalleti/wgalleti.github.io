@@ -1,0 +1,24 @@
+.content {
+  @apply font-ubuntu;
+  @apply w-full;
+  @apply flex flex-col md:flex-row gap-3 items-center justify-center;
+  @apply p-6 rounded-md;
+
+  img {
+    @apply h-64 w-64 object-cover rounded-full ring-4 ring-metal backdrop-saturate-50;
+  }
+
+  div {
+    @apply flex flex-col justify-center items-center md:items-start;
+
+    p {
+      @apply text-sm text-justify;
+      @apply md:text-xl p-5;
+      @apply hover:bg-metal/75 hover:rounded-lg duration-300;
+    }
+
+    h4 {
+      @apply mt-4 mx-5;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.content {
+  @apply border-b border-metal;
+  @apply flex flex-col md:flex-row;
+  @apply items-center justify-center;
+  @apply md:p-6 md:gap-4;
+
+  img {
+    @apply md:my-0 my-6;
+  }
+
+  h2 {
+    @apply text-center;
+    @apply md:my-0 my-6;
+  }
+}
