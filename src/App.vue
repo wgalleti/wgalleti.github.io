@@ -7,7 +7,7 @@ import Contact from './components/Contact.vue'
 import Footer from './components/Footer.vue'
 
 const data = {
-  name: 'William Galleti',
+  name: 'William Gallëti',
   title: 'Estrategista de Sistemas',
   description: 'Crio sistemas que otimizam processos, automatizam tarefas e liberam equipes para focar no que realmente importa.',
   specialties: [

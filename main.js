@@ -9,7 +9,7 @@ createApp({
     }
 
     return {
-      name: 'William Galleti',
+      name: 'William Gallëti',
       title: 'Estrategista de Sistemas',
       description: 'Crio sistemas que otimizam processos, automatizam tarefas e liberam equipes para focar no que realmente importa.',
       specialties: [
