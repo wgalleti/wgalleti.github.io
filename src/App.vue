@@ -5,6 +5,7 @@ import Hero from './components/Hero.vue'
 import Specialties from './components/Specialties.vue'
 import Contact from './components/Contact.vue'
 import Footer from './components/Footer.vue'
+import AnimatedBackground from './components/AnimatedBackground.vue'
 
 const data = {
   name: 'William Gallëti',
@@ -53,14 +54,17 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="min-h-screen flex flex-col">
-    <Header :name="data.name" :title="data.title" />
-    <main class="flex-grow">
-      <Hero :description="data.description" />
-      <Specialties :specialties="data.specialties" />
-      <Contact />
-    </main>
-    <Footer :name="data.name" />
+  <div class="min-h-screen flex flex-col relative">
+    <AnimatedBackground />
+    <div class="relative z-10">
+      <Header :name="data.name" :title="data.title" />
+      <main class="flex-grow">
+        <Hero :description="data.description" />
+        <Specialties :specialties="data.specialties" />
+        <Contact />
+      </main>
+      <Footer :name="data.name" />
+    </div>
   </div>
 </template>
 
