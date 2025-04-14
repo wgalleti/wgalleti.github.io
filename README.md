@@ -1,44 +1,5 @@
-# 👨‍💻 Portfólio de William Galleti
+# Vue 3 + Vite
 
-🎯 **Estrategista de Sistemas**  
-Desenvolvedor full stack com foco em criar soluções que geram impacto real no negócio, otimizando processos e aumentando produtividade com tecnologias modernas.
+This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
----
-
-## 🚀 Tecnologias & Especialidades
-
-- ✅ Nuxt3 / Vue 3
-- ✅ Django / DRF
-- ✅ Tailwind CSS
-- ✅ PrimeVue
-- ✅ Celery para automações robustas
-- ✅ Arquitetura pensada para escala e performance
-
----
-
-## 🌐 Site
-
-🖥 Acesse: [https://wgalleti.github.io](https://wgalleti.github.io)
-
----
-
-## 📈 Status do GitHub
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=wgalleti&show_icons=true&theme=tokyonight)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=wgalleti&layout=compact&theme=tokyonight)
-
----
-
-## 🛠️ Deploy Automático
-
-Este projeto utiliza **GitHub Actions** para deploy contínuo no GitHub Pages.
-
----
-
-## 📬 Contato
-
-📧 william.galleti@gmail.com  
-📍 Brasil
-
----
-Feito com ❤️ por William Galleti
+Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).

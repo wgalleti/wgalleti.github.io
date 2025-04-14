@@ -1,0 +1,42 @@
+:root {
+  --color-primary: #6D28D9;
+  --color-primary-light: #7C3AED;
+  --color-primary-dark: #5B21B6;
+  --color-secondary: #9333EA;
+  --color-secondary-light: #A855F7;
+  --color-secondary-dark: #7E22CE;
+  --color-accent: #C084FC;
+  --color-background: #F9FAFB;
+  --color-background-dark: #1F2937;
+  --color-text: #1F2937;
+  --color-text-dark: #F9FAFB;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-50 dark:bg-gray-900 transition-colors duration-200;
+  font-family: 'Inter', sans-serif;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-violet-500;
+}
+
+.section-container {
+  @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.card {
+  @apply bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 transition-all duration-200;
+}
+
+.btn-primary {
+  @apply bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-2 rounded-lg shadow transition-colors duration-200;
+}
+
+.input-field {
+  @apply w-full p-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200;
+} 

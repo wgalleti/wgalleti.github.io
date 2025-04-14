@@ -13,7 +13,7 @@ createApp({
       title: 'Estrategista de Sistemas',
       description: 'Crio sistemas que otimizam processos, automatizam tarefas e liberam equipes para focar no que realmente importa.',
       specialties: [
-        '🔧 Desenvolvimento Full Stack com Nuxt3 e Django',
+        '🔧 Desenvolvimento Full Stack com Nuxt e Django',
         '⚙️ Automação com Celery e integração de sistemas',
         '🧠 Arquitetura orientada a impacto e performance',
         '🚀 Projetos com foco em produtividade e ROI'
