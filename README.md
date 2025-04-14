@@ -1,28 +1,44 @@
-# Portfólio de William Galleti
+# 👨‍💻 Portfólio de William Galleti
 
 🎯 **Estrategista de Sistemas**  
 Desenvolvedor full stack com foco em criar soluções que geram impacto real no negócio, otimizando processos e aumentando produtividade com tecnologias modernas.
 
-## 🚀 Tecnologias e Especialidades
-- Nuxt3 / Vue 3
-- Django / DRF
-- Tailwind CSS
-- PrimeVue
-- Celery para automações robustas
-- Arquitetura pensada para escala e performance
+---
 
-## ✨ Sobre o Projeto
+## 🚀 Tecnologias & Especialidades
 
-Este é meu portfólio pessoal, construído com **Vue 3 sem build step**, usando CDN e foco em performance, leveza e atualização simples.
+- ✅ Nuxt3 / Vue 3
+- ✅ Django / DRF
+- ✅ Tailwind CSS
+- ✅ PrimeVue
+- ✅ Celery para automações robustas
+- ✅ Arquitetura pensada para escala e performance
 
-## 🌐 Publicação
+---
 
-Este projeto é publicado automaticamente no GitHub Pages via GitHub Actions.
+## 🌐 Site
 
-## 📫 Contato
+🖥 Acesse: [https://wgalleti.github.io](https://wgalleti.github.io)
 
-Entre em contato pelo e-mail: `william.galleti@gmail.com`  
-Ou acesse: [https://wgalleti.github.io](https://wgalleti.github.io)
+---
+
+## 📈 Status do GitHub
+
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=wgalleti&show_icons=true&theme=tokyonight)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=wgalleti&layout=compact&theme=tokyonight)
+
+---
+
+## 🛠️ Deploy Automático
+
+Este projeto utiliza **GitHub Actions** para deploy contínuo no GitHub Pages.
+
+---
+
+## 📬 Contato
+
+📧 william.galleti@gmail.com  
+📍 Brasil
 
 ---
 Feito com ❤️ por William Galleti
