@@ -17,7 +17,9 @@ const data = {
   title: 'Estrategista de Sistemas',
   description: 'Crio sistemas que otimizam processos, automatizam tarefas e liberam equipes para focar no que realmente importa.',
   bio: 'Com mais de 10 anos de estrada entre desenvolvimento e estratégia, eu projeto sistemas como um arquiteto que já construiu com as próprias mãos. Meu diferencial é unir visão de negócio com profundidade técnica.\n\nDa interface ao banco de dados, entrego soluções que reduzem atrito operacional, aumentam produtividade e liberam equipes para o que realmente importa.',
-  cvLink: '/cv.docx',
+  cvLinkPtBr: '/cv.pdf',
+  cvLinkEn: '/resume.pdf',
+  coverLetterLink: '/carta.pdf',
   specialties: [
     '🔧 Desenvolvimento Full Stack com Nuxt e Django',
     '⚙️ Automação com Celery e integração de sistemas',
@@ -93,7 +95,12 @@ onMounted(async () => {
       <Header :name="data.name" :title="data.title" />
       <main class="flex-grow">
         <Hero :description="data.description" />
-        <Bio :bio="data.bio" :cv-link="data.cvLink" />
+        <Bio 
+          :bio="data.bio" 
+          :cv-link-pt-br="data.cvLinkPtBr"
+          :cv-link-en="data.cvLinkEn"
+          :cover-letter-link="data.coverLetterLink"
+        />
         <Specialties :specialties="data.specialties" />
         <ProfileDashboard />
         <YouTubeVideos 
