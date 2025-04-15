@@ -6,7 +6,7 @@ Sou um desenvolvedor com mais de 15 anos de experiência em TI, com foco nos úl
 
 Atuo como **Estrategista de Sistemas**, unindo visão técnica com conhecimento de produto e operações. Especialista em stacks modernas como:
 
-- 🧠 Nuxt3, Vue 3, Tailwind CSS, PrimeVue
+- 🧠 Nuxt, Vue, Tailwind, Shadcn, PrimeVue
 - 🐍 Django, Celery, DRF, FastAPI
 - 🔁 Integração de APIs, automações, jobs escaláveis
 - 🛠️ GitHub Actions, Docker, CI/CD pipelines
@@ -19,6 +19,15 @@ Atuo como **Estrategista de Sistemas**, unindo visão técnica com conhecimento 
 ## 🚀 Objetivo
 
 Busco atuar com times que valorizem **autonomia, entrega de valor e pensamento sistêmico**, em projetos com escopo técnico desafiador e propósito claro.
+
+---
+
+## 📊 GitHub Insights
+
+<p align="left">
+  <img src="https://github-readme-stats.vercel.app/api?username=wgalleti&show_icons=true&theme=tokyonight&hide_border=true" width="48%" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=wgalleti&layout=compact&theme=tokyonight&hide_border=true" width="48%" />
+</p>
 
 ---
 
