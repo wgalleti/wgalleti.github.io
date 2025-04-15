@@ -1,13 +1,13 @@
 <template>
   <section class="section-container mt-12">
     <div class="card" data-sr-left>
-      <h2 class="text-2xl font-semibold mb-6 gradient-text">Perfil</h2>
+      <h2 class="text-2xl font-semibold mb-6 gradient-text">{{ t('profile') }}</h2>
 
       <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Big Five -->
         <li class="flex flex-col items-start p-4 rounded-lg bg-purple-50 dark:bg-gray-700 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg" data-sr-left>
-          <h2 class="text-xl font-semibold text-purple-600 dark:text-purple-400 mb-4">Big Five</h2>
-          <div v-for="(item, index) in bigFive" :key="index" class="mb-4 w-full">
+          <h2 class="text-xl font-semibold text-purple-600 dark:text-purple-400 mb-4">{{ t('bigFive') }}</h2>
+          <div v-for="(item, index) in translatedBigFive" :key="index" class="mb-4 w-full">
             <p class="mb-1 text-gray-700 dark:text-gray-200">{{ item.label }}</p>
             <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
               <div
@@ -20,13 +20,13 @@
 
         <!-- DISC com Chart -->
         <li class="flex flex-col items-start p-4 rounded-lg bg-purple-50 dark:bg-gray-700 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg" data-sr-right>
-          <h2 class="text-xl font-semibold text-purple-600 dark:text-purple-400 mb-4">DISC</h2>
+          <h2 class="text-xl font-semibold text-purple-600 dark:text-purple-400 mb-4">{{ t('disc') }}</h2>
           <canvas ref="discChart" height="200" class="w-full"></canvas>
         </li>
 
         <!-- MBTI e Eneagrama -->
         <li class="flex flex-col items-start p-4 rounded-lg bg-purple-50 dark:bg-gray-700 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg" data-sr-left>
-          <h2 class="text-xl font-semibold text-purple-600 dark:text-purple-400 mb-4">MBTI</h2>
+          <h2 class="text-xl font-semibold text-purple-600 dark:text-purple-400 mb-4">{{ t('mbti') }}</h2>
           <p
             class="text-lg font-bold bg-purple-700 text-purple-50 inline-block px-3 py-1 rounded"
           >
@@ -34,10 +34,10 @@
           </p>
 
           <h2 class="text-xl font-semibold text-purple-600 dark:text-purple-400 mt-6 mb-2">
-            Eneagrama
+            {{ t('enneagram') }}
           </h2>
           <p class="text-lg text-gray-700 dark:text-gray-200">
-            Tipo {{ eneagrama.tipo }} com asa {{ eneagrama.asa }}
+            {{ t('enneagramType') }} {{ eneagrama.tipo }} {{ t('enneagramWing') }} {{ eneagrama.asa }}
             <span
               class="ml-2 bg-purple-700 text-purple-50 font-semibold px-2 py-1 rounded"
               >{{ eneagrama.tipo }}w{{ eneagrama.asa }}</span
@@ -45,7 +45,7 @@
           </p>
           <ul class="mt-4 list-disc list-inside text-gray-700 dark:text-gray-300">
             <li
-              v-for="(caracteristica, index) in eneagrama.caracteristicas"
+              v-for="(caracteristica, index) in translatedCharacteristics"
               :key="index"
             >
               {{ caracteristica }}
@@ -56,20 +56,20 @@
         <!-- Forças e Riscos -->
         <li class="flex flex-col items-start p-4 rounded-lg bg-purple-50 dark:bg-gray-700 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg" data-sr-right>
           <h2 class="text-xl font-semibold text-purple-600 dark:text-purple-400 mb-4">
-            Forças e Riscos
+            {{ t('strengths') }} e {{ t('risks') }}
           </h2>
           <div class="mb-4">
-            <h3 class="font-semibold text-purple-600 dark:text-purple-300 mb-1">Pontos Fortes</h3>
+            <h3 class="font-semibold text-purple-600 dark:text-purple-300 mb-1">{{ t('strengths') }}</h3>
             <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
-              <li v-for="(forca, index) in forcas" :key="'forca' + index">
+              <li v-for="(forca, index) in translatedStrengths" :key="'forca' + index">
                 {{ forca }}
               </li>
             </ul>
           </div>
           <div>
-            <h3 class="font-semibold text-purple-600 dark:text-purple-300 mb-1">Riscos</h3>
+            <h3 class="font-semibold text-purple-600 dark:text-purple-300 mb-1">{{ t('risks') }}</h3>
             <ul class="list-disc list-inside text-red-600 dark:text-red-400">
-              <li v-for="(risco, index) in riscos" :key="'risco' + index">
+              <li v-for="(risco, index) in translatedRisks" :key="'risco' + index">
                 {{ risco }}
               </li>
             </ul>
@@ -79,11 +79,11 @@
         <!-- Valores -->
         <li class="flex flex-col items-center p-4 rounded-lg bg-purple-50 dark:bg-gray-700 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg col-span-1 md:col-span-2" data-sr-bottom>
           <h2 class="text-xl font-semibold text-purple-600 dark:text-purple-400 mb-4">
-            Valores Essenciais
+            {{ t('coreValues') }}
           </h2>
           <div class="flex gap-4 flex-wrap justify-center">
             <span
-              v-for="(valor, index) in valores"
+              v-for="(valor, index) in translatedValues"
               :key="index"
               class="bg-purple-700 text-purple-50 px-4 py-2 rounded-full font-semibold"
             >
@@ -97,11 +97,16 @@
 </template>
 
 <script setup>
-import { ref, onMounted, reactive } from "vue";
+import { ref, onMounted, reactive, computed, watch } from "vue";
 import Chart from "chart.js/auto";
+import { useI18n } from '../utils/i18n';
 
 // Props dinâmicas
 const props = defineProps({
+  currentLang: {
+    type: String,
+    default: 'pt'
+  },
   titulo: {
     type: String,
     default: "William Galleti – Estrategista de Sistemas",
@@ -156,19 +161,71 @@ const props = defineProps({
   },
 });
 
-const discChart = ref(null);
+// Get translations
+const t = computed(() => {
+  const { t } = useI18n(props.currentLang);
+  return t;
+});
 
-onMounted(() => {
+// Translated elements
+const translatedBigFive = computed(() => [
+  { label: t.value('openness'), percent: 95 },
+  { label: t.value('conscientiousness'), percent: 90 },
+  { label: t.value('extraversion'), percent: 65 },
+  { label: t.value('agreeableness'), percent: 70 },
+  { label: t.value('neuroticism'), percent: 50 },
+]);
+
+const translatedDisc = computed(() => [
+  { label: t.value('dominance'), value: props.disc.Dominância },
+  { label: t.value('influence'), value: props.disc.Influência },
+  { label: t.value('steadiness'), value: props.disc.Estabilidade },
+  { label: t.value('compliance'), value: props.disc.Conformidade },
+]);
+
+const translatedCharacteristics = computed(() => [
+  t.value('drivenByExcellence'),
+  t.value('seekingImpact'),
+  t.value('demandsFromSelf')
+]);
+
+const translatedStrengths = computed(() => [
+  t.value('systemicVision'),
+  t.value('executionMaster'),
+  t.value('strategicThinking')
+]);
+
+const translatedRisks = computed(() => [
+  t.value('burnoutRisk'),
+  t.value('highSelfCriticism')
+]);
+
+const translatedValues = computed(() => [
+  t.value('autonomy'),
+  t.value('impact'),
+  t.value('excellence')
+]);
+
+const discChart = ref(null);
+let chartInstance = null;
+
+// Function to create or update the chart
+const createDiscChart = () => {
   if (discChart.value) {
+    // If a chart instance exists, destroy it first
+    if (chartInstance) {
+      chartInstance.destroy();
+    }
+    
     const ctx = discChart.value.getContext("2d");
-    new Chart(ctx, {
+    chartInstance = new Chart(ctx, {
       type: "radar",
       data: {
-        labels: Object.keys(props.disc),
+        labels: translatedDisc.value.map(item => item.label),
         datasets: [
           {
-            label: "Perfil DISC",
-            data: Object.values(props.disc),
+            label: t.value('discProfile'),
+            data: translatedDisc.value.map(item => item.value),
             fill: true,
             backgroundColor: "rgba(126, 34, 206, 0.2)",
             borderColor: "rgba(126, 34, 206, 1)",
@@ -226,6 +283,15 @@ onMounted(() => {
       },
     });
   }
+};
+
+// Watch for language changes and redraw the chart
+watch(() => props.currentLang, () => {
+  createDiscChart();
+});
+
+onMounted(() => {
+  createDiscChart();
 });
 </script>
 
@@ -242,5 +308,12 @@ onMounted(() => {
 }
 .animate-fadeIn {
   animation: fadeIn 0.8s ease-out;
+}
+
+.gradient-text {
+  background-image: linear-gradient(to right, #8B5CF6, #EC4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 </style>

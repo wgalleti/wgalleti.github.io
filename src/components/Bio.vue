@@ -1,5 +1,8 @@
 <script setup>
-defineProps({
+import { watch, computed } from 'vue'
+import { useI18n } from '../utils/i18n'
+
+const props = defineProps({
   bio: {
     type: String,
     default: ''
@@ -15,14 +18,24 @@ defineProps({
   coverLetterLink: {
     type: String,
     default: '#'
+  },
+  currentLang: {
+    type: String,
+    default: 'pt'
   }
+})
+
+// Create a computed property for the translation function
+const t = computed(() => {
+  const { t } = useI18n(props.currentLang)
+  return t
 })
 </script>
 
 <template>
   <section class="section-container mt-12">
     <div class="card" data-sr-left>
-      <h2 class="text-2xl font-semibold mb-6 gradient-text">Sobre Mim</h2>
+      <h2 class="text-2xl font-semibold mb-6 gradient-text">{{ t('aboutMe') }}</h2>
       <div class="flex flex-col md:flex-row items-center gap-6">
         <div 
           class="w-28 h-28 md:w-36 md:h-36 relative overflow-hidden rounded-full shadow-xl border-4 border-purple-200 dark:border-gray-600 flex-shrink-0 transition-all duration-300 hover:shadow-2xl"
@@ -48,7 +61,7 @@ defineProps({
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
-              CV Português
+              {{ t('cvPortuguese') }}
             </a>
             <a 
               :href="cvLinkEn" 
@@ -58,7 +71,7 @@ defineProps({
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
-              CV English
+              {{ t('cvEnglish') }}
             </a>
             <a 
               :href="coverLetterLink" 
@@ -68,11 +81,20 @@ defineProps({
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
-              Carta de Apresentação
+              {{ t('coverLetter') }}
             </a>
           </div>
         </div>
       </div>
     </div>
   </section>
-</template> 
+</template>
+
+<style scoped>
+.gradient-text {
+  background-image: linear-gradient(to right, #8B5CF6, #EC4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+</style> 

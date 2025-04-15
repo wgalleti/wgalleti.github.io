@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watch, computed } from 'vue'
 import Header from './components/Header.vue'
 import Hero from './components/Hero.vue'
 import Bio from './components/Bio.vue'
@@ -11,22 +11,51 @@ import ProfileDashboard from './components/ProfileDashboard.vue'
 import YouTubeVideos from './components/YouTubeVideos.vue'
 import SocialMedia from './components/SocialMedia.vue'
 import { fetchYouTubeVideos } from './utils/youtube'
+import { useI18n, translations } from './utils/i18n'
 
-const data = {
-  name: 'William Gallëti',
-  title: 'Estrategista de Sistemas',
-  description: 'Crio sistemas que otimizam processos, automatizam tarefas e liberam equipes para focar no que realmente importa.',
-  bio: 'Com mais de 10 anos de estrada entre desenvolvimento e estratégia, eu projeto sistemas como um arquiteto que já construiu com as próprias mãos. Meu diferencial é unir visão de negócio com profundidade técnica.\n\nDa interface ao banco de dados, entrego soluções que reduzem atrito operacional, aumentam produtividade e liberam equipes para o que realmente importa.',
-  cvLinkPtBr: '/cv.pdf',
-  cvLinkEn: '/resume.pdf',
-  coverLetterLink: '/carta.pdf',
-  specialties: [
-    '🔧 Desenvolvimento Full Stack com Nuxt e Django',
-    '⚙️ Automação com Celery e integração de sistemas',
-    '🧠 Arquitetura orientada a impacto e performance',
-    '🚀 Projetos com foco em produtividade e ROI'
-  ]
+// Create a reactive language state
+const currentLang = ref(localStorage.getItem('preferredLanguage') || 'pt')
+
+// Get translations based on current language with reactivity
+const t = computed(() => {
+  const i18n = useI18n(currentLang.value)
+  return i18n.t
+})
+
+// Function to change language
+const changeLanguage = (lang) => {
+  currentLang.value = lang
+  localStorage.setItem('preferredLanguage', lang)
+  updateData()
 }
+
+// Define translated data object
+const getData = () => {
+  return {
+    name: 'William Gallëti',
+    title: t.value('title'),
+    description: t.value('description'),
+    bio: t.value('bio'),
+    cvLinkPtBr: '/cv.pdf',
+    cvLinkEn: '/resume.pdf',
+    coverLetterLink: '/carta.pdf',
+    specialties: translations[currentLang.value].specialties
+  }
+}
+
+// Reactive data
+const data = ref(getData())
+
+// Update data when language changes
+const updateData = () => {
+  data.value = getData()
+}
+
+// Watch for language changes
+watch(currentLang, (newLang) => {
+  updateData()
+  document.documentElement.setAttribute('lang', newLang)
+}, { immediate: true })
 
 const youtubeVideos = ref([])
 const isLoading = ref(false)
@@ -92,27 +121,37 @@ onMounted(async () => {
   <div class="min-h-screen flex flex-col relative">
     <AnimatedBackground />
     <div class="relative z-10">
-      <Header :name="data.name" :title="data.title" />
+      <Header 
+        :name="data.name" 
+        :title="data.title" 
+        :current-lang="currentLang"
+        @change-language="changeLanguage"
+      />
       <main class="flex-grow">
-        <Hero :description="data.description" />
+        <Hero :description="data.description" :current-lang="currentLang" />
         <Bio 
           :bio="data.bio" 
           :cv-link-pt-br="data.cvLinkPtBr"
           :cv-link-en="data.cvLinkEn"
           :cover-letter-link="data.coverLetterLink"
+          :current-lang="currentLang"
         />
-        <Specialties :specialties="data.specialties" />
-        <ProfileDashboard />
+        <Specialties 
+          :specialties="data.specialties" 
+          :current-lang="currentLang"
+        />
+        <ProfileDashboard :current-lang="currentLang" />
         <YouTubeVideos 
           :videos="youtubeVideos" 
           :is-loading="isLoading" 
           :has-error="hasError"
+          :current-lang="currentLang"
           @refresh="handleRefreshVideos"
         />
-        <Contact />
-        <SocialMedia />
+        <Contact :current-lang="currentLang" />
+        <SocialMedia :current-lang="currentLang" />
       </main>
-      <Footer :name="data.name" />
+      <Footer :name="data.name" :current-lang="currentLang" />
     </div>
   </div>
 </template>

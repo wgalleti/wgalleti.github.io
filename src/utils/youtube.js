@@ -11,20 +11,16 @@ export async function fetchYouTubeVideos(channelHandle = 'wGalleti', maxResults 
     if (!forceRefresh) {
       const cachedData = getCachedVideos(channelHandle);
       if (cachedData) {
-        console.log('Using cached YouTube data');
         return cachedData;
       }
     } else {
-      console.log('Force refreshing YouTube data');
       // Clear existing cache if forcing refresh
       clearCache(channelHandle);
     }
     
-    console.log('Fetching fresh YouTube data');
     const apiKey = import.meta.env.VITE_YOUTUBE_API_KEY;
     
     if (!apiKey) {
-      console.error('YouTube API key not found in environment variables');
       return getMockData();
     }
     
@@ -116,7 +112,6 @@ function getCachedVideos(channelHandle) {
     
     // Check if cache is expired
     if (Date.now() > expiration) {
-      console.log('YouTube cache expired, removing');
       localStorage.removeItem(`youtube_${channelHandle}`);
       return null;
     }
@@ -187,7 +182,6 @@ export function clearCache(channelHandle = null) {
   try {
     if (channelHandle) {
       localStorage.removeItem(`youtube_${channelHandle}`);
-      console.log(`Cleared cache for channel: ${channelHandle}`);
     } else {
       // Find all youtube cache keys and remove them
       Object.keys(localStorage).forEach(key => {
@@ -195,7 +189,6 @@ export function clearCache(channelHandle = null) {
           localStorage.removeItem(key);
         }
       });
-      console.log('Cleared all YouTube cache');
     }
   } catch (error) {
     console.error('Error clearing cache:', error);

@@ -1,5 +1,12 @@
 <script setup>
-defineProps({
+import { computed } from 'vue'
+import { useI18n } from '../utils/i18n'
+
+const props = defineProps({
+  currentLang: {
+    type: String,
+    default: 'pt'
+  },
   socialLinks: {
     type: Array,
     default: () => [
@@ -30,12 +37,18 @@ defineProps({
     ]
   }
 })
+
+// Get translations
+const t = computed(() => {
+  const { t } = useI18n(props.currentLang);
+  return t;
+});
 </script>
 
 <template>
   <section class="section-container mt-12">
     <div class="card" data-sr-left>
-      <h2 class="text-2xl font-semibold mb-6 gradient-text">Redes Sociais</h2>
+      <h2 class="text-2xl font-semibold mb-6 gradient-text">{{ t('socialMedia') }}</h2>
       <div class="flex flex-wrap justify-center gap-6">
         <a 
           v-for="(item, index) in socialLinks" 
