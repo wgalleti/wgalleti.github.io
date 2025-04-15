@@ -1,11 +1,15 @@
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import Header from './components/Header.vue'
 import Hero from './components/Hero.vue'
 import Specialties from './components/Specialties.vue'
 import Contact from './components/Contact.vue'
 import Footer from './components/Footer.vue'
 import AnimatedBackground from './components/AnimatedBackground.vue'
+import ProfileDashboard from './components/ProfileDashboard.vue'
+import YouTubeVideos from './components/YouTubeVideos.vue'
+import SocialMedia from './components/SocialMedia.vue'
+import { fetchYouTubeVideos } from './utils/youtube'
 
 const data = {
   name: 'William Gallëti',
@@ -19,7 +23,30 @@ const data = {
   ]
 }
 
-onMounted(() => {
+const youtubeVideos = ref([])
+const isLoading = ref(false)
+const hasError = ref(false)
+
+// Function to fetch YouTube videos (with option to force refresh)
+async function loadYouTubeVideos(forceRefresh = false) {
+  try {
+    isLoading.value = true
+    hasError.value = false
+    youtubeVideos.value = await fetchYouTubeVideos('wGalleti', 6, forceRefresh)
+  } catch (error) {
+    console.error('Failed to load videos:', error)
+    hasError.value = true
+  } finally {
+    isLoading.value = false
+  }
+}
+
+// Handle refresh request from YouTubeVideos component
+function handleRefreshVideos() {
+  loadYouTubeVideos(true)
+}
+
+onMounted(async () => {
   // Initialize ScrollReveal with different directions
   ScrollReveal().reveal('[data-sr-left]', {
     distance: '100px',
@@ -50,6 +77,9 @@ onMounted(() => {
     cleanup: true,
     delay: 200
   })
+  
+  // Fetch YouTube videos
+  await loadYouTubeVideos()
 })
 </script>
 
@@ -61,7 +91,15 @@ onMounted(() => {
       <main class="flex-grow">
         <Hero :description="data.description" />
         <Specialties :specialties="data.specialties" />
+        <ProfileDashboard />
+        <YouTubeVideos 
+          :videos="youtubeVideos" 
+          :is-loading="isLoading" 
+          :has-error="hasError"
+          @refresh="handleRefreshVideos"
+        />
         <Contact />
+        <SocialMedia />
       </main>
       <Footer :name="data.name" />
     </div>
