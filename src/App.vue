@@ -140,7 +140,6 @@ onMounted(async () => {
           :specialties="data.specialties" 
           :current-lang="currentLang"
         />
-        <ProfileDashboard :current-lang="currentLang" />
         <YouTubeVideos 
           :videos="youtubeVideos" 
           :is-loading="isLoading" 
