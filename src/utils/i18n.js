@@ -1,180 +1,200 @@
-// Language translation utility
-
 export const translations = {
-  en: {
-    // App.vue content
-    title: 'Systems Strategist',
-    description: 'I create systems that optimize processes, automate tasks, and free teams to focus on what really matters.',
-    bio: 'With over 10 years of experience across development and strategy, I design systems like an architect who has built with their own hands. My differentiator is combining business vision with technical depth.\n\nFrom interface to database, I deliver solutions that reduce operational friction, increase productivity, and free teams to focus on what truly matters.',
-    specialties: [
-      '🔧 Full Stack Development with Nuxt and Django',
-      '⚙️ Automation with Celery and systems integration',
-      '🧠 Impact-driven architecture and performance',
-      '🚀 Projects focused on productivity and ROI'
-    ],
-    
-    // Common heading
-    solutionsTransform: 'Solutions that Transform',
-    
-    // Bio.vue
-    aboutMe: 'About Me',
-    cvPortuguese: 'CV Portuguese',
-    cvEnglish: 'CV English',
-    coverLetter: 'Cover Letter',
-    
-    // Contact.vue
-    optimizeProcesses: 'Want to optimize your processes?',
-    letsTalk: 'Let\'s talk about how I can add value to your project or business. Transform your ideas into efficient and scalable solutions.',
-    startConversation: 'Start Conversation',
-    sendMessage: 'Send a message',
-    fillForm: 'Fill out the form below and I\'ll get back to you as soon as possible.',
-    yourName: 'Your name',
-    yourEmail: 'Your email',
-    yourMessage: 'Your message...',
-    send: 'Send Message',
-    
-    // Header.vue
-    language: 'Language',
-    
-    // YouTube.vue
-    youtubeChannel: 'YouTube Channel',
-    latestVideos: 'Latest Videos',
-    loading: 'Loading videos...',
-    error: 'Error loading videos',
-    errorMessage: 'Check your internet connection or try again later.',
-    noVideos: 'No videos found',
-    refresh: 'Refresh',
-    viewChannel: 'View All Videos',
-    
-    // SocialMedia.vue
-    socialMedia: 'Social Media',
-    
-    // Specialties.vue
-    mySpecialties: 'My Specialties',
-    
-    // ProfileDashboard.vue
-    profile: 'Profile',
-    bigFive: 'Big Five',
-    openness: 'Openness to Experience',
-    conscientiousness: 'Conscientiousness',
-    extraversion: 'Extraversion',
-    agreeableness: 'Agreeableness',
-    neuroticism: 'Neuroticism',
-    disc: 'DISC',
-    dominance: 'Dominance',
-    influence: 'Influence',
-    steadiness: 'Steadiness',
-    compliance: 'Compliance',
-    discProfile: 'DISC Profile',
-    mbti: 'MBTI',
-    enneagram: 'Enneagram',
-    enneagramType: 'Type',
-    enneagramWing: 'with wing',
-    strengths: 'Strengths',
-    risks: 'Risks',
-    coreValues: 'Core Values',
-    systemicVision: 'Systemic Vision',
-    executionMaster: 'Execution Master',
-    strategicThinking: 'Strategic Thinking',
-    burnoutRisk: 'Burnout Risk',
-    highSelfCriticism: 'High Self-Criticism',
-    autonomy: 'Autonomy',
-    impact: 'Impact',
-    excellence: 'Excellence',
-    drivenByExcellence: 'Driven by excellence and ethics',
-    seekingImpact: 'Seeking impact and recognition',
-    demandsFromSelf: 'Demands a lot from self and others',
-    
-    // Footer.vue
-    copyright: 'All rights reserved'
-  },
   pt: {
-    // App.vue content - keeping original Portuguese content
-    title: 'Estrategista de Sistemas',
-    description: 'Crio sistemas que otimizam processos, automatizam tarefas e liberam equipes para focar no que realmente importa.',
-    bio: 'Com mais de 10 anos de estrada entre desenvolvimento e estratégia, eu projeto sistemas como um arquiteto que já construiu com as próprias mãos. Meu diferencial é unir visão de negócio com profundidade técnica.\n\nDa interface ao banco de dados, entrego soluções que reduzem atrito operacional, aumentam produtividade e liberam equipes para o que realmente importa.',
-    specialties: [
-      '🔧 Desenvolvimento Full Stack com Nuxt e Django',
-      '⚙️ Automação com Celery e integração de sistemas',
-      '🧠 Arquitetura orientada a impacto e performance',
-      '🚀 Projetos com foco em produtividade e ROI'
-    ],
-    
-    // Common heading
-    solutionsTransform: 'Soluções que Transformam',
-    
-    // Bio.vue
-    aboutMe: 'Sobre Mim',
-    cvPortuguese: 'CV Português',
-    cvEnglish: 'CV English',
-    coverLetter: 'Carta de Apresentação',
-    
-    // Contact.vue
-    optimizeProcesses: 'Quer otimizar seus processos?',
-    letsTalk: 'Vamos conversar sobre como posso agregar ao seu projeto ou negócio. Transforme suas ideias em soluções eficientes e escaláveis.',
-    startConversation: 'Iniciar Conversa',
-    sendMessage: 'Envie uma mensagem',
-    fillForm: 'Preencha o formulário abaixo e entrarei em contato o mais breve possível.',
-    yourName: 'Seu nome',
-    yourEmail: 'Seu e-mail',
-    yourMessage: 'Sua mensagem...',
-    send: 'Enviar Mensagem',
-    
-    // Header.vue
-    language: 'Idioma',
-    
-    // YouTube.vue
-    youtubeChannel: 'Canal no YouTube',
-    latestVideos: 'Últimos Vídeos',
-    loading: 'Carregando vídeos...',
-    error: 'Não foi possível carregar os vídeos',
-    errorMessage: 'Verifique sua conexão com a internet ou tente novamente mais tarde.',
-    noVideos: 'Nenhum vídeo encontrado',
-    refresh: 'Atualizar',
-    viewChannel: 'Ver todos os vídeos',
-    
-    // SocialMedia.vue
-    socialMedia: 'Redes Sociais',
-    followMe: 'Me Siga',
-    
-    // Specialties.vue
-    mySpecialties: 'Minhas Especialidades',
-    
-    // ProfileDashboard.vue
-    profile: 'Perfil',
-    bigFive: 'Big Five',
-    openness: 'Abertura à Experiência',
-    conscientiousness: 'Conscienciosidade',
-    extraversion: 'Extroversão',
-    agreeableness: 'Agradabilidade',
-    neuroticism: 'Neuroticismo',
-    disc: 'DISC',
-    dominance: 'Dominância',
-    influence: 'Influência',
-    steadiness: 'Estabilidade',
-    compliance: 'Conformidade',
-    discProfile: 'Perfil DISC',
-    mbti: 'MBTI',
-    enneagram: 'Eneagrama',
-    enneagramType: 'Tipo',
-    enneagramWing: 'com asa',
-    strengths: 'Pontos Fortes',
-    risks: 'Riscos',
-    coreValues: 'Valores Essenciais',
-    systemicVision: 'Visão Sistêmica',
-    executionMaster: 'Mestre em Execução',
-    strategicThinking: 'Pensamento Estratégico',
-    burnoutRisk: 'Risco de Burnout',
-    highSelfCriticism: 'Autocrítica Elevada',
-    autonomy: 'Autonomia',
-    impact: 'Impacto',
-    excellence: 'Excelência',
-    drivenByExcellence: 'Motivado por excelência e ética',
-    seekingImpact: 'Busca impacto e reconhecimento',
-    demandsFromSelf: 'Exige muito de si e dos outros',
-    
-    // Footer.vue
-    copyright: 'Todos os direitos reservados'
+    // Navigation
+    navAbout: 'Sobre',
+    navServices: 'Serviços',
+    navTech: 'Tecnologias',
+    navProducts: 'Produtos',
+    navContact: 'Contato',
+    navCta: 'Fale Conosco',
+
+    // Hero
+    heroTag: 'Tecnologia que resolve',
+    heroTitle1: 'Transformamos problemas',
+    heroTitle2: 'em soluções digitais',
+    heroDescription: 'Desenvolvemos sistemas, aplicativos e automações sob medida que geram resultados reais para o seu negócio. Da ideia à entrega, somos seu parceiro tecnológico.',
+    heroCta: 'Iniciar Projeto',
+    heroCtaSecondary: 'Conheça nossos produtos',
+    heroStats1: 'Anos de experiência',
+    heroStats2: 'Projetos entregues',
+    heroStats3: 'Tecnologias',
+    heroStats4: 'Clientes satisfeitos',
+
+    // About
+    aboutTag: 'Quem somos',
+    aboutTitle: 'Tecnologia como ferramenta, resultado como objetivo',
+    aboutDescription: 'A wGalleti Tech nasceu da convicção de que tecnologia deve resolver problemas reais. Com mais de 15 anos de experiência em desenvolvimento e estratégia de sistemas, entregamos soluções que reduzem custos, automatizam processos e escalam negócios.',
+    aboutMission: 'Missão',
+    aboutMissionText: 'Entregar soluções tecnológicas que simplifiquem operações, gerem valor e transformem a maneira como nossos clientes fazem negócio.',
+    aboutVision: 'Visão',
+    aboutVisionText: 'Ser referência em desenvolvimento de software sob medida, reconhecida pela excelência técnica e impacto nos resultados dos clientes.',
+    aboutValues: 'Valores',
+    aboutValue1: 'Excelência técnica',
+    aboutValue2: 'Compromisso com resultado',
+    aboutValue3: 'Transparência total',
+    aboutValue4: 'Inovação pragmática',
+
+    // Services
+    servicesTag: 'O que fazemos',
+    servicesTitle: 'Soluções completas para cada desafio',
+    servicesDescription: 'Do diagnóstico à entrega, construímos a solução certa para o seu problema.',
+    service1Title: 'Sistemas Web',
+    service1Desc: 'Plataformas web robustas e escaláveis com interfaces modernas. ERPs, dashboards, portais e aplicações SaaS sob medida.',
+    service2Title: 'Aplicativos Mobile',
+    service2Desc: 'Apps nativos e multiplataforma com Flutter para iOS e Android. Design intuitivo, performance e experiência do usuário.',
+    service3Title: 'Automação de Processos',
+    service3Desc: 'Eliminamos tarefas repetitivas e integramos sistemas. APIs, workflows automatizados e inteligência operacional.',
+    service4Title: 'Consultoria Técnica',
+    service4Desc: 'Arquitetura de sistemas, escolha de stack, code review e mentoria técnica para times de desenvolvimento.',
+    service5Title: 'APIs & Integrações',
+    service5Desc: 'Conectamos seus sistemas com APIs seguras e performáticas. Integrações com gateways de pagamento, ERPs e serviços externos.',
+    service6Title: 'Cloud & DevOps',
+    service6Desc: 'Infraestrutura na nuvem, CI/CD, Docker e deploy automatizado. Seus sistemas sempre no ar com máxima performance.',
+
+    // Technologies
+    techTag: 'Stack tecnológico',
+    techTitle: 'Ferramentas que dominamos',
+    techDescription: 'Escolhemos a tecnologia certa para cada projeto. Sem modismos, com pragmatismo.',
+
+    // Products
+    productsTag: 'Nosso portfólio',
+    productsTitle: 'Produtos que entregamos',
+    productsDescription: 'Cada projeto é uma história de problema resolvido. Conheça algumas das soluções que construímos.',
+    productProblem: 'Problema resolvido',
+    productTech: 'Tecnologias',
+    productVisit: 'Visitar produto',
+    productGallery: 'Ver galeria',
+    productClose: 'Fechar',
+    productNext: 'Próximo',
+    productPrev: 'Anterior',
+    productConfidential: 'Projeto confidencial',
+    productConfidentialDesc: 'Imagens e detalhes internos sob sigilo. Apenas informações públicas.',
+    productClientSite: 'Site do cliente',
+    productWantSimilar: 'Quero algo similar',
+
+    // Contact
+    contactTag: 'Vamos conversar',
+    contactTitle: 'Pronto para transformar seu negócio?',
+    contactDescription: 'Entre em contato pelo WhatsApp e vamos discutir como a tecnologia pode resolver seus desafios e alavancar seus resultados.',
+    contactWhatsapp: 'Chamar no WhatsApp',
+    contactWhatsappMsg: 'Olá! Vim pelo site da wGalleti Tech e gostaria de saber mais sobre as soluções de vocês.',
+    contactFormTitle: 'Ou envie uma mensagem',
+    contactName: 'Seu nome',
+    contactEmail: 'Seu e-mail',
+    contactMessage: 'Conte-nos sobre seu projeto...',
+    contactSend: 'Enviar mensagem',
+    contactResponseTime: 'Respondemos em até 24 horas',
+
+    // Footer
+    footerDescription: 'Soluções tecnológicas sob medida que transformam desafios em resultados.',
+    footerLinks: 'Links rápidos',
+    footerContact: 'Contato',
+    footerCnpj: 'CNPJ',
+    footerRights: 'Todos os direitos reservados.',
+    footerMadeWith: 'Feito com',
+
+    // Common
+    learnMore: 'Saiba mais',
+    copyright: 'Todos os direitos reservados',
+  },
+
+  en: {
+    // Navigation
+    navAbout: 'About',
+    navServices: 'Services',
+    navTech: 'Technologies',
+    navProducts: 'Products',
+    navContact: 'Contact',
+    navCta: 'Get in Touch',
+
+    // Hero
+    heroTag: 'Technology that solves',
+    heroTitle1: 'We turn problems',
+    heroTitle2: 'into digital solutions',
+    heroDescription: 'We develop custom systems, apps, and automations that generate real results for your business. From idea to delivery, we are your technology partner.',
+    heroCta: 'Start a Project',
+    heroCtaSecondary: 'See our products',
+    heroStats1: 'Years of experience',
+    heroStats2: 'Projects delivered',
+    heroStats3: 'Technologies',
+    heroStats4: 'Happy clients',
+
+    // About
+    aboutTag: 'Who we are',
+    aboutTitle: 'Technology as a tool, results as the goal',
+    aboutDescription: 'wGalleti Tech was born from the conviction that technology must solve real problems. With over 15 years of experience in systems development and strategy, we deliver solutions that cut costs, automate processes, and scale businesses.',
+    aboutMission: 'Mission',
+    aboutMissionText: 'Deliver technology solutions that simplify operations, generate value, and transform how our clients do business.',
+    aboutVision: 'Vision',
+    aboutVisionText: 'To be a reference in custom software development, recognized for technical excellence and impact on client results.',
+    aboutValues: 'Values',
+    aboutValue1: 'Technical excellence',
+    aboutValue2: 'Commitment to results',
+    aboutValue3: 'Full transparency',
+    aboutValue4: 'Pragmatic innovation',
+
+    // Services
+    servicesTag: 'What we do',
+    servicesTitle: 'Complete solutions for every challenge',
+    servicesDescription: 'From diagnosis to delivery, we build the right solution for your problem.',
+    service1Title: 'Web Systems',
+    service1Desc: 'Robust and scalable web platforms with modern interfaces. ERPs, dashboards, portals, and custom SaaS applications.',
+    service2Title: 'Mobile Apps',
+    service2Desc: 'Native and cross-platform apps with Flutter for iOS and Android. Intuitive design, performance, and user experience.',
+    service3Title: 'Process Automation',
+    service3Desc: 'We eliminate repetitive tasks and integrate systems. APIs, automated workflows, and operational intelligence.',
+    service4Title: 'Technical Consulting',
+    service4Desc: 'Systems architecture, stack selection, code review, and technical mentoring for development teams.',
+    service5Title: 'APIs & Integrations',
+    service5Desc: 'We connect your systems with secure, high-performance APIs. Integrations with payment gateways, ERPs, and external services.',
+    service6Title: 'Cloud & DevOps',
+    service6Desc: 'Cloud infrastructure, CI/CD, Docker, and automated deployments. Your systems always up with maximum performance.',
+
+    // Technologies
+    techTag: 'Tech stack',
+    techTitle: 'Tools we master',
+    techDescription: 'We choose the right technology for each project. No trends, just pragmatism.',
+
+    // Products
+    productsTag: 'Our portfolio',
+    productsTitle: 'Products we delivered',
+    productsDescription: 'Each project is a story of a problem solved. Discover some of the solutions we built.',
+    productProblem: 'Problem solved',
+    productTech: 'Technologies',
+    productVisit: 'Visit product',
+    productGallery: 'View gallery',
+    productClose: 'Close',
+    productNext: 'Next',
+    productPrev: 'Previous',
+    productConfidential: 'Confidential project',
+    productConfidentialDesc: 'Images and internal details under NDA. Only public information shown.',
+    productClientSite: 'Client website',
+    productWantSimilar: 'I want something similar',
+
+    // Contact
+    contactTag: "Let's talk",
+    contactTitle: 'Ready to transform your business?',
+    contactDescription: 'Get in touch via WhatsApp and let\'s discuss how technology can solve your challenges and boost your results.',
+    contactWhatsapp: 'Chat on WhatsApp',
+    contactWhatsappMsg: "Hello! I came from the wGalleti Tech website and would like to know more about your solutions.",
+    contactFormTitle: 'Or send a message',
+    contactName: 'Your name',
+    contactEmail: 'Your email',
+    contactMessage: 'Tell us about your project...',
+    contactSend: 'Send message',
+    contactResponseTime: 'We respond within 24 hours',
+
+    // Footer
+    footerDescription: 'Custom technology solutions that turn challenges into results.',
+    footerLinks: 'Quick links',
+    footerContact: 'Contact',
+    footerCnpj: 'Tax ID',
+    footerRights: 'All rights reserved.',
+    footerMadeWith: 'Made with',
+
+    // Common
+    learnMore: 'Learn more',
+    copyright: 'All rights reserved',
   }
 }
 
@@ -183,9 +203,8 @@ export const getTranslation = (lang, key) => {
   return langData[key] || key
 }
 
-// Create a Vue composition function for i18n
 export const useI18n = (lang) => {
   return {
     t: (key) => getTranslation(lang, key)
   }
-} 
+}

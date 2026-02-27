@@ -1,88 +1,71 @@
+<script setup>
+import { inject } from 'vue'
+
+defineProps({
+  currentLang: String
+})
+
+const t = inject('t')
+
+const whatsappUrl = 'https://wa.me/5565999448004?text=' + encodeURIComponent('Olá! Vim pelo site da wGalleti Tech e gostaria de saber mais sobre as soluções de vocês.')
+</script>
+
 <template>
-  <section class="section-container mt-12">
-    <div class="card bg-gradient-to-r from-purple-600 to-purple-800 shadow-xl p-6 rounded-xl" data-sr-left>
-      <h2 class="text-3xl font-semibold mb-6 text-white text-center">{{ getTranslation('optimizeProcesses') }}</h2>
-      <div class="flex flex-col items-center justify-center gap-6">
-        <div class="text-center max-w-2xl mx-auto">
-          <p class="text-white mb-8 text-lg">
-            {{ getTranslation('letsTalk') }}
-          </p>
-          <a 
-            :href="whatsappLink" 
-            class="inline-flex items-center px-8 py-4 bg-[#25D366] text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-[#128C7E] transition-all duration-200 hover:scale-105"
+  <section id="contact" class="section-padding relative overflow-hidden">
+    <!-- Background accent -->
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-950/30 to-transparent pointer-events-none"></div>
+
+    <div class="container-section relative z-10">
+      <!-- Section header -->
+      <div class="text-center mb-16 reveal">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-display font-medium bg-brand-500/10 text-brand-300 border border-brand-500/20 mb-6">
+          {{ t('contactTag') }}
+        </span>
+        <h2 class="heading-section text-white mb-6">{{ t('contactTitle') }}</h2>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto font-body">{{ t('contactDescription') }}</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+        <!-- WhatsApp CTA -->
+        <div class="card-glass p-8 md:p-10 flex flex-col items-center justify-center text-center reveal">
+          <div class="w-20 h-20 rounded-2xl bg-emerald-500/10 flex items-center justify-center mb-6">
+            <svg class="w-10 h-10 text-emerald-400" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          <h3 class="text-2xl font-display font-bold text-white mb-3">WhatsApp</h3>
+          <p class="text-slate-400 font-body mb-8 leading-relaxed">{{ t('contactDescription') }}</p>
+          <a
+            :href="whatsappUrl"
+            target="_blank"
+            rel="noopener"
+            class="btn-whatsapp text-base !py-4 !px-10 w-full sm:w-auto justify-center"
           >
-            <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M20.52 3.449C18.24 1.245 15.24 0.05 12.045 0.05C5.463 0.05 0.103 5.453 0.103 12.05C0.103 14.192 0.659 16.233 1.675 18.021L0 24.25L6.335 22.6C8.076 23.532 9.975 24.014 11.925 24.014H11.93C18.51 24.014 23.87 18.611 23.87 12.014C23.87 8.798 22.709 5.843 20.52 3.449ZM12.045 22.012C10.285 22.012 8.571 21.541 7.103 20.664L6.735 20.444L2.923 21.427L3.913 17.679L3.651 17.29C2.695 15.774 2.194 14.013 2.194 12.196C2.194 6.636 6.58 2.215 12.075 2.215C14.72 2.215 17.22 3.234 19.086 5.049C20.955 6.867 21.97 9.316 21.97 12.011C21.97 17.551 17.588 22.012 12.045 22.012ZM17.498 14.507C17.198 14.351 15.727 13.638 15.458 13.517C15.188 13.399 14.993 13.348 14.793 13.635C14.593 13.928 14.048 14.582 13.877 14.783C13.707 14.979 13.537 15.007 13.242 14.854C12.948 14.7 11.962 14.368 10.798 13.318C9.894 12.503 9.298 11.501 9.127 11.203C8.957 10.906 9.111 10.752 9.256 10.608C9.39 10.482 9.552 10.28 9.693 10.109C9.836 9.937 9.891 9.816 9.997 9.621C10.106 9.424 10.06 9.257 9.981 9.102C9.9 8.948 9.302 7.49 9.058 6.9C8.82 6.316 8.576 6.387 8.396 6.387C8.226 6.36 8.031 6.36 7.834 6.36C7.638 6.36 7.319 6.436 7.045 6.734C6.776 7.031 5.999 7.744 5.999 9.197C5.999 10.653 7.042 12.058 7.178 12.255C7.319 12.452 9.299 15.426 12.239 16.8C12.957 17.103 13.517 17.283 13.956 17.416C14.647 17.637 15.277 17.608 15.772 17.529C16.323 17.44 17.523 16.814 17.767 16.119C18.013 15.426 18.013 14.85 17.93 14.731C17.85 14.609 17.698 14.557 17.498 14.507Z"/>
-            </svg>
-            {{ getTranslation('startConversation') }}
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            {{ t('contactWhatsapp') }}
           </a>
+          <p class="text-xs text-slate-500 mt-4 font-body">{{ t('contactResponseTime') }}</p>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="card-glass p-8 md:p-10 reveal reveal-delay-2">
+          <h3 class="text-xl font-display font-bold text-white mb-6">{{ t('contactFormTitle') }}</h3>
+          <form class="space-y-5" name="contact" data-netlify="true">
+            <input type="hidden" name="form-name" value="contact" />
+            <div>
+              <input class="input-field" name="name" :placeholder="t('contactName')" required />
+            </div>
+            <div>
+              <input class="input-field" name="email" type="email" :placeholder="t('contactEmail')" required />
+            </div>
+            <div>
+              <textarea class="input-field min-h-[120px] resize-none" name="message" :placeholder="t('contactMessage')" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary w-full justify-center">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+              {{ t('contactSend') }}
+            </button>
+          </form>
         </div>
       </div>
     </div>
   </section>
-
-  <section class="section-container mt-12">
-    <div class="card" data-sr-right>
-      <h2 class="text-2xl font-semibold mb-6 gradient-text">{{ getTranslation('sendMessage') }}</h2>
-      <form class="space-y-4" name="contact" data-netlify="true">
-        <p class="text-gray-600 dark:text-gray-400">{{ getTranslation('fillForm') }}</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <input class="input-field" name="name" :placeholder="getTranslation('yourName')" required />
-          <input class="input-field" name="email" type="email" :placeholder="getTranslation('yourEmail')" required />
-        </div>
-        <textarea class="input-field" name="message" :placeholder="getTranslation('yourMessage')" rows="4" required></textarea>
-        <button class="btn-primary w-full">
-          <span class="flex items-center justify-center">
-            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"/>
-            </svg>
-            {{ getTranslation('send') }}
-          </span>
-        </button>
-      </form>
-    </div>
-  </section>
 </template>
-
-<script setup>
-import { computed } from 'vue'
-import { useI18n } from '../utils/i18n'
-
-const props = defineProps({
-  currentLang: {
-    type: String,
-    default: 'pt'
-  }
-})
-
-// Create a reactive translation function that returns the translation for a given key
-const getTranslation = (key) => {
-  const { t } = useI18n(props.currentLang)
-  return t(key)
-}
-
-const whatsappLink = computed(() => {
-  const message = props.currentLang === 'pt' 
-    ? 'Olá, estou entrando em contato pelo seu site sobre trabalhos de freelance' 
-    : 'Hello, I am contacting you from your website about freelance work'
-  return `https://wa.me/5565999448004?text=${encodeURIComponent(message)}`
-})
-</script>
-
-<style scoped>
-.input-field {
-  @apply w-full px-3 py-2 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 dark:bg-gray-800 dark:border-gray-700 dark:text-white;
-}
-
-.btn-primary {
-  @apply px-6 py-2 bg-gradient-to-r from-purple-500 to-violet-500 text-white font-semibold rounded-lg shadow-lg hover:from-purple-600 hover:to-violet-600 transition-all duration-200;
-}
-
-.gradient-text {
-  background-image: linear-gradient(to right, #8B5CF6, #EC4899);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-</style>
- 

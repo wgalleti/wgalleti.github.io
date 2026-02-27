@@ -1,16 +1,17 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import { fileURLToPath, URL } from 'node:url'
+import adminPlugin from './vite-plugin-admin.js'
 
-// https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   plugins: [
-    vue({
-      template: {
-        compilerOptions: {
-          isCustomElement: tag => tag === 'lottie-player'
-        }
-      }
-    })
+    vue(),
+    ...(command === 'serve' ? [adminPlugin()] : [])
   ],
   base: '/',
-})
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
+  }
+}))

@@ -1,0 +1,142 @@
+[
+  {
+    "id": "maison-mattos",
+    "name": "Maison Mattos Perfumes",
+    "description": {
+      "pt": "E-commerce completo de perfumaria importada com catálogo inteligente, assistente de IA para recomendação personalizada de fragrâncias, integração com WhatsApp e Instagram, e checkout otimizado para conversão.",
+      "en": "Complete imported perfumery e-commerce with smart catalog, AI-powered assistant for personalized fragrance recommendations, WhatsApp and Instagram integration, and conversion-optimized checkout."
+    },
+    "problemSolved": {
+      "pt": "A consultora de fragrâncias atendia apenas por redes sociais, sem catálogo organizado e sem presença digital profissional. O e-commerce com assistente de IA automatizou a curadoria e abriu um novo canal de vendas 24h.",
+      "en": "The fragrance consultant only served through social media, with no organized catalog and no professional digital presence. The e-commerce with AI assistant automated curation and opened a new 24/7 sales channel."
+    },
+    "technologies": [
+      "Python",
+      "Django",
+      "Postgres",
+      "Anthropic"
+    ],
+    "images": [
+      "/products/maison-mattos/01.jpg",
+      "/products/maison-mattos/02.jpg"
+    ],
+    "url": "https://www.maisonmattos.com.br",
+    "featured": true
+  },
+  {
+    "id": "zenith-bjj",
+    "name": "Zenith BJJ MT",
+    "description": {
+      "pt": "Plataforma institucional para academia de Jiu-Jitsu com sistema de matrículas online, planos de assinatura, agendamento de aulas particulares e área do aluno. Presença digital profissional desde 2004.",
+      "en": "Institutional platform for a Jiu-Jitsu academy with online enrollment, subscription plans, private class scheduling, and student portal. Professional digital presence since 2004."
+    },
+    "problemSolved": {
+      "pt": "A academia gerenciava matrículas e pagamentos manualmente, perdendo alunos por falta de presença digital. A plataforma profissionalizou o atendimento e facilitou a captação de novos alunos online.",
+      "en": "The academy managed enrollments and payments manually, losing students due to lack of digital presence. The platform professionalized service and facilitated online student acquisition."
+    },
+    "technologies": [
+      "Django",
+      "Postgres",
+      "Tailwind"
+    ],
+    "images": [
+      "/products/zenith-bjj/01.jpg"
+    ],
+    "url": "https://www.zenithbjjmt.com.br",
+    "featured": true
+  },
+  {
+    "id": "neo-campanhas",
+    "name": "neoCampanhas",
+    "description": {
+      "pt": "Plataforma de crowdfunding para criação de campanhas de arrecadação online. Sistema completo com compartilhamento em redes sociais, pagamentos via Mercado Pago, dashboard do organizador e transparência total nas doações.",
+      "en": "Crowdfunding platform for creating online fundraising campaigns. Complete system with social media sharing, Mercado Pago payments, organizer dashboard, and full donation transparency."
+    },
+    "problemSolved": {
+      "pt": "Organizadores não tinham ferramentas acessíveis para arrecadar fundos online. A plataforma simplificou todo o processo com apenas 5% de taxa e integração direta com Mercado Pago.",
+      "en": "Organizers lacked accessible tools for online fundraising. The platform simplified the entire process with only 5% fee and direct Mercado Pago integration."
+    },
+    "technologies": [
+      "Mercado Pago",
+      "Tailwind",
+      "Next.js",
+      "React",
+      "Supabase"
+    ],
+    "images": [
+      "/products/neo-campanhas/01.jpg"
+    ],
+    "url": "https://www.neocampanhas.com.br",
+    "featured": true
+  },
+  {
+    "id": "gestao-sementes",
+    "name": "Gestão de Sementes",
+    "description": {
+      "pt": "Sistema web completo para gestão de sementes do Grupo Lazarotto com controle de lotes, rastreabilidade, gestão de estoque, relatórios de qualidade e dashboards de acompanhamento de safra.",
+      "en": "Complete web system for seed management at Grupo Lazarotto with batch control, traceability, inventory management, quality reports, and crop monitoring dashboards."
+    },
+    "problemSolved": {
+      "pt": "O controle de lotes e rastreabilidade de sementes era feito em planilhas desconexas, gerando erros e retrabalho. O sistema centralizou toda a operação com rastreabilidade de ponta a ponta.",
+      "en": "Seed batch control and traceability was done in disconnected spreadsheets, generating errors and rework. The system centralized the entire operation with end-to-end traceability."
+    },
+    "technologies": [
+      "Django",
+      "Vue",
+      "PostgreSQL",
+      "Celery"
+    ],
+    "images": [],
+    "url": null,
+    "featured": true,
+    "confidential": true,
+    "clientUrl": "https://web.grupolazarotto.com.br"
+  },
+  {
+    "id": "laqus",
+    "name": "Laqus",
+    "description": {
+      "pt": "Consultoria e desenvolvimento para fintech especializada em operações financeiras estruturadas. Ajustes e evolução de ferramenta Django conectada a múltiplos bancos de dados, atendendo bancos, fundos de investimento e tesourarias na América Latina desde 2010.",
+      "en": "Consulting and development for a fintech specialized in structured financial operations. Adjustments and evolution of a Django tool connected to multiple databases, serving banks, investment funds, and treasuries across Latin America since 2010."
+    },
+    "problemSolved": {
+      "pt": "A plataforma precisava de ajustes e evoluções em uma arquitetura Django multi-database complexa para suportar o ciclo completo de operações financeiras — da estruturação ao monitoramento — com segurança e performance.",
+      "en": "The platform needed adjustments and evolution in a complex multi-database Django architecture to support the complete financial operations lifecycle — from structuring to monitoring — with security and performance."
+    },
+    "technologies": [
+      "Django",
+      "PostgreSQL",
+      "Python",
+      "Multi-DB"
+    ],
+    "images": [],
+    "url": null,
+    "featured": false,
+    "confidential": true,
+    "clientUrl": "https://www.laqus.com.br"
+  },
+  {
+    "id": "leiloapp",
+    "name": "LeiloApp",
+    "description": {
+      "pt": "Desenvolvimento e evolução de plataforma digital de leilões de gado. Aplicativo mobile e sistema web para compra e venda de rebanho por meio de leilões digitais, dando autonomia ao pecuarista brasileiro na comercialização.",
+      "en": "Development and evolution of a digital cattle auction platform. Mobile app and web system for buying and selling livestock through digital auctions, giving Brazilian ranchers autonomy in commercialization."
+    },
+    "problemSolved": {
+      "pt": "Pecuaristas dependiam de leilões presenciais com alcance limitado. A plataforma digital democratizou o acesso, permitindo lances, notificações e gestão de compras direto do celular.",
+      "en": "Ranchers depended on in-person auctions with limited reach. The digital platform democratized access, enabling bids, notifications, and purchase management directly from mobile phones."
+    },
+    "technologies": [
+      "Django",
+      "PostgreSQL",
+      "Firebase",
+      "Nuxt",
+      "Capacitor"
+    ],
+    "images": [],
+    "url": null,
+    "featured": false,
+    "confidential": true,
+    "clientUrl": "https://leiloapp.com.br"
+  }
+]

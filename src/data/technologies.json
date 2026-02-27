@@ -1,0 +1,14 @@
+[
+  { "name": "Python", "slug": "python", "color": "#3776AB" },
+  { "name": "JavaScript", "slug": "javascript", "color": "#F7DF1E" },
+  { "name": "Dart", "slug": "dart", "color": "#0175C2" },
+  { "name": "Go", "slug": "go", "color": "#00ADD8" },
+  { "name": "Django", "slug": "django", "color": "#092E20" },
+  { "name": "FastAPI", "slug": "fastapi", "color": "#009688" },
+  { "name": "Vue.js", "slug": "vuedotjs", "color": "#4FC08D" },
+  { "name": "Nuxt", "slug": "nuxt", "color": "#00DC82" },
+  { "name": "React", "slug": "react", "color": "#61DAFB" },
+  { "name": "Next.js", "slug": "nextdotjs", "color": "#ffffff" },
+  { "name": "Flutter", "slug": "flutter", "color": "#02569B" },
+  { "name": "Supabase", "slug": "supabase", "color": "#3FCF8E" }
+]
