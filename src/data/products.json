@@ -1,5 +1,24 @@
 [
   {
+    "id": "dojohub",
+    "name": "DojoHub",
+    "description": {
+      "pt": "Plataforma completa de gestão para academias de Jiu-Jitsu. Painel web para gestores e app mobile para alunos, com rede social própria da academia, controle financeiro, gestão de graduações, agendamento de aulas, gamificação e diferenciais únicos que não existem no mercado.",
+      "en": "Complete management platform for Jiu-Jitsu academies. Web panel for managers and mobile app for students, with the academy's own social network, financial control, belt graduation management, class scheduling, gamification, and unique features not found in the market."
+    },
+    "problemSolved": {
+      "pt": "Academias de Jiu-Jitsu gerenciam alunos, pagamentos, graduações e comunicação com ferramentas genéricas ou planilhas. O DojoHub centraliza tudo em uma plataforma feita sob medida para o universo das artes marciais, com diferenciais como rede social própria e app do aluno.",
+      "en": "Jiu-Jitsu academies manage students, payments, graduations, and communication with generic tools or spreadsheets. DojoHub centralizes everything in a platform tailored for martial arts, with unique features like a built-in social network and student app."
+    },
+    "technologies": ["Django", "Vue", "Flutter", "PostgreSQL"],
+    "images": [
+      "/products/dojohub/01.jpg"
+    ],
+    "url": "https://www.dojohub.com.br",
+    "featured": true,
+    "highlight": true
+  },
+  {
     "id": "maison-mattos",
     "name": "Maison Mattos Perfumes",
     "description": {
