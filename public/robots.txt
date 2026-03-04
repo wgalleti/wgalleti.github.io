@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wgalleti.github.io/sitemap.xml
