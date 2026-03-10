@@ -1,22 +1,244 @@
 [
   {
+    "id": "workhard",
+    "name": "workHard",
+    "description": {
+      "pt": "Sistema inteligente de gestão de maquinário para construtoras. Controle equipamentos, abastecimento, manutenção, estoque de peças e financeiro em uma única plataforma. Dashboards com KPIs em tempo real para decisões baseadas em dados.",
+      "en": "Intelligent machinery management system for construction companies. Control equipment, fuel, maintenance, parts inventory, and finances in a single platform. Real-time KPI dashboards for data-driven decisions."
+    },
+    "problemSolved": {
+      "pt": "Construtoras de médio e grande porte operam sem visão real dos custos de maquinário. Planilhas dispersas, manutenção reativa e zero relatórios gerenciais geram prejuízos invisíveis. O workHard centraliza toda a operação com rastreabilidade e inteligência.",
+      "en": "Mid to large construction companies operate without real visibility into machinery costs. Scattered spreadsheets, reactive maintenance, and zero management reports generate invisible losses. workHard centralizes the entire operation with traceability and intelligence."
+    },
+    "tagline": {
+      "pt": "Controle total do seu maquinário. Pare de perder dinheiro com equipamentos.",
+      "en": "Total control of your machinery. Stop losing money on equipment."
+    },
+    "technologies": ["Django", "Vue.js", "PostgreSQL", "Tailwind", "PrimeVue"],
+    "images": [
+      "/products/workhard/01.png",
+      "/products/workhard/02.png"
+    ],
+    "url": "https://workhardapp.com.br",
+    "featured": true,
+    "highlight": true,
+    "hasDetailPage": true,
+    "problems": [
+      {
+        "icon": "money",
+        "title": { "pt": "Custos Invisíveis", "en": "Invisible Costs" },
+        "description": { "pt": "Você sabe quanto gasta de diesel por equipamento por mês? A maioria das construtoras não sabe — e perde centenas de milhares por ano.", "en": "Do you know how much diesel you spend per equipment per month? Most construction companies don't — and lose hundreds of thousands per year." }
+      },
+      {
+        "icon": "spreadsheet",
+        "title": { "pt": "Planilhas Dispersas", "en": "Scattered Spreadsheets" },
+        "description": { "pt": "Dados espalhados entre obra, escritório e WhatsApp. Sem fonte única de verdade, erros são inevitáveis.", "en": "Data scattered between job site, office, and WhatsApp. Without a single source of truth, errors are inevitable." }
+      },
+      {
+        "icon": "alert",
+        "title": { "pt": "Manutenção Reativa", "en": "Reactive Maintenance" },
+        "description": { "pt": "O prejuízo de uma quebra inesperada é 3x maior que o custo da manutenção preventiva. Sem controle, equipamentos quebram no pior momento.", "en": "The cost of unexpected breakdown is 3x greater than preventive maintenance. Without control, equipment breaks at the worst time." }
+      },
+      {
+        "icon": "chart",
+        "title": { "pt": "Zero Relatórios Gerenciais", "en": "Zero Management Reports" },
+        "description": { "pt": "Decisões de investimento e corte de custos baseadas em intuição. Sem dados, sem estratégia.", "en": "Investment and cost-cutting decisions based on intuition. No data, no strategy." }
+      }
+    ],
+    "features": [
+      {
+        "icon": "truck",
+        "title": { "pt": "Cadastro de Equipamentos", "en": "Equipment Registry" },
+        "description": { "pt": "Ficha técnica completa com horímetro, quilometragem, localização por obra e histórico de movimentação.", "en": "Complete technical sheet with hour meter, mileage, location by project, and movement history." }
+      },
+      {
+        "icon": "fuel",
+        "title": { "pt": "Controle de Abastecimento", "en": "Fuel Management" },
+        "description": { "pt": "Registro de cada abastecimento por equipamento com custo por litro e consumo médio calculado automaticamente.", "en": "Record each refueling by equipment with cost per liter and automatically calculated average consumption." }
+      },
+      {
+        "icon": "wrench",
+        "title": { "pt": "Manutenção & Ordens de Serviço", "en": "Maintenance & Service Orders" },
+        "description": { "pt": "Workflow completo: abertura, aprovação, execução e fechamento com custo real. Preventiva e corretiva.", "en": "Complete workflow: opening, approval, execution, and closing with real cost. Preventive and corrective." }
+      },
+      {
+        "icon": "box",
+        "title": { "pt": "Estoque & Peças", "en": "Inventory & Parts" },
+        "description": { "pt": "Controle de saldo por almoxarifado, movimentações de entrada e saída e alertas de estoque mínimo.", "en": "Balance control by warehouse, inbound/outbound movements, and minimum stock alerts." }
+      },
+      {
+        "icon": "wallet",
+        "title": { "pt": "Financeiro Integrado", "en": "Integrated Finances" },
+        "description": { "pt": "Entradas, saídas, contas bancárias, fluxo de caixa e regime de caixa simplificado.", "en": "Income, expenses, bank accounts, cash flow, and simplified cash regime." }
+      },
+      {
+        "icon": "chart",
+        "title": { "pt": "Dashboard Inteligente", "en": "Smart Dashboard" },
+        "description": { "pt": "Visão consolidada com KPIs de equipamentos, custos de manutenção, consumo de combustível e indicadores financeiros.", "en": "Consolidated view with equipment KPIs, maintenance costs, fuel consumption, and financial indicators." }
+      },
+      {
+        "icon": "building",
+        "title": { "pt": "Multi-empresa", "en": "Multi-company" },
+        "description": { "pt": "Gerencie múltiplas empresas ou filiais em uma única plataforma, com dados completamente isolados.", "en": "Manage multiple companies or branches on a single platform, with completely isolated data." }
+      },
+      {
+        "icon": "file",
+        "title": { "pt": "Relatórios Completos", "en": "Complete Reports" },
+        "description": { "pt": "Relatórios por equipamento, obra, período e centro de custo. Exporte em PDF ou Excel.", "en": "Reports by equipment, project, period, and cost center. Export to PDF or Excel." }
+      }
+    ],
+    "plans": [
+      {
+        "name": "Básico",
+        "price": "R$ 697/mês",
+        "popular": false,
+        "features": [
+          "Até 10 usuários",
+          "Cadastro de equipamentos",
+          "Abastecimento com custo por litro",
+          "Ordens de serviço (manutenção)",
+          "Controle de estoque",
+          "Dashboard operacional",
+          "Financeiro básico",
+          "Suporte por e-mail"
+        ]
+      },
+      {
+        "name": "Completo",
+        "price": "R$ 1.897/mês",
+        "popular": true,
+        "features": [
+          "Até 30 usuários",
+          "Tudo do plano Básico",
+          "DRE e balanço patrimonial",
+          "Fluxo de caixa projetado",
+          "Cenários financeiros",
+          "Orçamento por centro de custo",
+          "Multi-empresa ilimitada",
+          "Relatórios avançados",
+          "Suporte prioritário por telefone"
+        ]
+      }
+    ]
+  },
+  {
     "id": "dojohub",
     "name": "DojoHub",
     "description": {
-      "pt": "Plataforma completa de gestão para academias de Jiu-Jitsu. Painel web para gestores e app mobile para alunos, com rede social própria da academia, controle financeiro, gestão de graduações, agendamento de aulas, gamificação e diferenciais únicos que não existem no mercado.",
-      "en": "Complete management platform for Jiu-Jitsu academies. Web panel for managers and mobile app for students, with the academy's own social network, financial control, belt graduation management, class scheduling, gamification, and unique features not found in the market."
+      "pt": "Plataforma completa de gestão para academias de artes marciais. Painel web para gestores e app mobile para alunos, com rede social própria, cobrança automatizada, gamificação e tudo que uma academia precisa para crescer.",
+      "en": "Complete management platform for martial arts academies. Web panel for managers and mobile app for students, with built-in social network, automated billing, gamification, and everything an academy needs to grow."
     },
     "problemSolved": {
-      "pt": "Academias de Jiu-Jitsu gerenciam alunos, pagamentos, graduações e comunicação com ferramentas genéricas ou planilhas. O DojoHub centraliza tudo em uma plataforma feita sob medida para o universo das artes marciais, com diferenciais como rede social própria e app do aluno.",
-      "en": "Jiu-Jitsu academies manage students, payments, graduations, and communication with generic tools or spreadsheets. DojoHub centralizes everything in a platform tailored for martial arts, with unique features like a built-in social network and student app."
+      "pt": "A maioria das academias perde dinheiro, alunos e tempo por falta de ferramentas adequadas. Inadimplência alta, gestão no caderno, comunicação dispersa e softwares genéricos que não entendem faixas, graduações e competições.",
+      "en": "Most academies lose money, students, and time due to lack of adequate tools. High default rates, paper-based management, scattered communication, and generic software that doesn't understand belts, graduations, and competitions."
     },
-    "technologies": ["Django", "Vue", "Flutter", "PostgreSQL"],
+    "tagline": {
+      "pt": "Sua academia. Outro nível. Gestão completa feita por quem vive o tatame.",
+      "en": "Your academy. Next level. Complete management built by someone who lives on the mat."
+    },
+    "technologies": ["Django", "Vue.js", "Flutter", "PostgreSQL", "Celery"],
     "images": [
-      "/products/dojohub/01.jpg"
+      "/products/dojohub/01.jpg",
+      "/products/dojohub/02.png",
+      "/products/dojohub/03.png"
     ],
     "url": "https://www.dojohub.com.br",
     "featured": true,
-    "highlight": true
+    "hasDetailPage": true,
+    "problems": [
+      {
+        "icon": "money",
+        "title": { "pt": "Inadimplência Alta", "en": "High Default Rates" },
+        "description": { "pt": "15-25% de inadimplência média por falta de cobrança automatizada. Cobranças manuais por WhatsApp não escalam.", "en": "15-25% average default rate due to lack of automated billing. Manual WhatsApp collections don't scale." }
+      },
+      {
+        "icon": "spreadsheet",
+        "title": { "pt": "Gestão no Caderno", "en": "Paper-based Management" },
+        "description": { "pt": "70% das academias ainda usam planilhas ou cadernos. Sem dados, sem decisões inteligentes.", "en": "70% of academies still use spreadsheets or notebooks. No data, no smart decisions." }
+      },
+      {
+        "icon": "chat",
+        "title": { "pt": "Comunicação Dispersa", "en": "Scattered Communication" },
+        "description": { "pt": "Mensagens perdidas no WhatsApp, pais sem visibilidade da evolução dos filhos, avisos que não chegam.", "en": "Messages lost in WhatsApp, parents without visibility into children's progress, announcements that don't arrive." }
+      },
+      {
+        "icon": "puzzle",
+        "title": { "pt": "Ferramentas Genéricas", "en": "Generic Tools" },
+        "description": { "pt": "Softwares fitness não entendem faixas, graduações e competições. Funcionalidades essenciais ficam de fora.", "en": "Fitness software doesn't understand belts, graduations, and competitions. Essential features are left out." }
+      }
+    ],
+    "features": [
+      {
+        "icon": "users",
+        "title": { "pt": "Alunos & Graduações", "en": "Students & Graduations" },
+        "description": { "pt": "Cadastro completo, sistema de faixas configurável por modalidade, check-in com geolocalização e turmas por nível.", "en": "Complete registration, configurable belt system by modality, geolocation check-in, and classes by level." }
+      },
+      {
+        "icon": "wallet",
+        "title": { "pt": "Financeiro Completo", "en": "Complete Finances" },
+        "description": { "pt": "PIX automático, boleto e cartão recorrente. Fluxo de caixa, contas bancárias e dashboard com KPIs em tempo real.", "en": "Automatic PIX, bank slip, and recurring card payments. Cash flow, bank accounts, and real-time KPI dashboard." }
+      },
+      {
+        "icon": "heart",
+        "title": { "pt": "Engajamento Familiar", "en": "Family Engagement" },
+        "description": { "pt": "Portal do responsável com relatório de progresso mensal, notificações push e integração WhatsApp.", "en": "Parent portal with monthly progress reports, push notifications, and WhatsApp integration." }
+      },
+      {
+        "icon": "trophy",
+        "title": { "pt": "Gamificação & Competições", "en": "Gamification & Competitions" },
+        "description": { "pt": "Sistema de XP, badges, ranking e desafios que aumentam frequência e motivação dos alunos.", "en": "XP system, badges, rankings, and challenges that increase student attendance and motivation." }
+      },
+      {
+        "icon": "globe",
+        "title": { "pt": "Rede Social da Academia", "en": "Academy Social Network" },
+        "description": { "pt": "Feed exclusivo onde conquistas viram celebração. Graduações, badges e matrículas geram posts automáticos.", "en": "Exclusive feed where achievements become celebrations. Graduations, badges, and enrollments generate automatic posts." }
+      },
+      {
+        "icon": "phone",
+        "title": { "pt": "App Mobile Nativo", "en": "Native Mobile App" },
+        "description": { "pt": "App para iOS e Android no bolso de cada aluno. Check-in, gamificação, horários e acompanhamento de evolução.", "en": "iOS and Android app in every student's pocket. Check-in, gamification, schedules, and progress tracking." }
+      }
+    ],
+    "plans": [
+      {
+        "name": "Starter",
+        "price": "R$ 79/mês",
+        "popular": false,
+        "features": [
+          "Até 50 alunos",
+          "Gestão básica",
+          "Controle de faixas",
+          "Check-in",
+          "Suporte por e-mail"
+        ]
+      },
+      {
+        "name": "Pro",
+        "price": "R$ 149/mês",
+        "popular": true,
+        "features": [
+          "Até 200 alunos",
+          "Cobrança automática",
+          "App do aluno/responsável",
+          "Relatórios avançados",
+          "Gamificação completa",
+          "Rede social da academia"
+        ]
+      },
+      {
+        "name": "Business",
+        "price": "R$ 249/mês",
+        "popular": false,
+        "features": [
+          "Alunos ilimitados",
+          "Multi-unidade",
+          "API aberta",
+          "Suporte prioritário",
+          "IA preditiva",
+          "Onboarding assistido"
+        ]
+      }
+    ]
   },
   {
     "id": "maison-mattos",
@@ -157,5 +379,39 @@
     "featured": false,
     "confidential": true,
     "clientUrl": "https://leiloapp.com.br"
+  },
+  {
+    "id": "emcsquart",
+    "name": "EMC² - Desafio de Einstein",
+    "description": {
+      "pt": "Jogo interativo baseado no famoso Enigma de Einstein (Zebra Puzzle). O jogador precisa deduzir a solução de uma matriz lógica usando apenas as dicas fornecidas — dizem que apenas 2% da população consegue resolver.",
+      "en": "Interactive game based on the famous Einstein's Riddle (Zebra Puzzle). The player must deduce the solution of a logic matrix using only the given clues — it's said that only 2% of the population can solve it."
+    },
+    "problemSolved": {
+      "pt": "Um clássico desafio de lógica transformado em experiência web interativa. Perfeito para exercitar o raciocínio dedutivo de forma divertida.",
+      "en": "A classic logic challenge turned into an interactive web experience. Perfect for exercising deductive reasoning in a fun way."
+    },
+    "technologies": ["Vue.js", "JavaScript", "CSS"],
+    "images": ["/products/emcsquart/01.png"],
+    "url": "https://wgalleti.github.io/emcsquart/",
+    "featured": false,
+    "forFun": true
+  },
+  {
+    "id": "twelyers",
+    "name": "12 Camadas da Personalidade",
+    "description": {
+      "pt": "Aplicação interativa baseada na teoria das 12 camadas da personalidade do professor Olavo de Carvalho. Uma ferramenta de autoconhecimento que permite explorar e refletir sobre as diferentes dimensões que compõem a personalidade humana.",
+      "en": "Interactive application based on Professor Olavo de Carvalho's theory of the 12 layers of personality. A self-knowledge tool that allows exploring and reflecting on the different dimensions that make up the human personality."
+    },
+    "problemSolved": {
+      "pt": "A teoria das 12 camadas é rica e complexa. Esta aplicação torna o conteúdo acessível e interativo, facilitando o estudo e a reflexão sobre cada camada da personalidade.",
+      "en": "The 12-layer theory is rich and complex. This application makes the content accessible and interactive, facilitating study and reflection on each layer of personality."
+    },
+    "technologies": ["Vue.js", "JavaScript", "CSS"],
+    "images": ["/products/twelyers/01.png"],
+    "url": "https://wgalleti.github.io/twelyers/",
+    "featured": false,
+    "forFun": true
   }
 ]

@@ -1,12 +1,6 @@
 <script setup>
-import { onMounted, ref, watch, computed, provide, defineAsyncComponent } from 'vue'
+import { ref, watch, provide, defineAsyncComponent } from 'vue'
 import Header from './components/Header.vue'
-import Hero from './components/Hero.vue'
-import About from './components/About.vue'
-import Services from './components/Services.vue'
-import Technologies from './components/Technologies.vue'
-import Products from './components/Products.vue'
-import Contact from './components/Contact.vue'
 import Footer from './components/Footer.vue'
 import AnimatedBackground from './components/AnimatedBackground.vue'
 import { useI18n } from './utils/i18n'
@@ -44,27 +38,6 @@ watch(currentLang, (newLang) => {
   document.documentElement.setAttribute('lang', newLang)
 }, { immediate: true })
 
-// Scroll reveal observer
-onMounted(() => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible')
-        }
-      })
-    },
-    { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
-  )
-
-  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el))
-
-  const mutationObserver = new MutationObserver(() => {
-    document.querySelectorAll('.reveal:not(.visible)').forEach((el) => observer.observe(el))
-  })
-  mutationObserver.observe(document.body, { childList: true, subtree: true })
-})
-
 const whatsappUrl = 'https://wa.me/5565999448004?text=' + encodeURIComponent('Olá! Vim pelo site da wGalleti Tech e gostaria de saber mais sobre as soluções de vocês.')
 </script>
 
@@ -78,14 +51,7 @@ const whatsappUrl = 'https://wa.me/5565999448004?text=' + encodeURIComponent('Ol
         @change-lang="changeLanguage"
       />
 
-      <main class="flex-grow">
-        <Hero :current-lang="currentLang" />
-        <About :current-lang="currentLang" />
-        <Services :current-lang="currentLang" />
-        <Technologies :current-lang="currentLang" />
-        <Products :current-lang="currentLang" />
-        <Contact :current-lang="currentLang" />
-      </main>
+      <router-view />
 
       <Footer :current-lang="currentLang" />
     </div>

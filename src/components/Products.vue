@@ -1,7 +1,9 @@
 <script setup>
 import { ref, inject } from 'vue'
+import { useRouter } from 'vue-router'
 import ConfidentialBadge from './ConfidentialBadge.vue'
 
+const router = useRouter()
 const products = inject('products')
 
 const props = defineProps({
@@ -28,6 +30,10 @@ const getPreviewSrc = (product) => {
 }
 
 const openProduct = (product) => {
+  if (product.hasDetailPage) {
+    router.push({ name: 'product', params: { id: product.id } })
+    return
+  }
   selectedProduct.value = product
   currentImageIndex.value = 0
   document.body.style.overflow = 'hidden'
@@ -106,11 +112,11 @@ const whatsappForProduct = (product) => {
                 <div class="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-slate-900/80 hidden md:block"></div>
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent md:hidden"></div>
 
-                <!-- "Em desenvolvimento" / active badge -->
+                <!-- Active / launching badge -->
                 <div class="absolute top-4 left-4 z-10">
-                  <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-display font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 backdrop-blur-sm">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                    {{ currentLang === 'pt' ? 'Projeto atual' : 'Current project' }}
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-display font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 backdrop-blur-sm">
+                    <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+                    {{ currentLang === 'pt' ? 'Em lançamento' : 'Launching soon' }}
                   </span>
                 </div>
               </div>
@@ -133,7 +139,11 @@ const whatsappForProduct = (product) => {
 
                 <!-- CTA -->
                 <div class="flex flex-wrap gap-3">
-                  <a v-if="product.url" :href="product.url" target="_blank" rel="noopener" class="btn-primary !text-sm" @click.stop>
+                  <button v-if="product.hasDetailPage" class="btn-primary !text-sm" @click.stop="openProduct(product)">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                    {{ currentLang === 'pt' ? 'Ver detalhes' : 'View details' }}
+                  </button>
+                  <a v-if="product.url" :href="product.url" target="_blank" rel="noopener" class="btn-secondary !text-sm" @click.stop>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                     {{ t('productVisit') }}
                   </a>
@@ -187,6 +197,13 @@ const whatsappForProduct = (product) => {
             <div v-if="product.featured" class="absolute top-3 right-3 z-10">
               <span class="px-2.5 py-1 rounded-md text-[10px] font-display font-semibold bg-brand-500/20 text-brand-300 border border-brand-500/30 backdrop-blur-sm">
                 Featured
+              </span>
+            </div>
+
+            <!-- For Fun badge -->
+            <div v-if="product.forFun" class="absolute top-3 right-3 z-10">
+              <span class="px-2.5 py-1 rounded-md text-[10px] font-display font-semibold bg-amber-500/20 text-amber-300 border border-amber-500/30 backdrop-blur-sm">
+                For Fun
               </span>
             </div>
 

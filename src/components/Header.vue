@@ -1,6 +1,10 @@
 <script setup>
 import { ref, onMounted, onUnmounted, inject } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 import WgLogo from './WgLogo.vue'
+
+const router = useRouter()
+const route = useRoute()
 
 const props = defineProps({
   currentLang: String
@@ -38,7 +42,19 @@ const toggleLang = () => {
 
 const scrollTo = (id) => {
   mobileOpen.value = false
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+  if (route.name !== 'home') {
+    router.push({ name: 'home', hash: '#' + id })
+  } else {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+  }
+}
+
+const goHome = () => {
+  if (route.name !== 'home') {
+    router.push({ name: 'home' })
+  } else {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 }
 
 const whatsappUrl = 'https://wa.me/5565999448004?text=' + encodeURIComponent('Olá! Vim pelo site da wGalleti Tech e gostaria de saber mais sobre as soluções de vocês.')
@@ -54,7 +70,7 @@ const whatsappUrl = 'https://wa.me/5565999448004?text=' + encodeURIComponent('Ol
     ]"
   >
     <div class="container-section flex items-center justify-between">
-      <a href="#" class="relative z-50" @click.prevent="window.scrollTo({ top: 0, behavior: 'smooth' })">
+      <a href="#" class="relative z-50" @click.prevent="goHome">
         <WgLogo size="sm" />
       </a>
 
