@@ -14,6 +14,42 @@
       "pt": "Controle total do seu maquinário. Pare de perder dinheiro com equipamentos.",
       "en": "Total control of your machinery. Stop losing money on equipment."
     },
+    "audience": {
+      "pt": [
+        "Construtoras com frota propria e operacao distribuida por obras",
+        "Times que ainda dependem de planilhas e apontamentos paralelos",
+        "Gestores que precisam enxergar custo real, manutencao e disponibilidade"
+      ],
+      "en": [
+        "Construction companies with owned fleets and multi-site operations",
+        "Teams still dependent on spreadsheets and parallel tracking",
+        "Managers who need real visibility into cost, maintenance and availability"
+      ]
+    },
+    "integrations": {
+      "pt": [
+        "Fluxo financeiro e centros de custo",
+        "Operacao de manutencao e ordens de servico",
+        "Controle de estoque e pecas por almoxarifado"
+      ],
+      "en": [
+        "Financial flow and cost centers",
+        "Maintenance operation and service orders",
+        "Inventory and spare parts control by warehouse"
+      ]
+    },
+    "results": {
+      "pt": [
+        "Visibilidade consolidada da operacao de maquinario",
+        "Reducao de retrabalho administrativo e manutencao reativa",
+        "Base gerencial para decisoes com dados e KPIs"
+      ],
+      "en": [
+        "Consolidated visibility into machinery operations",
+        "Reduced administrative rework and reactive maintenance",
+        "Management basis for decisions with data and KPIs"
+      ]
+    },
     "technologies": ["Django", "Vue.js", "PostgreSQL", "Tailwind", "PrimeVue"],
     "images": [
       "/products/workhard/01.png",
@@ -135,6 +171,42 @@
     "tagline": {
       "pt": "Sua academia. Outro nível. Gestão completa feita por quem vive o tatame.",
       "en": "Your academy. Next level. Complete management built by someone who lives on the mat."
+    },
+    "audience": {
+      "pt": [
+        "Academias que querem profissionalizar cobranca e operacao",
+        "Escolas com alto volume de alunos e responsaveis",
+        "Negocios que precisam engajamento e retencao, nao so controle"
+      ],
+      "en": [
+        "Academies that want to professionalize billing and operations",
+        "Schools with high volumes of students and guardians",
+        "Businesses that need engagement and retention, not only control"
+      ]
+    },
+    "integrations": {
+      "pt": [
+        "Cobranca recorrente via PIX, boleto e cartao",
+        "App mobile para alunos e responsaveis",
+        "Notificacoes, relatorios e experiencia de comunidade"
+      ],
+      "en": [
+        "Recurring billing via PIX, bank slip and card",
+        "Mobile app for students and guardians",
+        "Notifications, reports and community experience"
+      ]
+    },
+    "results": {
+      "pt": [
+        "Operacao centralizada em uma plataforma propria",
+        "Melhor controle de inadimplencia e jornada do aluno",
+        "Mais valor percebido com app, gamificacao e comunicacao"
+      ],
+      "en": [
+        "Operations centralized in a dedicated platform",
+        "Better control over churn risk and student journey",
+        "Higher perceived value with app, gamification and communication"
+      ]
     },
     "technologies": ["Django", "Vue.js", "Flutter", "PostgreSQL", "Celery"],
     "images": [

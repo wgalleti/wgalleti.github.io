@@ -2,6 +2,7 @@
 import { onMounted, onUnmounted, inject } from 'vue'
 import Hero from '../components/Hero.vue'
 import About from '../components/About.vue'
+import Process from '../components/Process.vue'
 import Services from '../components/Services.vue'
 import Technologies from '../components/Technologies.vue'
 import Products from '../components/Products.vue'
@@ -11,7 +12,6 @@ const currentLang = inject('currentLang')
 
 // Scroll reveal observer — scoped to this view's lifecycle
 let observer = null
-let mutationObserver = null
 
 onMounted(() => {
   observer = new IntersectionObserver(
@@ -26,19 +26,11 @@ onMounted(() => {
   )
 
   document.querySelectorAll('.reveal').forEach((el) => observer.observe(el))
-
-  mutationObserver = new MutationObserver(() => {
-    document.querySelectorAll('.reveal:not(.visible)').forEach((el) => observer.observe(el))
-  })
-  mutationObserver.observe(document.body, { childList: true, subtree: true })
 })
 
 onUnmounted(() => {
   if (observer) {
     observer.disconnect()
-  }
-  if (mutationObserver) {
-    mutationObserver.disconnect()
   }
 })
 </script>
@@ -47,6 +39,7 @@ onUnmounted(() => {
   <main class="flex-grow">
     <Hero :current-lang="currentLang" />
     <About :current-lang="currentLang" />
+    <Process :current-lang="currentLang" />
     <Services :current-lang="currentLang" />
     <Technologies :current-lang="currentLang" />
     <Products :current-lang="currentLang" />

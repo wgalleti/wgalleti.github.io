@@ -22,46 +22,50 @@ const scrollTo = (id) => {
 </script>
 
 <template>
-  <footer class="relative border-t border-white/[0.06] bg-slate-950/50">
-    <div class="container-section py-16">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-        <!-- Brand -->
-        <div class="md:col-span-1">
+  <footer class="relative border-t border-white/[0.06] bg-slate-950/60">
+    <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top_left,rgba(124,58,237,0.12),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(14,165,233,0.08),transparent_24%)]"></div>
+
+    <div class="container-section relative z-10 py-16">
+      <div class="mb-12 grid gap-8 rounded-[2rem] border border-white/[0.06] bg-white/[0.03] p-8 lg:grid-cols-[1.1fr_0.55fr_0.75fr] lg:p-10">
+        <div>
           <WgLogo size="md" />
-          <p class="text-slate-500 font-body text-sm mt-4 leading-relaxed max-w-xs">
+          <p class="mt-5 max-w-sm text-sm leading-relaxed text-slate-400 font-body">
             {{ t('footerDescription') }}
           </p>
+          <div class="mt-6 inline-flex items-center gap-2 rounded-full border border-white/[0.06] bg-white/[0.03] px-4 py-2 text-[11px] font-display font-semibold uppercase tracking-[0.22em] text-slate-500">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+            {{ t('footerOperatingLabel') }}
+          </div>
         </div>
 
-        <!-- Links -->
         <div>
-          <h4 class="font-display font-semibold text-white text-sm mb-4">{{ t('footerLinks') }}</h4>
-          <nav class="flex flex-col gap-2.5">
-            <button @click="scrollTo('about')" class="text-sm text-slate-500 hover:text-brand-400 transition-colors text-left font-body">{{ t('navAbout') }}</button>
-            <button @click="scrollTo('services')" class="text-sm text-slate-500 hover:text-brand-400 transition-colors text-left font-body">{{ t('navServices') }}</button>
-            <button @click="scrollTo('tech')" class="text-sm text-slate-500 hover:text-brand-400 transition-colors text-left font-body">{{ t('navTech') }}</button>
-            <button @click="scrollTo('products')" class="text-sm text-slate-500 hover:text-brand-400 transition-colors text-left font-body">{{ t('navProducts') }}</button>
-            <button @click="scrollTo('contact')" class="text-sm text-slate-500 hover:text-brand-400 transition-colors text-left font-body">{{ t('navContact') }}</button>
+          <h4 class="mb-4 text-sm font-display font-semibold text-white">{{ t('footerLinks') }}</h4>
+          <nav class="grid gap-2.5">
+            <button @click="scrollTo('about')" class="text-left text-sm text-slate-400 transition-colors hover:text-white font-body">{{ t('navAbout') }}</button>
+            <button @click="scrollTo('process')" class="text-left text-sm text-slate-400 transition-colors hover:text-white font-body">{{ t('navProcess') }}</button>
+            <button @click="scrollTo('services')" class="text-left text-sm text-slate-400 transition-colors hover:text-white font-body">{{ t('navServices') }}</button>
+            <button @click="scrollTo('tech')" class="text-left text-sm text-slate-400 transition-colors hover:text-white font-body">{{ t('navTech') }}</button>
+            <button @click="scrollTo('products')" class="text-left text-sm text-slate-400 transition-colors hover:text-white font-body">{{ t('navProducts') }}</button>
+            <button @click="scrollTo('contact')" class="text-left text-sm text-slate-400 transition-colors hover:text-white font-body">{{ t('navContact') }}</button>
           </nav>
         </div>
 
-        <!-- Contact info -->
         <div>
-          <h4 class="font-display font-semibold text-white text-sm mb-4">{{ t('footerContact') }}</h4>
-          <div class="flex flex-col gap-2.5 text-sm text-slate-500 font-body">
-            <a href="mailto:william.galleti@gmail.com" class="hover:text-brand-400 transition-colors">william.galleti@gmail.com</a>
-            <a href="https://wa.me/5565999448004" target="_blank" class="hover:text-brand-400 transition-colors">+55 65 99944-8004</a>
+          <h4 class="mb-4 text-sm font-display font-semibold text-white">{{ t('footerContact') }}</h4>
+          <div class="grid gap-3 text-sm text-slate-400 font-body">
+            <a href="mailto:william.galleti@gmail.com" class="transition-colors hover:text-white">william.galleti@gmail.com</a>
+            <a href="https://wa.me/5565999448004" target="_blank" rel="noopener" class="transition-colors hover:text-white">+55 65 99944-8004</a>
             <p>{{ t('footerCnpj') }}: 50.326.042/0001-95</p>
           </div>
-          <!-- Social -->
-          <div class="flex items-center gap-3 mt-5">
+
+          <div class="mt-6 flex items-center gap-3">
             <a
               v-for="link in socialLinks"
               :key="link.name"
               :href="link.url"
               target="_blank"
               rel="noopener noreferrer"
-              class="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.06] flex items-center justify-center text-slate-500 hover:text-brand-400 hover:border-brand-400/30 hover:bg-brand-400/5 transition-all duration-300"
+              class="flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.06] bg-white/[0.04] text-slate-400 transition-all duration-300 hover:border-white/[0.14] hover:bg-white/[0.08] hover:text-white"
               :title="link.name"
             >
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path :d="link.icon"/></svg>
@@ -70,9 +74,8 @@ const scrollTo = (id) => {
         </div>
       </div>
 
-      <!-- Bottom bar -->
       <div class="divider-gradient mb-6"></div>
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-600 font-body">
+      <div class="flex flex-col items-center justify-between gap-4 text-xs text-slate-600 font-body sm:flex-row">
         <p>&copy; {{ year }} wGalleti Tech. {{ t('footerRights') }}</p>
         <p>{{ t('footerMadeWith') }} <span class="text-brand-400">&#9829;</span> &amp; Vue.js</p>
       </div>

@@ -1,5 +1,5 @@
 <script setup>
-import { ref, inject } from 'vue'
+import { ref, inject, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
 import ConfidentialBadge from './ConfidentialBadge.vue'
 
@@ -14,6 +14,12 @@ const t = inject('t')
 
 const selectedProduct = ref(null)
 const currentImageIndex = ref(0)
+
+const onKeydown = (event) => {
+  if (event.key === 'Escape' && selectedProduct.value) {
+    closeProduct()
+  }
+}
 
 const getGallery = (product) => {
   if (product.images && product.images.length > 0) return product.images
@@ -44,6 +50,15 @@ const closeProduct = () => {
   document.body.style.overflow = ''
 }
 
+onMounted(() => {
+  window.addEventListener('keydown', onKeydown)
+})
+
+onUnmounted(() => {
+  document.body.style.overflow = ''
+  window.removeEventListener('keydown', onKeydown)
+})
+
 const nextImage = () => {
   if (selectedProduct.value) {
     const gallery = getGallery(selectedProduct.value)
@@ -64,6 +79,7 @@ const prevImage = () => {
 
 const getDescription = (product) => product.description[props.currentLang] || product.description.pt
 const getProblem = (product) => product.problemSolved[props.currentLang] || product.problemSolved.pt
+const getTagline = (product) => product.tagline?.[props.currentLang] || product.tagline?.pt || getDescription(product)
 
 const whatsappForProduct = (product) => {
   const msg = props.currentLang === 'pt'
@@ -78,13 +94,29 @@ const whatsappForProduct = (product) => {
     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-950/20 to-transparent pointer-events-none"></div>
 
     <div class="container-section relative z-10">
-      <!-- Section header -->
-      <div class="text-center mb-16 reveal">
-        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-display font-medium bg-brand-500/10 text-brand-300 border border-brand-500/20 mb-6">
-          {{ t('productsTag') }}
-        </span>
-        <h2 class="heading-section text-white mb-6">{{ t('productsTitle') }}</h2>
-        <p class="text-lg text-slate-400 max-w-2xl mx-auto font-body">{{ t('productsDescription') }}</p>
+      <div class="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-end mb-16">
+        <div class="reveal">
+          <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-display font-medium bg-brand-500/10 text-brand-300 border border-brand-500/20 mb-6">
+            {{ t('productsTag') }}
+          </span>
+          <h2 class="heading-section text-white mb-6 max-w-3xl">{{ t('productsTitle') }}</h2>
+          <p class="text-lg text-slate-400 max-w-2xl font-body leading-relaxed">{{ t('productsDescription') }}</p>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-3 reveal reveal-delay-1">
+          <div class="rounded-[1.75rem] border border-white/[0.06] bg-white/[0.03] p-5">
+            <p class="text-xs font-display font-semibold uppercase tracking-[0.22em] text-slate-500 mb-2">{{ t('productsStat1Label') }}</p>
+            <p class="text-2xl font-display font-bold text-white">{{ t('productsStat1Value') }}</p>
+          </div>
+          <div class="rounded-[1.75rem] border border-white/[0.06] bg-white/[0.03] p-5">
+            <p class="text-xs font-display font-semibold uppercase tracking-[0.22em] text-slate-500 mb-2">{{ t('productsStat2Label') }}</p>
+            <p class="text-2xl font-display font-bold text-white">{{ t('productsStat2Value') }}</p>
+          </div>
+          <div class="rounded-[1.75rem] border border-white/[0.06] bg-white/[0.03] p-5">
+            <p class="text-xs font-display font-semibold uppercase tracking-[0.22em] text-slate-500 mb-2">{{ t('productsStat3Label') }}</p>
+            <p class="text-2xl font-display font-bold text-white">{{ t('productsStat3Value') }}</p>
+          </div>
+        </div>
       </div>
 
       <!-- Highlight product (full-width hero card) -->
@@ -123,11 +155,16 @@ const whatsappForProduct = (product) => {
 
               <!-- Content side -->
               <div class="p-8 md:p-10 flex flex-col justify-center">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="text-[11px] font-display font-semibold tracking-[0.22em] uppercase text-slate-500">{{ t('productsFeaturedLabel') }}</span>
+                  <div class="h-px w-10 bg-white/10"></div>
+                </div>
                 <h3 class="text-2xl md:text-3xl font-display font-bold text-white mb-4 group-hover:text-brand-300 transition-colors duration-300">{{ product.name }}</h3>
+                <p class="text-base md:text-lg text-slate-300 font-body leading-relaxed mb-4">{{ getTagline(product) }}</p>
                 <p class="text-sm md:text-base text-slate-400 font-body leading-relaxed mb-6">{{ getDescription(product) }}</p>
 
                 <!-- Problem solved inline -->
-                <div class="rounded-xl bg-white/[0.03] border border-white/[0.06] p-4 mb-6">
+                <div class="rounded-[1.5rem] bg-white/[0.03] border border-white/[0.06] p-5 mb-6">
                   <h4 class="text-xs font-display font-semibold text-brand-400 mb-1.5 uppercase tracking-wider">{{ t('productProblem') }}</h4>
                   <p class="text-xs text-slate-500 font-body leading-relaxed">{{ getProblem(product) }}</p>
                 </div>
@@ -163,7 +200,7 @@ const whatsappForProduct = (product) => {
         <div
           v-for="(product, i) in products.filter(p => !p.highlight)"
           :key="product.id"
-          class="card-glass group cursor-pointer reveal"
+          class="group cursor-pointer reveal rounded-[2rem] border border-white/[0.06] bg-white/[0.035] overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:border-white/[0.12]"
           :class="['reveal-delay-' + Math.min(i + 1, 6)]"
           @click="openProduct(product)"
         >
@@ -217,8 +254,16 @@ const whatsappForProduct = (product) => {
 
           <!-- Content -->
           <div class="p-6">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-[11px] font-display font-semibold tracking-[0.22em] uppercase text-slate-500">
+                {{ product.confidential ? t('productsConfidentialLabel') : t('productsCaseLabel') }}
+              </span>
+              <div class="h-px flex-1 bg-white/10"></div>
+            </div>
+
             <h3 class="text-lg font-display font-bold text-white mb-2 group-hover:text-brand-300 transition-colors duration-300">{{ product.name }}</h3>
-            <p class="text-sm text-slate-400 font-body leading-relaxed mb-4 line-clamp-2">{{ getDescription(product) }}</p>
+            <p class="text-sm text-slate-300 font-body leading-relaxed mb-3 line-clamp-2">{{ getTagline(product) }}</p>
+            <p class="text-sm text-slate-500 font-body leading-relaxed mb-5 line-clamp-3">{{ getProblem(product) }}</p>
 
             <!-- Tech badges -->
             <div class="flex flex-wrap gap-1.5">
@@ -248,7 +293,7 @@ const whatsappForProduct = (product) => {
         <div v-if="selectedProduct" class="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6" @click.self="closeProduct">
           <div class="absolute inset-0 bg-slate-950/90 backdrop-blur-sm" @click="closeProduct"></div>
 
-          <div class="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-slate-900 border border-white/[0.08] rounded-2xl shadow-2xl animate-scale-in">
+          <div class="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-slate-900 border border-white/[0.08] rounded-2xl shadow-2xl animate-scale-in" role="dialog" aria-modal="true" :aria-label="selectedProduct.name">
             <!-- Close -->
             <button @click="closeProduct" class="absolute top-4 right-4 z-20 w-10 h-10 rounded-xl bg-black/40 backdrop-blur-sm border border-white/[0.1] flex items-center justify-center text-slate-400 hover:text-white hover:bg-black/60 transition-all">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>

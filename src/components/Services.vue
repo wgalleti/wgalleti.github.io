@@ -49,37 +49,55 @@ const whatsappUrl = 'https://wa.me/5565999448004?text=' + encodeURIComponent('Ol
     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-950/20 to-transparent pointer-events-none"></div>
 
     <div class="container-section relative z-10">
-      <!-- Section header -->
-      <div class="text-center mb-16 reveal">
-        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-display font-medium bg-brand-500/10 text-brand-300 border border-brand-500/20 mb-6">
-          {{ t('servicesTag') }}
-        </span>
-        <h2 class="heading-section text-white mb-6">{{ t('servicesTitle') }}</h2>
-        <p class="text-lg text-slate-400 max-w-2xl mx-auto font-body">{{ t('servicesDescription') }}</p>
-      </div>
+      <div class="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
+        <div class="reveal lg:sticky lg:top-28">
+          <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-display font-medium bg-brand-500/10 text-brand-300 border border-brand-500/20 mb-6">
+            {{ t('servicesTag') }}
+          </span>
+          <h2 class="heading-section text-white mb-6">{{ t('servicesTitle') }}</h2>
+          <p class="text-lg text-slate-400 max-w-xl font-body leading-relaxed mb-8">{{ t('servicesDescription') }}</p>
 
-      <!-- Services grid -->
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div
-          v-for="(_, i) in 6"
-          :key="i"
-          class="card-glass p-7 group reveal"
-          :class="['reveal-delay-' + (i + 1)]"
-        >
-          <!-- Icon -->
-          <div :class="['w-12 h-12 rounded-xl bg-gradient-to-br flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-500', gradients[i]]">
-            <svg :class="['w-6 h-6', iconColors[i]]" fill="none" stroke="currentColor" viewBox="0 0 24 24" v-html="serviceIcons[i]"></svg>
+          <div class="rounded-[2rem] border border-white/[0.06] bg-white/[0.03] p-6">
+            <p class="text-xs font-display font-semibold uppercase tracking-[0.22em] text-slate-500 mb-3">Fit de projeto</p>
+            <p class="text-base text-slate-300 font-body leading-relaxed">
+              Empresas com operacao especifica, integracoes complexas, processos improvisados ou necessidade de produto digital proprio.
+            </p>
           </div>
+        </div>
 
-          <!-- Content -->
-          <h3 class="text-lg font-display font-bold text-white mb-2">{{ t('service' + (i + 1) + 'Title') }}</h3>
-          <p class="text-sm text-slate-400 font-body leading-relaxed">{{ t('service' + (i + 1) + 'Desc') }}</p>
+        <div class="grid gap-6 md:grid-cols-2">
+          <article
+            v-for="(_, i) in 6"
+            :key="i"
+            class="group reveal rounded-[2rem] border border-white/[0.06] bg-white/[0.035] p-7 transition-all duration-500 hover:-translate-y-1 hover:border-white/[0.12] hover:bg-white/[0.05]"
+            :class="[
+              'reveal-delay-' + (i + 1),
+              i === 0 || i === 5 ? 'md:col-span-2' : ''
+            ]"
+          >
+            <div class="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+              <div class="max-w-xl">
+                <div :class="['w-12 h-12 rounded-2xl bg-gradient-to-br flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-500', gradients[i]]">
+                  <svg :class="['w-6 h-6', iconColors[i]]" fill="none" stroke="currentColor" viewBox="0 0 24 24" v-html="serviceIcons[i]"></svg>
+                </div>
 
-          <!-- Hover arrow -->
-          <div class="mt-5 flex items-center gap-2 text-xs font-display font-medium text-brand-400 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-            <a :href="whatsappUrl" target="_blank" rel="noopener" class="hover:underline">{{ t('learnMore') }}</a>
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </div>
+                <div class="flex items-center gap-3 mb-3">
+                  <span class="text-xs font-display font-semibold tracking-[0.22em] text-slate-500">0{{ i + 1 }}</span>
+                  <div class="h-px w-10 bg-white/10"></div>
+                </div>
+
+                <h3 class="text-xl font-display font-bold text-white mb-3">{{ t('service' + (i + 1) + 'Title') }}</h3>
+                <p class="text-sm md:text-base text-slate-400 font-body leading-relaxed">{{ t('service' + (i + 1) + 'Desc') }}</p>
+              </div>
+
+              <div class="md:pt-2">
+                <a :href="whatsappUrl" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-xs font-display font-medium text-brand-300 hover:text-white transition-colors">
+                  {{ t('learnMore') }}
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </div>

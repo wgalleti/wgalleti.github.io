@@ -18,6 +18,7 @@ const mobileOpen = ref(false)
 
 const sections = [
   { id: 'about', key: 'navAbout' },
+  { id: 'process', key: 'navProcess' },
   { id: 'services', key: 'navServices' },
   { id: 'tech', key: 'navTech' },
   { id: 'products', key: 'navProducts' },
@@ -103,6 +104,8 @@ const whatsappUrl = 'https://wa.me/5565999448004?text=' + encodeURIComponent('Ol
       <button
         @click="mobileOpen = !mobileOpen"
         class="lg:hidden relative z-50 w-10 h-10 flex flex-col items-center justify-center gap-1.5"
+        :aria-expanded="mobileOpen ? 'true' : 'false'"
+        :aria-label="mobileOpen ? 'Fechar menu' : 'Abrir menu'"
       >
         <span :class="['block w-6 h-0.5 bg-white transition-all duration-300 origin-center', mobileOpen ? 'rotate-45 translate-y-2' : '']"></span>
         <span :class="['block w-6 h-0.5 bg-white transition-all duration-300', mobileOpen ? 'opacity-0 scale-0' : '']"></span>
@@ -118,7 +121,7 @@ const whatsappUrl = 'https://wa.me/5565999448004?text=' + encodeURIComponent('Ol
       leave-from-class="opacity-100"
       leave-to-class="opacity-0"
     >
-      <div v-if="mobileOpen" class="fixed inset-0 z-40 lg:hidden bg-slate-950/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-6">
+      <div v-if="mobileOpen" class="fixed inset-0 z-40 lg:hidden bg-slate-950/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-6" role="dialog" aria-modal="true">
         <button
           v-for="s in sections"
           :key="s.id"
