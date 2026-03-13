@@ -50,6 +50,53 @@
         "Management basis for decisions with data and KPIs"
       ]
     },
+    "proof": [
+      {
+        "label": { "pt": "Operacao centralizada", "en": "Centralized operation" },
+        "title": { "pt": "Uma unica plataforma para frentes criticas", "en": "One platform for critical workflows" },
+        "description": { "pt": "Equipamentos, abastecimento, manutencao, estoque e financeiro deixam de operar em paralelo e passam a compartilhar a mesma base.", "en": "Equipment, fuel, maintenance, inventory, and finance stop operating in parallel and start sharing the same source of truth." }
+      },
+      {
+        "label": { "pt": "Visao gerencial", "en": "Management visibility" },
+        "title": { "pt": "Indicadores que ajudam a decidir com clareza", "en": "Indicators that support clearer decisions" },
+        "description": { "pt": "O produto foi desenhado para transformar dados operacionais em leitura gerencial, com mais rastreabilidade e menos intuicao.", "en": "The product was designed to turn operational data into management insight, with more traceability and less guesswork." }
+      },
+      {
+        "label": { "pt": "Base de evolucao", "en": "Evolution-ready base" },
+        "title": { "pt": "Estrutura preparada para crescer com a operacao", "en": "Built to grow alongside the operation" },
+        "description": { "pt": "A arquitetura suporta expansao por novas obras, novas empresas e novas regras sem desmontar o processo atual.", "en": "The architecture supports expansion across new projects, companies, and business rules without tearing apart the current process." }
+      }
+    ],
+    "onboarding": {
+      "pt": [
+        {
+          "title": "Mapeamento operacional",
+          "description": "Levantamento do fluxo de maquinario, manutencao, abastecimento e centros de custo para definir o recorte inicial."
+        },
+        {
+          "title": "Configuracao da base",
+          "description": "Estruturacao de empresas, obras, equipamentos, usuarios e parametros para entrar em operacao sem improviso."
+        },
+        {
+          "title": "Virada assistida",
+          "description": "Acompanhamento da implantacao com suporte aos primeiros apontamentos, ajustes de processo e leitura dos indicadores."
+        }
+      ],
+      "en": [
+        {
+          "title": "Operational mapping",
+          "description": "We map machinery, maintenance, fuel, and cost-center workflows to define the right initial scope."
+        },
+        {
+          "title": "Platform setup",
+          "description": "Companies, projects, equipment, users, and rules are configured so the team can start without improvisation."
+        },
+        {
+          "title": "Assisted go-live",
+          "description": "We support the rollout, first records, process adjustments, and the first management readings."
+        }
+      ]
+    },
     "technologies": ["Django", "Vue.js", "PostgreSQL", "Tailwind", "PrimeVue"],
     "images": [
       "/products/workhard/01.png",
@@ -125,35 +172,60 @@
     ],
     "plans": [
       {
-        "name": "Básico",
+        "name": { "pt": "Essencial", "en": "Essential" },
         "price": "R$ 697/mês",
         "popular": false,
-        "features": [
-          "Até 10 usuários",
-          "Cadastro de equipamentos",
-          "Abastecimento com custo por litro",
-          "Ordens de serviço (manutenção)",
-          "Controle de estoque",
-          "Dashboard operacional",
-          "Financeiro básico",
-          "Suporte por e-mail"
-        ]
+        "features": {
+          "pt": [
+            "Ate 10 usuarios",
+            "Cadastro de equipamentos",
+            "Controle de abastecimento por custo e consumo",
+            "Ordens de servico e manutencao",
+            "Controle de estoque",
+            "Painel operacional",
+            "Financeiro essencial",
+            "Suporte por e-mail"
+          ],
+          "en": [
+            "Up to 10 users",
+            "Equipment registry",
+            "Fuel control by cost and consumption",
+            "Service orders and maintenance",
+            "Inventory control",
+            "Operational dashboard",
+            "Core financial control",
+            "Email support"
+          ]
+        }
       },
       {
-        "name": "Completo",
+        "name": { "pt": "Operacao Completa", "en": "Full Operation" },
         "price": "R$ 1.897/mês",
         "popular": true,
-        "features": [
-          "Até 30 usuários",
-          "Tudo do plano Básico",
-          "DRE e balanço patrimonial",
-          "Fluxo de caixa projetado",
-          "Cenários financeiros",
-          "Orçamento por centro de custo",
-          "Multi-empresa ilimitada",
-          "Relatórios avançados",
-          "Suporte prioritário por telefone"
-        ]
+        "features": {
+          "pt": [
+            "Ate 30 usuarios",
+            "Tudo do plano Essencial",
+            "DRE e balanco patrimonial",
+            "Fluxo de caixa projetado",
+            "Cenarios financeiros",
+            "Orcamento por centro de custo",
+            "Multiempresa",
+            "Relatorios avancados",
+            "Suporte prioritario"
+          ],
+          "en": [
+            "Up to 30 users",
+            "Everything in Essential",
+            "P&L and balance sheet",
+            "Projected cash flow",
+            "Financial scenarios",
+            "Budget by cost center",
+            "Multi-company management",
+            "Advanced reports",
+            "Priority support"
+          ]
+        }
       }
     ]
   },
@@ -206,6 +278,53 @@
         "Operations centralized in a dedicated platform",
         "Better control over churn risk and student journey",
         "Higher perceived value with app, gamification and communication"
+      ]
+    },
+    "proof": [
+      {
+        "label": { "pt": "Experiencia completa", "en": "Complete experience" },
+        "title": { "pt": "Gestao, cobranca e comunidade no mesmo produto", "en": "Management, billing, and community in one product" },
+        "description": { "pt": "O valor do DojoHub esta em conectar operacao interna e percepcao do aluno, nao apenas em controlar cadastro.", "en": "DojoHub creates value by connecting internal operations and student experience, not just by managing records." }
+      },
+      {
+        "label": { "pt": "Retencao", "en": "Retention" },
+        "title": { "pt": "Mais recorrencia com uma jornada que continua fora da aula", "en": "More retention through a journey that continues beyond class" },
+        "description": { "pt": "App, notificacoes, graduações e gamificacao mantem a relacao com a academia ativa durante a semana inteira.", "en": "The app, notifications, belt progression, and gamification keep the academy relationship active throughout the week." }
+      },
+      {
+        "label": { "pt": "Escala comercial", "en": "Commercial scale" },
+        "title": { "pt": "Estrutura pronta para crescer sem perder controle", "en": "Built to grow without losing control" },
+        "description": { "pt": "Cobranca recorrente, portal de responsaveis e operacao centralizada ajudam a profissionalizar a escola sem inflar o administrativo.", "en": "Recurring billing, guardian portals, and centralized operations help professionalize the school without bloating admin work." }
+      }
+    ],
+    "onboarding": {
+      "pt": [
+        {
+          "title": "Diagnostico da academia",
+          "description": "Entendimento da operacao atual, da cobranca, das turmas e do modelo de relacionamento com alunos e responsaveis."
+        },
+        {
+          "title": "Configuracao e migracao",
+          "description": "Organizacao da base, regras de graduacao, planos, usuarios e processos para a plataforma entrar alinhada ao dia a dia."
+        },
+        {
+          "title": "Lançamento orientado",
+          "description": "Ativacao do painel, app e cobranca recorrente com acompanhamento inicial para reduzir atrito e acelerar adesao."
+        }
+      ],
+      "en": [
+        {
+          "title": "Academy diagnosis",
+          "description": "We review operations, billing, class structure, and the relationship model with students and guardians."
+        },
+        {
+          "title": "Setup and migration",
+          "description": "Data, belt rules, plans, users, and workflows are organized so the platform matches the academy routine."
+        },
+        {
+          "title": "Guided launch",
+          "description": "The panel, app, and recurring billing are activated with close follow-up to reduce friction and accelerate adoption."
+        }
       ]
     },
     "technologies": ["Django", "Vue.js", "Flutter", "PostgreSQL", "Celery"],
@@ -273,42 +392,71 @@
     ],
     "plans": [
       {
-        "name": "Starter",
+        "name": { "pt": "Starter", "en": "Starter" },
         "price": "R$ 79/mês",
         "popular": false,
-        "features": [
-          "Até 50 alunos",
-          "Gestão básica",
-          "Controle de faixas",
-          "Check-in",
-          "Suporte por e-mail"
-        ]
+        "features": {
+          "pt": [
+            "Ate 50 alunos",
+            "Gestao essencial da academia",
+            "Controle de graduacoes",
+            "Check-in",
+            "Suporte por e-mail"
+          ],
+          "en": [
+            "Up to 50 students",
+            "Core academy management",
+            "Belt progression control",
+            "Check-in",
+            "Email support"
+          ]
+        }
       },
       {
-        "name": "Pro",
+        "name": { "pt": "Pro", "en": "Pro" },
         "price": "R$ 149/mês",
         "popular": true,
-        "features": [
-          "Até 200 alunos",
-          "Cobrança automática",
-          "App do aluno/responsável",
-          "Relatórios avançados",
-          "Gamificação completa",
-          "Rede social da academia"
-        ]
+        "features": {
+          "pt": [
+            "Ate 200 alunos",
+            "Cobranca automatizada",
+            "App do aluno e do responsavel",
+            "Relatorios avancados",
+            "Gamificacao completa",
+            "Rede social da academia"
+          ],
+          "en": [
+            "Up to 200 students",
+            "Automated billing",
+            "Student and guardian app",
+            "Advanced reports",
+            "Full gamification",
+            "Academy social feed"
+          ]
+        }
       },
       {
-        "name": "Business",
+        "name": { "pt": "Business", "en": "Business" },
         "price": "R$ 249/mês",
         "popular": false,
-        "features": [
-          "Alunos ilimitados",
-          "Multi-unidade",
-          "API aberta",
-          "Suporte prioritário",
-          "IA preditiva",
-          "Onboarding assistido"
-        ]
+        "features": {
+          "pt": [
+            "Alunos ilimitados",
+            "Multiunidade",
+            "API aberta",
+            "Suporte prioritario",
+            "Inteligencia operacional",
+            "Onboarding assistido"
+          ],
+          "en": [
+            "Unlimited students",
+            "Multi-location operation",
+            "Open API",
+            "Priority support",
+            "Operational intelligence",
+            "Assisted onboarding"
+          ]
+        }
       }
     ]
   },

@@ -80,6 +80,52 @@ const prevImage = () => {
 const getDescription = (product) => product.description[props.currentLang] || product.description.pt
 const getProblem = (product) => product.problemSolved[props.currentLang] || product.problemSolved.pt
 const getTagline = (product) => product.tagline?.[props.currentLang] || product.tagline?.pt || getDescription(product)
+const getKind = (product) => {
+  if (product.confidential) return 'confidential'
+  if (product.plans?.length) return 'saas'
+  if (product.forFun) return 'lab'
+  return 'case'
+}
+
+const getKindLabel = (product) => {
+  const key = {
+    saas: 'productsSaasLabel',
+    confidential: 'productsConfidentialLabel',
+    lab: 'productsLabLabel',
+    case: 'productsCaseLabel'
+  }[getKind(product)]
+
+  return t(key)
+}
+
+const getKindBadgeClass = (product) => {
+  const kind = getKind(product)
+  if (kind === 'saas') return 'bg-cyan-500/14 text-cyan-300 border-cyan-500/20'
+  if (kind === 'confidential') return 'bg-amber-500/14 text-amber-300 border-amber-500/20'
+  if (kind === 'lab') return 'bg-fuchsia-500/14 text-fuchsia-300 border-fuchsia-500/20'
+  return 'bg-brand-500/14 text-brand-300 border-brand-500/20'
+}
+
+const getKindCardClass = (product) => {
+  const kind = getKind(product)
+  if (kind === 'saas') return 'hover:border-cyan-400/20 hover:shadow-[0_20px_60px_-30px_rgba(34,211,238,0.35)]'
+  if (kind === 'confidential') return 'hover:border-amber-400/20 hover:shadow-[0_20px_60px_-30px_rgba(245,158,11,0.3)]'
+  if (kind === 'lab') return 'hover:border-fuchsia-400/20 hover:shadow-[0_20px_60px_-30px_rgba(217,70,239,0.28)]'
+  return 'hover:border-brand-400/20 hover:shadow-[0_20px_60px_-30px_rgba(124,58,237,0.25)]'
+}
+
+const getMetaLine = (product) => {
+  if (product.confidential) return t('productsMetaConfidential')
+  if (product.plans?.length) return t('productsMetaSaas')
+  if (product.forFun) return t('productsMetaLab')
+  return t('productsMetaCase')
+}
+
+const getPrimaryAction = (product) => {
+  if (product.hasDetailPage) return t('productViewSolution')
+  if (product.confidential) return t('productSeeContext')
+  return t('learnMore')
+}
 
 const whatsappForProduct = (product) => {
   const msg = props.currentLang === 'pt'
@@ -146,9 +192,9 @@ const whatsappForProduct = (product) => {
 
                 <!-- Active / launching badge -->
                 <div class="absolute top-4 left-4 z-10">
-                  <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-display font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 backdrop-blur-sm">
-                    <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
-                    {{ currentLang === 'pt' ? 'Em lançamento' : 'Launching soon' }}
+                  <span class="inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-[11px] font-display font-bold backdrop-blur-sm" :class="getKindBadgeClass(product)">
+                    <span class="h-1.5 w-1.5 rounded-full animate-pulse" :class="getKind(product) === 'saas' ? 'bg-cyan-400' : getKind(product) === 'confidential' ? 'bg-amber-400' : 'bg-brand-400'"></span>
+                    {{ getKindLabel(product) }}
                   </span>
                 </div>
               </div>
@@ -161,6 +207,7 @@ const whatsappForProduct = (product) => {
                 </div>
                 <h3 class="text-2xl md:text-3xl font-display font-bold text-white mb-4 group-hover:text-brand-300 transition-colors duration-300">{{ product.name }}</h3>
                 <p class="text-base md:text-lg text-slate-300 font-body leading-relaxed mb-4">{{ getTagline(product) }}</p>
+                <p class="mb-3 text-[11px] font-display font-semibold uppercase tracking-[0.22em] text-slate-500">{{ getMetaLine(product) }}</p>
                 <p class="text-sm md:text-base text-slate-400 font-body leading-relaxed mb-6">{{ getDescription(product) }}</p>
 
                 <!-- Problem solved inline -->
@@ -178,7 +225,7 @@ const whatsappForProduct = (product) => {
                 <div class="flex flex-wrap gap-3">
                   <button v-if="product.hasDetailPage" class="btn-primary !text-sm" @click.stop="openProduct(product)">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
-                    {{ currentLang === 'pt' ? 'Ver detalhes' : 'View details' }}
+                    {{ t('productViewSolution') }}
                   </button>
                   <a v-if="product.url" :href="product.url" target="_blank" rel="noopener" class="btn-secondary !text-sm" @click.stop>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
@@ -200,8 +247,9 @@ const whatsappForProduct = (product) => {
         <div
           v-for="(product, i) in products.filter(p => !p.highlight)"
           :key="product.id"
-          class="group cursor-pointer reveal rounded-[2rem] border border-white/[0.06] bg-white/[0.035] overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:border-white/[0.12]"
-          :class="['reveal-delay-' + Math.min(i + 1, 6)]"
+          class="group cursor-pointer reveal rounded-[2rem] border border-white/[0.06] bg-white/[0.035] overflow-hidden transition-all duration-500 hover:-translate-y-1"
+          :class="['reveal-delay-' + Math.min(i + 1, 6), getKindCardClass(product)]"
+          :data-kind="getKind(product)"
           @click="openProduct(product)"
         >
           <!-- Image area -->
@@ -230,24 +278,19 @@ const whatsappForProduct = (product) => {
               </div>
             </div>
 
-            <!-- Featured badge -->
-            <div v-if="product.featured" class="absolute top-3 right-3 z-10">
-              <span class="px-2.5 py-1 rounded-md text-[10px] font-display font-semibold bg-brand-500/20 text-brand-300 border border-brand-500/30 backdrop-blur-sm">
-                Featured
+            <div class="absolute top-3 right-3 z-10 flex flex-wrap justify-end gap-2">
+              <span class="rounded-md border px-2.5 py-1 text-[10px] font-display font-semibold backdrop-blur-sm" :class="getKindBadgeClass(product)">
+                {{ getKindLabel(product) }}
               </span>
-            </div>
-
-            <!-- For Fun badge -->
-            <div v-if="product.forFun" class="absolute top-3 right-3 z-10">
-              <span class="px-2.5 py-1 rounded-md text-[10px] font-display font-semibold bg-amber-500/20 text-amber-300 border border-amber-500/30 backdrop-blur-sm">
-                For Fun
+              <span v-if="product.featured && !product.forFun" class="rounded-md border border-white/10 bg-black/30 px-2.5 py-1 text-[10px] font-display font-semibold text-white/80 backdrop-blur-sm">
+                {{ t('productsFeaturedMini') }}
               </span>
             </div>
 
             <!-- Hover overlay -->
             <div class="absolute inset-0 bg-brand-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center z-10">
               <span class="px-4 py-2 rounded-lg bg-white/10 backdrop-blur-sm text-white text-sm font-display font-medium border border-white/20">
-                {{ t('learnMore') }}
+                {{ getPrimaryAction(product) }}
               </span>
             </div>
           </div>
@@ -256,13 +299,14 @@ const whatsappForProduct = (product) => {
           <div class="p-6">
             <div class="flex items-center gap-3 mb-3">
               <span class="text-[11px] font-display font-semibold tracking-[0.22em] uppercase text-slate-500">
-                {{ product.confidential ? t('productsConfidentialLabel') : t('productsCaseLabel') }}
+                {{ getKindLabel(product) }}
               </span>
               <div class="h-px flex-1 bg-white/10"></div>
             </div>
 
             <h3 class="text-lg font-display font-bold text-white mb-2 group-hover:text-brand-300 transition-colors duration-300">{{ product.name }}</h3>
             <p class="text-sm text-slate-300 font-body leading-relaxed mb-3 line-clamp-2">{{ getTagline(product) }}</p>
+            <p class="mb-4 text-[11px] font-display font-semibold uppercase tracking-[0.22em] text-slate-500">{{ getMetaLine(product) }}</p>
             <p class="text-sm text-slate-500 font-body leading-relaxed mb-5 line-clamp-3">{{ getProblem(product) }}</p>
 
             <!-- Tech badges -->
@@ -274,6 +318,13 @@ const whatsappForProduct = (product) => {
               >
                 {{ tech }}
               </span>
+            </div>
+
+            <div class="mt-5 flex items-center justify-between gap-4 border-t border-white/[0.06] pt-4">
+              <span class="text-xs font-body text-slate-500">{{ getPrimaryAction(product) }}</span>
+              <svg class="h-4 w-4 text-slate-500 transition-all duration-300 group-hover:translate-x-1 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+              </svg>
             </div>
           </div>
         </div>
@@ -344,6 +395,11 @@ const whatsappForProduct = (product) => {
             <!-- Content -->
             <div class="p-6 sm:p-8">
               <h2 class="text-2xl font-display font-bold text-white mb-4">{{ selectedProduct.name }}</h2>
+              <div class="mb-4">
+                <span class="inline-flex rounded-md border px-2.5 py-1 text-[10px] font-display font-semibold uppercase tracking-[0.18em]" :class="getKindBadgeClass(selectedProduct)">
+                  {{ getKindLabel(selectedProduct) }}
+                </span>
+              </div>
 
               <p class="text-slate-400 font-body leading-relaxed mb-6">{{ getDescription(selectedProduct) }}</p>
 
@@ -376,7 +432,7 @@ const whatsappForProduct = (product) => {
                 <!-- WhatsApp -->
                 <a :href="whatsappForProduct(selectedProduct)" target="_blank" rel="noopener" class="btn-whatsapp justify-center">
                   <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                  {{ t('productWantSimilar') }}
+                  {{ currentLang === 'pt' ? 'Conversar sobre uma solucao parecida' : 'Discuss a similar solution' }}
                 </a>
               </div>
             </div>

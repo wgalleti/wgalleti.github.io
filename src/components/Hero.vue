@@ -38,7 +38,7 @@ onMounted(() => {
   }, 100)
 })
 
-const whatsappUrl = 'https://wa.me/5565999448004?text=' + encodeURIComponent('Olá! Vim pelo site da wGalleti Tech e gostaria de iniciar um projeto.')
+const whatsappUrl = 'https://wa.me/5565999448004?text=' + encodeURIComponent('Olá! Vim pelo site da wGalleti Tech e gostaria de conversar sobre um cenário, integração ou produto digital.')
 </script>
 
 <template>

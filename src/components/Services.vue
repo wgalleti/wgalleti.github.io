@@ -40,7 +40,7 @@ const iconColors = [
   'text-cyan-400',
 ]
 
-const whatsappUrl = 'https://wa.me/5565999448004?text=' + encodeURIComponent('Olá! Gostaria de saber mais sobre os serviços da wGalleti Tech.')
+const whatsappUrl = 'https://wa.me/5565999448004?text=' + encodeURIComponent('Olá! Vim pelo site da wGalleti Tech e gostaria de conversar sobre um projeto, integração ou operação.')
 </script>
 
 <template>
@@ -58,9 +58,9 @@ const whatsappUrl = 'https://wa.me/5565999448004?text=' + encodeURIComponent('Ol
           <p class="text-lg text-slate-400 max-w-xl font-body leading-relaxed mb-8">{{ t('servicesDescription') }}</p>
 
           <div class="rounded-[2rem] border border-white/[0.06] bg-white/[0.03] p-6">
-            <p class="text-xs font-display font-semibold uppercase tracking-[0.22em] text-slate-500 mb-3">Fit de projeto</p>
+            <p class="text-xs font-display font-semibold uppercase tracking-[0.22em] text-slate-500 mb-3">{{ t('servicesFitLabel') }}</p>
             <p class="text-base text-slate-300 font-body leading-relaxed">
-              Empresas com operacao especifica, integracoes complexas, processos improvisados ou necessidade de produto digital proprio.
+              {{ t('servicesFitText') }}
             </p>
           </div>
         </div>
@@ -92,7 +92,7 @@ const whatsappUrl = 'https://wa.me/5565999448004?text=' + encodeURIComponent('Ol
 
               <div class="md:pt-2">
                 <a :href="whatsappUrl" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-xs font-display font-medium text-brand-300 hover:text-white transition-colors">
-                  {{ t('learnMore') }}
+                  {{ t('servicesCta') }}
                   <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                 </a>
               </div>

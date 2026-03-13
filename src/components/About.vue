@@ -65,12 +65,12 @@ const t = inject('t')
 
           <div class="grid gap-5 sm:grid-cols-2 reveal reveal-delay-2">
             <div class="rounded-3xl border border-white/[0.06] bg-gradient-to-br from-brand-500/10 to-transparent p-6">
-              <p class="text-xs font-display font-semibold uppercase tracking-[0.22em] text-slate-500 mb-2">15+</p>
-              <p class="text-lg font-display font-bold text-white">Anos construindo software com contexto de negocio</p>
+              <p class="text-xs font-display font-semibold uppercase tracking-[0.22em] text-slate-500 mb-2">{{ t('aboutStat1Label') }}</p>
+              <p class="text-lg font-display font-bold text-white">{{ t('aboutStat1Text') }}</p>
             </div>
             <div class="rounded-3xl border border-white/[0.06] bg-gradient-to-br from-accent-500/10 to-transparent p-6">
-              <p class="text-xs font-display font-semibold uppercase tracking-[0.22em] text-slate-500 mb-2">B2B + Produto</p>
-              <p class="text-lg font-display font-bold text-white">Experiencia em operacao, servico e produto digital</p>
+              <p class="text-xs font-display font-semibold uppercase tracking-[0.22em] text-slate-500 mb-2">{{ t('aboutStat2Label') }}</p>
+              <p class="text-lg font-display font-bold text-white">{{ t('aboutStat2Text') }}</p>
             </div>
           </div>
         </div>

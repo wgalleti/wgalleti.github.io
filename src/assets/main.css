@@ -60,10 +60,36 @@
     @apply py-20 md:py-28 lg:py-32;
   }
 
+  .section-shell {
+    @apply relative;
+  }
+
+  .section-shell::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto auto 50%;
+    width: min(88vw, 1120px);
+    height: 1px;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.16), transparent);
+    opacity: 0.65;
+    pointer-events: none;
+  }
+
   /* ── Cards ── */
   .card-glass {
     @apply relative bg-white/[0.03] backdrop-blur-xl border border-white/[0.06] rounded-2xl overflow-hidden;
     @apply transition-all duration-500 ease-out;
+  }
+
+  .card-glass::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.08), transparent 32%, transparent 68%, rgba(14,165,233,0.06));
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
   }
 
   .card-glass:hover {
@@ -71,26 +97,55 @@
     box-shadow: 0 0 40px -10px rgba(124, 58, 237, 0.15);
   }
 
+  .card-glass:hover::before {
+    opacity: 1;
+  }
+
   /* ── Buttons ── */
   .btn-primary {
-    @apply inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl font-display font-semibold text-sm;
+    @apply relative inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl font-display font-semibold text-sm overflow-hidden isolate;
     @apply bg-gradient-to-r from-brand-500 to-brand-400 text-white;
     @apply hover:from-brand-400 hover:to-brand-300 hover:shadow-lg hover:shadow-brand-500/25;
     @apply active:scale-[0.98] transition-all duration-300;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl font-display font-semibold text-sm;
+    @apply relative inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl font-display font-semibold text-sm overflow-hidden isolate;
     @apply bg-white/[0.05] border border-white/10 text-slate-200;
     @apply hover:bg-white/[0.08] hover:border-brand-400/30 hover:text-white;
     @apply active:scale-[0.98] transition-all duration-300;
   }
 
   .btn-whatsapp {
-    @apply inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl font-display font-semibold text-sm;
+    @apply relative inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl font-display font-semibold text-sm overflow-hidden isolate;
     @apply bg-emerald-500 text-white;
     @apply hover:bg-emerald-400 hover:shadow-lg hover:shadow-emerald-500/25;
     @apply active:scale-[0.98] transition-all duration-300;
+  }
+
+  .btn-primary::before,
+  .btn-secondary::before,
+  .btn-whatsapp::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.24) 42%, transparent 70%);
+    transform: translateX(-130%);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+  }
+
+  .btn-primary:hover::before,
+  .btn-secondary:hover::before,
+  .btn-whatsapp:hover::before {
+    transform: translateX(130%);
+  }
+
+  .btn-primary > *,
+  .btn-secondary > *,
+  .btn-whatsapp > * {
+    position: relative;
+    z-index: 1;
   }
 
   /* ── Inputs ── */
@@ -105,6 +160,13 @@
   .badge-tech {
     @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-display font-medium;
     @apply bg-brand-500/10 text-brand-300 border border-brand-500/20;
+    transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+  }
+
+  .badge-tech:hover {
+    transform: translateY(-1px);
+    border-color: rgba(96, 165, 250, 0.3);
+    background-color: rgba(124, 58, 237, 0.14);
   }
 
   /* ── Divider ── */
@@ -128,6 +190,14 @@
 
   .glow-accent {
     box-shadow: 0 0 80px -20px rgba(14, 165, 233, 0.3);
+  }
+
+  .ambient-orb {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(90px);
+    pointer-events: none;
+    opacity: 0.18;
   }
 
   /* ── Scroll Animations ── */

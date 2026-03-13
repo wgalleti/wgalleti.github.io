@@ -38,11 +38,26 @@ onUnmounted(() => {
 <template>
   <main class="flex-grow">
     <Hero :current-lang="currentLang" />
-    <About :current-lang="currentLang" />
-    <Process :current-lang="currentLang" />
-    <Services :current-lang="currentLang" />
-    <Technologies :current-lang="currentLang" />
-    <Products :current-lang="currentLang" />
-    <Contact :current-lang="currentLang" />
+    <div class="section-shell">
+      <div class="ambient-orb top-20 left-[8%] h-40 w-40 bg-brand-500/40"></div>
+      <About :current-lang="currentLang" />
+    </div>
+    <div class="section-shell">
+      <Process :current-lang="currentLang" />
+    </div>
+    <div class="section-shell">
+      <div class="ambient-orb top-32 right-[10%] h-44 w-44 bg-accent-500/35"></div>
+      <Services :current-lang="currentLang" />
+    </div>
+    <div class="section-shell">
+      <Technologies :current-lang="currentLang" />
+    </div>
+    <div class="section-shell">
+      <div class="ambient-orb top-24 left-[14%] h-40 w-40 bg-emerald-500/30"></div>
+      <Products :current-lang="currentLang" />
+    </div>
+    <div class="section-shell">
+      <Contact :current-lang="currentLang" />
+    </div>
   </main>
 </template>
