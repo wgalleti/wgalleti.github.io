@@ -1,131 +1,192 @@
 <script setup>
-import { inject, ref } from 'vue'
-
-defineProps({
-  currentLang: String
-})
+import { inject, onBeforeUnmount, ref, watch } from 'vue'
+import { terminalPhrases } from '../utils/i18n'
 
 const t = inject('t')
-const form = ref({
-  name: '',
-  company: '',
-  email: '',
-  challenge: ''
-})
+const currentLang = inject('currentLang')
 
-const whatsappUrl = () => 'https://wa.me/5565999448004?text=' + encodeURIComponent(t('contactWhatsappMsg'))
+// Terminal state — viv  fora do template para sobreviver a re-renders.
+const typed = ref('')
+const showResult = ref(false)
 
-const submitBriefing = () => {
-  const message = [
-    t('contactWhatsappMsg'),
-    '',
-    `${t('contactNameLabel')}: ${form.value.name || '-'}`,
-    `${t('contactCompanyLabel')}: ${form.value.company || '-'}`,
-    `${t('contactEmailLabel')}: ${form.value.email || '-'}`,
-    `${t('contactChallengeLabel')}: ${form.value.challenge || '-'}`
-  ].join('\n')
+let typeToken = 0
+let phraseIdx = 0
+let timer = null
 
-  window.open(`https://wa.me/5565999448004?text=${encodeURIComponent(message)}`, '_blank', 'noopener')
+function startTyping() {
+  if (timer) clearTimeout(timer)
+  const token = ++typeToken
+  const phrases = terminalPhrases[currentLang.value] || terminalPhrases.pt
+  const str = phrases[phraseIdx % phrases.length]
+
+  const typeChar = (pos) => {
+    if (token !== typeToken) return
+    typed.value = str.slice(0, pos)
+    showResult.value = false
+    if (pos < str.length) {
+      timer = setTimeout(() => typeChar(pos + 1), 48 + Math.random() * 55)
+    } else {
+      timer = setTimeout(() => {
+        if (token !== typeToken) return
+        showResult.value = true
+        timer = setTimeout(() => erase(str.length), 2800)
+      }, 420)
+    }
+  }
+
+  const erase = (pos) => {
+    if (token !== typeToken) return
+    if (pos <= 0) {
+      typed.value = ''
+      showResult.value = false
+      phraseIdx += 1
+      timer = setTimeout(() => startTyping(), 600)
+      return
+    }
+    typed.value = str.slice(0, pos - 1)
+    showResult.value = false
+    timer = setTimeout(() => erase(pos - 1), 16)
+  }
+
+  typeChar(0)
 }
+
+// Inicia e reinicia ao trocar idioma
+watch(
+  currentLang,
+  () => {
+    phraseIdx = 0
+    typed.value = ''
+    showResult.value = false
+    startTyping()
+  },
+  { immediate: true },
+)
+
+onBeforeUnmount(() => {
+  typeToken += 1
+  if (timer) clearTimeout(timer)
+})
 </script>
 
 <template>
-  <section id="contact" class="section-padding relative overflow-hidden">
-    <!-- Background accent -->
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-950/30 to-transparent pointer-events-none"></div>
+  <section
+    id="contato"
+    class="container-shell contact-grid"
+    style="padding-top: 110px; padding-bottom: 90px;"
+  >
+    <!-- Esquerda -->
+    <div class="reveal flex flex-col" style="gap: 22px;">
+      <span class="eyebrow">{{ t('contactEyebrow') }}</span>
+      <h2 class="m-0" style="font-size: 48px; font-weight: 900; letter-spacing: -0.025em; line-height: 1.06;">
+        {{ t('contactTitle1') }}<br />{{ t('contactTitle2') }}<span class="text-cyan">.</span>
+      </h2>
+      <p class="text-muted m-0" style="font-size: 16.5px; line-height: 1.65; max-width: 460px;">
+        {{ t('contactDesc') }}
+      </p>
 
-    <div class="container-section relative z-10">
-      <!-- Section header -->
-      <div class="text-center mb-16 reveal">
-        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-display font-medium bg-brand-500/10 text-brand-300 border border-brand-500/20 mb-6">
-          {{ t('contactTag') }}
-        </span>
-        <h2 class="heading-section text-white mb-6">{{ t('contactTitle') }}</h2>
-        <p class="text-lg text-slate-400 max-w-2xl mx-auto font-body">{{ t('contactDescription') }}</p>
+      <div class="flex flex-col items-start" style="gap: 16px;">
+        <a
+          :href="t('whatsappUrl')"
+          target="_blank"
+          rel="noopener"
+          class="btn-brand"
+          style="font-size: 15.5px; padding: 16px 30px;"
+        >
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          {{ t('contactCta') }}
+        </a>
+        <a
+          href="mailto:william.galleti@gmail.com"
+          class="font-mono text-muted no-underline transition-colors hover:text-cyan"
+          style="font-size: 13.5px;"
+        >william.galleti@gmail.com →</a>
       </div>
+    </div>
 
-      <div class="grid gap-10 xl:grid-cols-[0.9fr_1.1fr] max-w-6xl mx-auto">
-        <!-- WhatsApp CTA -->
-        <div class="card-glass p-8 md:p-10 reveal">
-          <div class="mb-6 inline-flex rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-1.5 text-xs font-display font-medium text-emerald-300">
-            {{ t('contactCardEyebrow') }}
-          </div>
-          <div class="w-20 h-20 rounded-2xl bg-emerald-500/10 flex items-center justify-center mb-6">
-            <svg class="w-10 h-10 text-emerald-400" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          </div>
-          <h3 class="max-w-lg text-2xl font-display font-bold text-white mb-3">{{ t('contactCardTitle') }}</h3>
-          <p class="max-w-lg text-slate-400 font-body mb-8 leading-relaxed">{{ t('contactWhatsappDescription') }}</p>
-          <div class="mb-8 grid gap-3">
-            <div class="flex items-start gap-3 rounded-2xl border border-white/[0.06] bg-white/[0.03] p-4">
-              <span class="mt-1 h-2 w-2 rounded-full bg-emerald-400"></span>
-              <p class="text-sm font-body leading-relaxed text-slate-300">{{ t('contactCardPoint1') }}</p>
-            </div>
-            <div class="flex items-start gap-3 rounded-2xl border border-white/[0.06] bg-white/[0.03] p-4">
-              <span class="mt-1 h-2 w-2 rounded-full bg-brand-400"></span>
-              <p class="text-sm font-body leading-relaxed text-slate-300">{{ t('contactCardPoint2') }}</p>
-            </div>
-            <div class="flex items-start gap-3 rounded-2xl border border-white/[0.06] bg-white/[0.03] p-4">
-              <span class="mt-1 h-2 w-2 rounded-full bg-accent-400"></span>
-              <p class="text-sm font-body leading-relaxed text-slate-300">{{ t('contactCardPoint3') }}</p>
-            </div>
-          </div>
-          <a
-            :href="whatsappUrl()"
-            target="_blank"
-            rel="noopener"
-            class="btn-whatsapp text-base !py-4 !px-10 w-full justify-center"
-          >
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            {{ t('contactWhatsapp') }}
-          </a>
-          <p class="text-xs text-slate-500 mt-4 font-body">{{ t('contactResponseTime') }}</p>
+    <!-- Direita: terminal -->
+    <div
+      class="reveal terminal-window"
+    >
+      <div
+        class="flex items-center"
+        style="gap: 8px; padding: 13px 18px; border-bottom: 1px solid #1E1440;"
+      >
+        <span class="dot dot-violet"></span>
+        <span class="dot dot-violet"></span>
+        <span class="dot dot-cyan"></span>
+        <span class="font-mono text-faint" style="font-size: 11.5px; margin-left: 10px;">{{ t('terminalTitle') }}</span>
+      </div>
+      <div
+        class="terminal-body font-mono"
+      >
+        <div><span class="text-violet">$</span> <span class="text-text">{{ t('terminalCommand') }}</span></div>
+        <div class="text-muted">{{ t('terminalPrompt') }}</div>
+        <div class="text-text">
+          "{{ typed }}<span class="cursor"></span>"
         </div>
-
-        <!-- Briefing Form -->
-        <div class="card-glass p-8 md:p-10 reveal reveal-delay-2">
-          <div class="mb-3 inline-flex rounded-full border border-brand-500/20 bg-brand-500/10 px-4 py-1.5 text-xs font-display font-medium text-brand-300">
-            {{ t('contactFormEyebrow') }}
-          </div>
-          <h3 class="text-xl font-display font-bold text-white mb-6">{{ t('contactFormTitle') }}</h3>
-          <div class="mb-6 grid gap-3 sm:grid-cols-3">
-            <div class="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-4">
-              <p class="text-xs font-display font-semibold uppercase tracking-[0.18em] text-slate-500 mb-2">01</p>
-              <p class="text-sm font-body leading-relaxed text-slate-300">{{ t('contactHint1') }}</p>
-            </div>
-            <div class="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-4">
-              <p class="text-xs font-display font-semibold uppercase tracking-[0.18em] text-slate-500 mb-2">02</p>
-              <p class="text-sm font-body leading-relaxed text-slate-300">{{ t('contactHint2') }}</p>
-            </div>
-            <div class="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-4">
-              <p class="text-xs font-display font-semibold uppercase tracking-[0.18em] text-slate-500 mb-2">03</p>
-              <p class="text-sm font-body leading-relaxed text-slate-300">{{ t('contactHint3') }}</p>
-            </div>
-          </div>
-          <form class="space-y-5" @submit.prevent="submitBriefing">
-            <div>
-              <label class="block text-sm text-slate-300 font-body mb-2" for="contact-name">{{ t('contactNameLabel') }}</label>
-              <input id="contact-name" v-model="form.name" class="input-field" name="name" :placeholder="t('contactName')" required />
-            </div>
-            <div>
-              <label class="block text-sm text-slate-300 font-body mb-2" for="contact-company">{{ t('contactCompanyLabel') }}</label>
-              <input id="contact-company" v-model="form.company" class="input-field" name="company" :placeholder="t('contactCompany')" />
-            </div>
-            <div>
-              <label class="block text-sm text-slate-300 font-body mb-2" for="contact-email">{{ t('contactEmailLabel') }}</label>
-              <input id="contact-email" v-model="form.email" class="input-field" name="email" type="email" :placeholder="t('contactEmail')" required />
-            </div>
-            <div>
-              <label class="block text-sm text-slate-300 font-body mb-2" for="contact-message">{{ t('contactChallengeLabel') }}</label>
-              <textarea id="contact-message" v-model="form.challenge" class="input-field min-h-[120px] resize-none" name="message" :placeholder="t('contactMessage')" rows="4" required></textarea>
-            </div>
-            <button type="submit" class="btn-primary w-full justify-center">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
-              {{ t('contactSend') }}
-            </button>
-          </form>
-          <p class="text-xs text-slate-500 mt-4 font-body">{{ t('contactFormNote') }}</p>
-        </div>
+        <div v-if="showResult" class="text-success">{{ t('terminalSuccess') }}</div>
       </div>
     </div>
   </section>
 </template>
+
+<style scoped>
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 44px;
+  align-items: center;
+}
+
+.terminal-window {
+  background: #06030F;
+  border: 1px solid #2D1F5E;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 64px -24px rgba(0, 0, 0, 0.6);
+}
+
+.terminal-body {
+  padding: 24px 26px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 13.5px;
+  line-height: 1.7;
+  min-height: 150px;
+}
+
+.dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+.dot-violet { background: #3D2C78; }
+.dot-cyan   { background: #22D3EE; }
+
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 16px;
+  background: #22D3EE;
+  vertical-align: -2px;
+  animation: cursorBlink 1.1s step-end infinite;
+}
+
+@keyframes cursorBlink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor { animation: none; }
+}
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+</style>

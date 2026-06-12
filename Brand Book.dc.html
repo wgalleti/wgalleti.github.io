@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; background: #0A0618; }
+  </style>
+</helmet>
+
+<div style="min-height: 100vh; background: #0A0618; font-family: 'Archivo', sans-serif; color: #EDEAFF; display: flex; flex-direction: column; align-items: center; padding: 0 32px 120px; box-sizing: border-box;">
+  <div style="width: 100%; max-width: 1120px; display: flex; flex-direction: column; gap: 120px;">
+
+    <!-- ============ CAPA ============ -->
+    <section data-screen-label="Capa" style="min-height: 88vh; display: flex; flex-direction: column; justify-content: center; gap: 48px; padding-top: 64px;">
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #8E87B3;">brand book · v1.0 · junho 2026</span>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #8E87B3;">wgalleti.io</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 40px;">
+        <svg width="340" height="280" viewBox="0 0 90 80" fill="none">
+          <defs>
+            <linearGradient id="bbGrad" x1="8" y1="40" x2="82" y2="40" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#8B5CF6"></stop>
+              <stop offset="100%" stop-color="#22D3EE"></stop>
+            </linearGradient>
+          </defs>
+          <path d="M8 38 C14 22, 26 20, 26 32 C26 44, 12 46, 14 34 C16 24, 30 22, 36 34 L46 64 L57 28 L68 64 L79 22" stroke="url(#bbGrad)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+          <circle cx="79" cy="22" r="4" fill="#22D3EE"></circle>
+        </svg>
+        <h1 style="font-size: 84px; font-weight: 900; letter-spacing: -0.035em; line-height: 1; margin: 0;">wgalleti<span style="color: #22D3EE;">.</span></h1>
+        <p style="font-size: 22px; line-height: 1.5; color: #B6AED6; max-width: 560px; margin: 0;">William Galleti — o desenvolvedor que pega o emaranhado e entrega a linha reta. Identidade visual, voz e regras de aplicação.</p>
+      </div>
+      <div style="display: flex; gap: 28px; font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: #8E87B3;">
+        <span>01 essência</span><span>02 logo</span><span>03 cor</span><span>04 tipografia</span><span>05 voz</span><span>06 aplicações</span><span>07 motion</span>
+      </div>
+    </section>
+
+    <!-- ============ 01 ESSÊNCIA ============ -->
+    <section data-screen-label="01 Essência" style="display: flex; flex-direction: column; gap: 36px;">
+      <div style="display: flex; align-items: baseline; gap: 16px; border-bottom: 1px solid #2D1F5E; padding-bottom: 20px;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #22D3EE;">01</span>
+        <h2 style="font-size: 36px; font-weight: 900; letter-spacing: -0.02em; margin: 0;">Essência</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        <div style="background: #110A26; border: 1px solid #2D1F5E; border-radius: 18px; padding: 32px; display: flex; flex-direction: column; gap: 14px;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #8E87B3;">A ideia central</span>
+          <p style="font-size: 26px; font-weight: 600; line-height: 1.35; margin: 0; letter-spacing: -0.01em;">Todo problema é um nó.<br>Eu desato nós com código.</p>
+          <p style="font-size: 15px; line-height: 1.65; color: #B6AED6; margin: 0;">A marca conta essa história numa linha única: ela entra emaranhada (o problema do cliente) e sai como um W resoluto (a solução). Não vendemos tecnologia — vendemos o nó desatado.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div style="background: #110A26; border: 1px solid #2D1F5E; border-radius: 18px; padding: 28px 32px; display: flex; flex-direction: column; gap: 10px; flex: 1;">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #8E87B3;">Posicionamento</span>
+            <p style="font-size: 15px; line-height: 1.6; color: #EDEAFF; margin: 0;"><strong>Pessoal.</strong> William Galleti, especialista sênior — 15 anos resolvendo. "Eu", nunca "nós". O cliente contrata uma pessoa em quem confia, não um fornecedor.</p>
+          </div>
+          <div style="background: #110A26; border: 1px solid #2D1F5E; border-radius: 18px; padding: 28px 32px; display: flex; flex-direction: column; gap: 10px; flex: 1;">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #8E87B3;">Personalidade</span>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: #EDEAFF; border: 1px solid #3D2C78; border-radius: 100px; padding: 7px 14px;">consultivo</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: #EDEAFF; border: 1px solid #3D2C78; border-radius: 100px; padding: 7px 14px;">direto sem ser frio</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: #EDEAFF; border: 1px solid #3D2C78; border-radius: 100px; padding: 7px 14px;">sênior</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: #EDEAFF; border: 1px solid #3D2C78; border-radius: 100px; padding: 7px 14px;">curioso</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: #EDEAFF; border: 1px solid #3D2C78; border-radius: 100px; padding: 7px 14px;">parceiro, não fornecedor</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 02 LOGO ============ -->
+    <section data-screen-label="02 Logo" style="display: flex; flex-direction: column; gap: 36px;">
+      <div style="display: flex; align-items: baseline; gap: 16px; border-bottom: 1px solid #2D1F5E; padding-bottom: 20px;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #22D3EE;">02</span>
+        <h2 style="font-size: 36px; font-weight: 900; letter-spacing: -0.02em; margin: 0;">Logo — a Linha</h2>
+      </div>
+
+      <!-- anatomia -->
+      <div style="background: #110A26; border: 1px solid #2D1F5E; border-radius: 18px; padding: 40px; display: grid; grid-template-columns: 1fr 360px; gap: 40px; align-items: center;">
+        <svg width="100%" viewBox="0 0 90 80" fill="none" style="max-height: 320px;">
+          <defs>
+            <linearGradient id="bbGrad2" x1="8" y1="40" x2="82" y2="40" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#8B5CF6"></stop>
+              <stop offset="100%" stop-color="#22D3EE"></stop>
+            </linearGradient>
+          </defs>
+          <path d="M8 38 C14 22, 26 20, 26 32 C26 44, 12 46, 14 34 C16 24, 30 22, 36 34 L46 64 L57 28 L68 64 L79 22" stroke="url(#bbGrad2)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+          <circle cx="79" cy="22" r="4" fill="#22D3EE"></circle>
+          <path d="M22 12 L22 6 M22 6 L30 6" stroke="#8E87B3" stroke-width="0.8" opacity="0.7"></path>
+          <text x="32" y="8.5" fill="#8E87B3" font-size="5" font-family="JetBrains Mono, monospace">o nó — o problema</text>
+          <path d="M62 70 L62 76 M62 76 L54 76" stroke="#8E87B3" stroke-width="0.8" opacity="0.7"></path>
+          <text x="14" y="78" fill="#8E87B3" font-size="5" font-family="JetBrains Mono, monospace">o W — a solução</text>
+          <path d="M84 16 L88 12" stroke="#8E87B3" stroke-width="0.8" opacity="0.7"></path>
+          <text x="64" y="10" fill="#8E87B3" font-size="5" font-family="JetBrains Mono, monospace">o ponto final</text>
+        </svg>
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #8E87B3;">Anatomia</span>
+          <p style="font-size: 15px; line-height: 1.65; color: #B6AED6; margin: 0;">Um traçado único, sem emendas. O gradiente acompanha a narrativa: nasce <strong style="color: #A78BFA;">violeta</strong> no nó e resolve <strong style="color: #22D3EE;">ciano</strong> no vértice final, coroado pelo ponto — o problema encerrado.</p>
+          <p style="font-size: 15px; line-height: 1.65; color: #B6AED6; margin: 0;">Traço de espessura constante (5/90 da largura), pontas e junções arredondadas. Nunca redesenhe o nó: ele é a assinatura.</p>
+        </div>
+      </div>
+
+      <!-- variações -->
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #8E87B3;">Variações permitidas</span>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="background: #0A0618; border: 1px solid #2D1F5E; border-radius: 14px; height: 150px; display: flex; align-items: center; justify-content: center;">
+              <svg width="100" height="89" viewBox="0 0 90 80" fill="none">
+                <defs><linearGradient id="bbGrad3" x1="8" y1="40" x2="82" y2="40" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#8B5CF6"></stop><stop offset="100%" stop-color="#22D3EE"></stop></linearGradient></defs>
+                <path d="M8 38 C14 22, 26 20, 26 32 C26 44, 12 46, 14 34 C16 24, 30 22, 36 34 L46 64 L57 28 L68 64 L79 22" stroke="url(#bbGrad3)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                <circle cx="79" cy="22" r="4" fill="#22D3EE"></circle>
+              </svg>
+            </div>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #8E87B3;">principal — gradiente sobre escuro</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="background: #0A0618; border: 1px solid #2D1F5E; border-radius: 14px; height: 150px; display: flex; align-items: center; justify-content: center;">
+              <svg width="100" height="89" viewBox="0 0 90 80" fill="none">
+                <path d="M8 38 C14 22, 26 20, 26 32 C26 44, 12 46, 14 34 C16 24, 30 22, 36 34 L46 64 L57 28 L68 64 L79 22" stroke="#EDEAFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                <circle cx="79" cy="22" r="4" fill="#EDEAFF"></circle>
+              </svg>
+            </div>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #8E87B3;">mono clara — usos discretos</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="background: #EDEAFF; border-radius: 14px; height: 150px; display: flex; align-items: center; justify-content: center;">
+              <svg width="100" height="89" viewBox="0 0 90 80" fill="none">
+                <path d="M8 38 C14 22, 26 20, 26 32 C26 44, 12 46, 14 34 C16 24, 30 22, 36 34 L46 64 L57 28 L68 64 L79 22" stroke="#0A0618" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                <circle cx="79" cy="22" r="4" fill="#6D28D9"></circle>
+              </svg>
+            </div>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #8E87B3;">sobre claro — documentos, e-mail</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="background: #0A0618; border: 1px solid #2D1F5E; border-radius: 14px; height: 150px; display: flex; align-items: center; justify-content: center; gap: 18px;">
+              <div style="width: 64px; height: 64px; border-radius: 16px; background: linear-gradient(135deg, #6D28D9, #22D3EE); display: flex; align-items: center; justify-content: center;">
+                <svg width="40" height="32" viewBox="0 0 60 48" fill="none">
+                  <path d="M6 6 L18 42 L30 14 L42 42 L54 6" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                </svg>
+              </div>
+              <div style="width: 36px; height: 36px; border-radius: 10px; background: #110A26; border: 1px solid #3D2C78; display: flex; align-items: center; justify-content: center;">
+                <svg width="22" height="18" viewBox="0 0 60 48" fill="none">
+                  <path d="M6 6 L18 42 L30 14 L42 42 L54 6" stroke="#22D3EE" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                </svg>
+              </div>
+            </div>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #8E87B3;">ícone — abaixo de 32px o nó sai, fica só o W</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- lockup + proteção -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <div style="background: #110A26; border: 1px solid #2D1F5E; border-radius: 18px; padding: 32px; display: flex; flex-direction: column; gap: 18px;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #8E87B3;">Lockup horizontal</span>
+          <div style="display: flex; align-items: center; gap: 18px;">
+            <svg width="72" height="64" viewBox="0 0 90 80" fill="none">
+              <defs><linearGradient id="bbGrad4" x1="8" y1="40" x2="82" y2="40" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#8B5CF6"></stop><stop offset="100%" stop-color="#22D3EE"></stop></linearGradient></defs>
+              <path d="M8 38 C14 22, 26 20, 26 32 C26 44, 12 46, 14 34 C16 24, 30 22, 36 34 L46 64 L57 28 L68 64 L79 22" stroke="url(#bbGrad4)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+              <circle cx="79" cy="22" r="4" fill="#22D3EE"></circle>
+            </svg>
+            <div style="display: flex; flex-direction: column; gap: 2px;">
+              <span style="font-size: 34px; font-weight: 900; letter-spacing: -0.035em; line-height: 1;">wgalleti<span style="color: #22D3EE;">.</span></span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #8E87B3; letter-spacing: 0.06em;">william galleti — tecnologia que resolve</span>
+            </div>
+          </div>
+          <p style="font-size: 14px; line-height: 1.6; color: #B6AED6; margin: 0;">Wordmark sempre minúscula, Archivo Black, tracking −3.5%. O ponto final é sempre ciano. O descritor em mono é opcional.</p>
+        </div>
+        <div style="background: #110A26; border: 1px solid #2D1F5E; border-radius: 18px; padding: 32px; display: flex; flex-direction: column; gap: 18px;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #8E87B3;">Área de proteção & mínimos</span>
+          <div style="display: flex; align-items: center; gap: 24px;">
+            <div style="position: relative; border: 1px dashed #3D2C78; border-radius: 8px; padding: 22px;">
+              <svg width="64" height="57" viewBox="0 0 90 80" fill="none">
+                <path d="M8 38 C14 22, 26 20, 26 32 C26 44, 12 46, 14 34 C16 24, 30 22, 36 34 L46 64 L57 28 L68 64 L79 22" stroke="#EDEAFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                <circle cx="79" cy="22" r="4" fill="#EDEAFF"></circle>
+              </svg>
+              <span style="position: absolute; top: 2px; right: 6px; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #8E87B3;">2×</span>
+            </div>
+            <p style="font-size: 14px; line-height: 1.6; color: #B6AED6; margin: 0;">Margem livre = 2× o diâmetro do ponto final, em todos os lados.<br><br>Mínimos: símbolo 24px · lockup 120px de largura.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- don'ts -->
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #8E87B3;">Nunca</span>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="background: #0A0618; border: 1px solid #4A1D2E; border-radius: 14px; height: 120px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+              <svg width="110" height="60" viewBox="0 0 90 80" fill="none" preserveAspectRatio="none" style="width: 130px; height: 56px;">
+                <path d="M8 38 C14 22, 26 20, 26 32 C26 44, 12 46, 14 34 C16 24, 30 22, 36 34 L46 64 L57 28 L68 64 L79 22" stroke="#EDEAFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+              </svg>
+            </div>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #C76A8A;">✕ esticar ou comprimir</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="background: #0A0618; border: 1px solid #4A1D2E; border-radius: 14px; height: 120px; display: flex; align-items: center; justify-content: center;">
+              <svg width="84" height="75" viewBox="0 0 90 80" fill="none" style="filter: drop-shadow(0 4px 8px rgba(139,92,246,0.9));">
+                <path d="M8 38 C14 22, 26 20, 26 32 C26 44, 12 46, 14 34 C16 24, 30 22, 36 34 L46 64 L57 28 L68 64 L79 22" stroke="#8B5CF6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+              </svg>
+            </div>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #C76A8A;">✕ sombras ou glow pesado</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="background: #0A0618; border: 1px solid #4A1D2E; border-radius: 14px; height: 120px; display: flex; align-items: center; justify-content: center;">
+              <svg width="84" height="75" viewBox="0 0 90 80" fill="none">
+                <path d="M8 38 C14 22, 26 20, 26 32 C26 44, 12 46, 14 34 C16 24, 30 22, 36 34 L46 64 L57 28 L68 64 L79 22" stroke="#FF6B35" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                <circle cx="79" cy="22" r="4" fill="#FFD23F"></circle>
+              </svg>
+            </div>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #C76A8A;">✕ cores fora da paleta</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="background: #0A0618; border: 1px solid #4A1D2E; border-radius: 14px; height: 120px; display: flex; align-items: center; justify-content: center;">
+              <svg width="84" height="75" viewBox="0 0 90 80" fill="none" style="transform: rotate(38deg);">
+                <path d="M8 38 C14 22, 26 20, 26 32 C26 44, 12 46, 14 34 C16 24, 30 22, 36 34 L46 64 L57 28 L68 64 L79 22" stroke="#EDEAFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+              </svg>
+            </div>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #C76A8A;">✕ rotacionar</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 03 COR ============ -->
+    <section data-screen-label="03 Cor" style="display: flex; flex-direction: column; gap: 36px;">
+      <div style="display: flex; align-items: baseline; gap: 16px; border-bottom: 1px solid #2D1F5E; padding-bottom: 20px;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #22D3EE;">03</span>
+        <h2 style="font-size: 36px; font-weight: 900; letter-spacing: -0.02em; margin: 0;">Cor</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: 14px;">
+        <div style="grid-column: span 5; background: #0A0618; border: 1px solid #2D1F5E; border-radius: 16px; height: 190px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between;">
+          <span style="font-size: 16px; font-weight: 600;">Void</span>
+          <div style="display: flex; flex-direction: column; gap: 2px;"><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #8E87B3;">#0A0618 · fundo · ~70% da interface</span></div>
+        </div>
+        <div style="grid-column: span 4; background: #8B5CF6; border-radius: 16px; height: 190px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between;">
+          <span style="font-size: 16px; font-weight: 600; color: #FFFFFF;">Violeta</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #2A1060;">#8B5CF6 · marca, ações · ~15%</span>
+        </div>
+        <div style="grid-column: span 3; background: #22D3EE; border-radius: 16px; height: 190px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between;">
+          <span style="font-size: 16px; font-weight: 600; color: #06343C;">Ciano</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #06343C;">#22D3EE · destaque, "resolvido" · ~5%</span>
+        </div>
+        <div style="grid-column: span 3; background: #110A26; border: 1px solid #2D1F5E; border-radius: 16px; height: 130px; padding: 18px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between;">
+          <span style="font-size: 14px; font-weight: 600;">Superfície</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #8E87B3;">#110A26 · cards</span>
+        </div>
+        <div style="grid-column: span 3; background: #2D1F5E; border-radius: 16px; height: 130px; padding: 18px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between;">
+          <span style="font-size: 14px; font-weight: 600;">Borda</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #B6AED6;">#2D1F5E · linhas, divisores</span>
+        </div>
+        <div style="grid-column: span 2; background: #EDEAFF; border-radius: 16px; height: 130px; padding: 18px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between;">
+          <span style="font-size: 14px; font-weight: 600; color: #1A1033;">Texto</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #4A3D78;">#EDEAFF</span>
+        </div>
+        <div style="grid-column: span 2; background: #8E87B3; border-radius: 16px; height: 130px; padding: 18px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between;">
+          <span style="font-size: 14px; font-weight: 600; color: #1A1033;">Apoio</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #2A2148;">#8E87B3</span>
+        </div>
+        <div style="grid-column: span 2; background: #34D399; border-radius: 16px; height: 130px; padding: 18px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between;">
+          <span style="font-size: 14px; font-weight: 600; color: #064E36;">Sucesso</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #064E36;">#34D399</span>
+        </div>
+        <div style="grid-column: span 12; background: linear-gradient(100deg, #8B5CF6, #22D3EE); border-radius: 16px; height: 92px; padding: 20px 24px; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between;">
+          <span style="font-size: 16px; font-weight: 600; color: #FFFFFF;">Gradiente-assinatura — só na logo, num destaque do título e no CTA principal. Nunca em fundos grandes.</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: rgba(255,255,255,0.85);">100deg · #8B5CF6 → #22D3EE</span>
+        </div>
+      </div>
+      <p style="font-size: 14.5px; line-height: 1.65; color: #B6AED6; margin: 0; max-width: 760px;">Regra de ouro: a interface é <strong style="color: #EDEAFF;">void + texto</strong>. Violeta marca o que é interativo; ciano marca o que está <em>resolvido</em> (checks, resultados, o ponto final). O matrix rain usa violeta e ciano a ≤ 18% de opacidade — presença, não ruído.</p>
+    </section>
+
+    <!-- ============ 04 TIPOGRAFIA ============ -->
+    <section data-screen-label="04 Tipografia" style="display: flex; flex-direction: column; gap: 36px;">
+      <div style="display: flex; align-items: baseline; gap: 16px; border-bottom: 1px solid #2D1F5E; padding-bottom: 20px;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #22D3EE;">04</span>
+        <h2 style="font-size: 36px; font-weight: 900; letter-spacing: -0.02em; margin: 0;">Tipografia</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px;">
+        <div style="background: #110A26; border: 1px solid #2D1F5E; border-radius: 18px; padding: 36px; display: flex; flex-direction: column; gap: 22px;">
+          <div style="display: flex; align-items: baseline; justify-content: space-between;">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #8E87B3;">Display & texto — Archivo</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #8E87B3;">Google Fonts</span>
+          </div>
+          <span style="font-size: 58px; font-weight: 900; letter-spacing: -0.03em; line-height: 1.05;">Aa — resolve.</span>
+          <div style="display: flex; flex-direction: column; gap: 12px; border-top: 1px solid #2D1F5E; padding-top: 20px;">
+            <span style="font-size: 30px; font-weight: 900; letter-spacing: -0.02em;">H1/H2 · Black 900 · −2% a −3.5%</span>
+            <span style="font-size: 20px; font-weight: 600;">H3 e destaques · Semibold 600</span>
+            <span style="font-size: 15.5px; font-weight: 400; color: #B6AED6; line-height: 1.65;">Corpo · Regular 400 · 1.65 de entrelinha. O texto fala como gente: frases curtas, voz ativa, "você" e "eu".</span>
+          </div>
+        </div>
+        <div style="background: #110A26; border: 1px solid #2D1F5E; border-radius: 18px; padding: 36px; display: flex; flex-direction: column; gap: 22px;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #8E87B3;">Técnica — JetBrains Mono</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 42px; font-weight: 700; letter-spacing: -0.02em;">{a}</span>
+          <div style="display: flex; flex-direction: column; gap: 12px; border-top: 1px solid #2D1F5E; padding-top: 20px;">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #8E87B3;">eyebrows · 0.18em tracking</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 13.5px; color: #EDEAFF;">labels, código, dados, stack</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 13.5px; color: #22D3EE;">resultado: −40% de retrabalho ✓</span>
+          </div>
+          <p style="font-size: 14px; line-height: 1.6; color: #B6AED6; margin: 0;">O mono é o sotaque técnico da marca — nunca para parágrafos longos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 05 VOZ ============ -->
+    <section data-screen-label="05 Voz" style="display: flex; flex-direction: column; gap: 36px;">
+      <div style="display: flex; align-items: baseline; gap: 16px; border-bottom: 1px solid #2D1F5E; padding-bottom: 20px;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #22D3EE;">05</span>
+        <h2 style="font-size: 36px; font-weight: 900; letter-spacing: -0.02em; margin: 0;">Voz</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <div style="background: #110A26; border: 1px solid #2A5E4A; border-radius: 18px; padding: 32px; display: flex; flex-direction: column; gap: 16px;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #34D399;">✓ assim</span>
+          <div style="display: flex; flex-direction: column; gap: 14px; font-size: 15px; line-height: 1.55; color: #EDEAFF;">
+            <p style="margin: 0;">"Me conta o seu problema. Eu te digo se dá pra resolver — e quanto custa."</p>
+            <p style="margin: 0;">"Seu time perde 3 horas por dia em planilha? Isso é um sistema de 2 semanas."</p>
+            <p style="margin: 0;">"Não precisa saber o que é uma API. Precisa saber que o boleto vai sair sozinho."</p>
+          </div>
+        </div>
+        <div style="background: #110A26; border: 1px solid #4A1D2E; border-radius: 18px; padding: 32px; display: flex; flex-direction: column; gap: 16px;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #C76A8A;">✕ assim não</span>
+          <div style="display: flex; flex-direction: column; gap: 14px; font-size: 15px; line-height: 1.55; color: #8E87B3;">
+            <p style="margin: 0;">"Somos uma empresa especializada em soluções digitais inovadoras e disruptivas."</p>
+            <p style="margin: 0;">"Utilizamos as mais modernas tecnologias de mercado para alavancar seu negócio."</p>
+            <p style="margin: 0;">"Sinergia entre arquitetura cloud-native e metodologias ágeis end-to-end."</p>
+          </div>
+        </div>
+      </div>
+      <p style="font-size: 14.5px; line-height: 1.65; color: #B6AED6; margin: 0; max-width: 760px;">Três regras: <strong style="color: #EDEAFF;">1.</strong> O problema do cliente vem antes da tecnologia. <strong style="color: #EDEAFF;">2.</strong> Primeira pessoa do singular, sempre. <strong style="color: #EDEAFF;">3.</strong> Todo jargão precisa pagar aluguel — se não explica valor, sai.</p>
+    </section>
+
+    <!-- ============ 06 APLICAÇÕES ============ -->
+    <section data-screen-label="06 Aplicações" style="display: flex; flex-direction: column; gap: 36px;">
+      <div style="display: flex; align-items: baseline; gap: 16px; border-bottom: 1px solid #2D1F5E; padding-bottom: 20px;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #22D3EE;">06</span>
+        <h2 style="font-size: 36px; font-weight: 900; letter-spacing: -0.02em; margin: 0;">Aplicações</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+        <div style="background: #110A26; border: 1px solid #2D1F5E; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 18px;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #8E87B3;">Botões</span>
+          <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start;">
+            <span style="font-size: 14.5px; font-weight: 600; background: linear-gradient(100deg, #8B5CF6, #22D3EE); color: #FFFFFF; padding: 13px 24px; border-radius: 10px;">Me conta seu problema</span>
+            <span style="font-size: 14.5px; font-weight: 600; color: #EDEAFF; border: 1px solid #3D2C78; padding: 13px 24px; border-radius: 10px;">Ver soluções</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #22D3EE;">link técnico →</span>
+          </div>
+        </div>
+        <div style="background: #110A26; border: 1px solid #2D1F5E; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 18px;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #8E87B3;">Card de solução</span>
+          <div style="background: #0A0618; border: 1px solid #2D1F5E; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 10px;">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #8B5CF6;">problema #03</span>
+            <span style="font-size: 16.5px; font-weight: 600; line-height: 1.35;">Estoque no caderno, venda no balcão</span>
+            <span style="font-size: 13.5px; color: #8E87B3; line-height: 1.55;">ERP sob medida, 6 semanas.</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #22D3EE;">✓ resolvido — 2 anos no ar</span>
+          </div>
+        </div>
+        <div style="background: #110A26; border: 1px solid #2D1F5E; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 18px;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #8E87B3;">Avatar & favicon</span>
+          <div style="display: flex; align-items: center; gap: 16px;">
+            <div style="width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, #6D28D9, #22D3EE); display: flex; align-items: center; justify-content: center;">
+              <svg width="42" height="34" viewBox="0 0 60 48" fill="none"><path d="M6 6 L18 42 L30 14 L42 42 L54 6" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"></path></svg>
+            </div>
+            <div style="width: 44px; height: 44px; border-radius: 12px; background: #0A0618; border: 1px solid #3D2C78; display: flex; align-items: center; justify-content: center;">
+              <svg width="26" height="21" viewBox="0 0 60 48" fill="none"><path d="M6 6 L18 42 L30 14 L42 42 L54 6" stroke="#22D3EE" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"></path></svg>
+            </div>
+            <div style="width: 28px; height: 28px; border-radius: 7px; background: linear-gradient(135deg, #6D28D9, #22D3EE); display: flex; align-items: center; justify-content: center;">
+              <svg width="17" height="14" viewBox="0 0 60 48" fill="none"><path d="M6 6 L18 42 L30 14 L42 42 L54 6" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"></path></svg>
+            </div>
+          </div>
+          <p style="font-size: 13.5px; line-height: 1.55; color: #B6AED6; margin: 0;">Em espaços minúsculos vale só o W limpo — o nó vive nos tamanhos generosos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 07 MOTION ============ -->
+    <section data-screen-label="07 Motion" style="display: flex; flex-direction: column; gap: 36px;">
+      <div style="display: flex; align-items: baseline; gap: 16px; border-bottom: 1px solid #2D1F5E; padding-bottom: 20px;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #22D3EE;">07</span>
+        <h2 style="font-size: 36px; font-weight: 900; letter-spacing: -0.02em; margin: 0;">Motion</h2>
+      </div>
+      <div style="background: #110A26; border: 1px solid #2D1F5E; border-radius: 18px; padding: 36px; display: flex; flex-direction: column; gap: 28px;">
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div style="background: #0A0618; border: 1px solid #2D1F5E; border-radius: 12px; height: 110px; display: flex; align-items: center; justify-content: center;">
+              <svg width="76" height="68" viewBox="0 0 90 80" fill="none">
+                <circle cx="8" cy="38" r="2.4" fill="#8B5CF6" opacity="0.9"></circle><circle cx="26" cy="32" r="2.4" fill="#8B5CF6" opacity="0.6"></circle><circle cx="36" cy="34" r="2.4" fill="#9461FF" opacity="0.8"></circle><circle cx="46" cy="64" r="2.4" fill="#22D3EE" opacity="0.5"></circle><circle cx="57" cy="28" r="2.4" fill="#22D3EE" opacity="0.7"></circle><circle cx="68" cy="64" r="2.4" fill="#22D3EE" opacity="0.6"></circle><circle cx="79" cy="22" r="2.4" fill="#22D3EE" opacity="0.9"></circle>
+              </svg>
+            </div>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #8E87B3;">1 · vértices emergem do matrix</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div style="background: #0A0618; border: 1px solid #2D1F5E; border-radius: 12px; height: 110px; display: flex; align-items: center; justify-content: center;">
+              <svg width="76" height="68" viewBox="0 0 90 80" fill="none">
+                <path d="M8 38 C14 22, 26 20, 26 32 C26 44, 12 46, 14 34 C16 24, 30 22, 36 34 L46 64" stroke="#8B5CF6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"></path>
+                <circle cx="57" cy="28" r="2.4" fill="#22D3EE" opacity="0.7"></circle><circle cx="68" cy="64" r="2.4" fill="#22D3EE" opacity="0.6"></circle><circle cx="79" cy="22" r="2.4" fill="#22D3EE" opacity="0.9"></circle>
+              </svg>
+            </div>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #8E87B3;">2 · a linha se desenha em 3D</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div style="background: #0A0618; border: 1px solid #2D1F5E; border-radius: 12px; height: 110px; display: flex; align-items: center; justify-content: center;">
+              <svg width="76" height="68" viewBox="0 0 90 80" fill="none" style="transform: perspective(200px) rotateY(28deg);">
+                <defs><linearGradient id="bbGradM" x1="8" y1="40" x2="82" y2="40" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#8B5CF6"></stop><stop offset="100%" stop-color="#22D3EE"></stop></linearGradient></defs>
+                <path d="M8 38 C14 22, 26 20, 26 32 C26 44, 12 46, 14 34 C16 24, 30 22, 36 34 L46 64 L57 28 L68 64 L79 22" stroke="url(#bbGradM)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+              </svg>
+            </div>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #8E87B3;">3 · rotaciona, nó se desata</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div style="background: #0A0618; border: 1px solid #2D1F5E; border-radius: 12px; height: 110px; display: flex; align-items: center; justify-content: center;">
+              <svg width="76" height="68" viewBox="0 0 90 80" fill="none">
+                <defs><linearGradient id="bbGradM2" x1="8" y1="40" x2="82" y2="40" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#8B5CF6"></stop><stop offset="100%" stop-color="#22D3EE"></stop></linearGradient></defs>
+                <path d="M8 38 C14 22, 26 20, 26 32 C26 44, 12 46, 14 34 C16 24, 30 22, 36 34 L46 64 L57 28 L68 64 L79 22" stroke="url(#bbGradM2)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+                <circle cx="79" cy="22" r="4" fill="#22D3EE"></circle>
+              </svg>
+            </div>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #8E87B3;">4 · cristaliza, ponto final acende</span>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; border-top: 1px solid #2D1F5E; padding-top: 24px;">
+          <p style="font-size: 14.5px; line-height: 1.65; color: #B6AED6; margin: 0;"><strong style="color: #EDEAFF;">Princípios:</strong> easing suave (cubic-bezier 0.16, 1, 0.3, 1), durações 600–1200ms, nada de bounce. A logo monta uma vez na entrada (~2.5s) e depois fica quieta — confiança não fica se exibindo. Respeitar <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px;">prefers-reduced-motion</span>.</p>
+          <p style="font-size: 14.5px; line-height: 1.65; color: #B6AED6; margin: 0;"><strong style="color: #EDEAFF;">Matrix rain:</strong> glifos katakana + código, violeta/ciano, opacidade ≤ 18%, velocidade lenta (0.4–0.8px/frame). É atmosfera, não protagonista — o texto sempre vence.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #2D1F5E; padding-top: 28px;">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <svg width="34" height="30" viewBox="0 0 90 80" fill="none">
+          <defs><linearGradient id="bbGradF" x1="8" y1="40" x2="82" y2="40" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#8B5CF6"></stop><stop offset="100%" stop-color="#22D3EE"></stop></linearGradient></defs>
+          <path d="M8 38 C14 22, 26 20, 26 32 C26 44, 12 46, 14 34 C16 24, 30 22, 36 34 L46 64 L57 28 L68 64 L79 22" stroke="url(#bbGradF)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+          <circle cx="79" cy="22" r="4" fill="#22D3EE"></circle>
+        </svg>
+        <span style="font-size: 16px; font-weight: 900; letter-spacing: -0.03em;">wgalleti<span style="color: #22D3EE;">.</span></span>
+      </div>
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #8E87B3;">brand book v1.0 — próximo: o site</span>
+    </footer>
+
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

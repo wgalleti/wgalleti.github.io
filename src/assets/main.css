@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 /* ═══════════════════════════════════════════
-   wGalleti Tech — Design System
+   wgalleti. — "a Linha"
+   Todo problema é um nó. Eu desato com código.
    ═══════════════════════════════════════════ */
 
 @layer base {
@@ -18,222 +19,267 @@
   }
 
   body {
-    font-family: 'DM Sans', sans-serif;
-    background-color: #0a0a1a;
-    color: #e2e8f0;
-  }
-
-  .dark body {
-    background-color: #0a0a1a;
+    font-family: 'Archivo', sans-serif;
+    background-color: #0A0618;
+    color: #EDEAFF;
   }
 
   ::selection {
-    background-color: rgba(124, 58, 237, 0.4);
-    color: #fff;
+    background-color: #8B5CF6;
+    color: #FFFFFF;
   }
 }
 
 @layer components {
-  /* ── Typography ── */
-  .heading-display {
-    @apply font-display font-extrabold tracking-tight;
+  .container-shell {
+    @apply mx-auto px-8;
+    max-width: 1180px;
   }
 
-  .heading-section {
-    @apply font-display font-bold text-3xl md:text-4xl lg:text-5xl tracking-tight;
+  .eyebrow {
+    @apply font-mono text-[12px] uppercase tracking-[0.2em] text-cyan;
   }
 
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-400 via-violet-400 to-accent-400;
+  .eyebrow-hero {
+    @apply font-mono text-[12.5px] uppercase tracking-[0.18em] text-cyan;
   }
 
-  .text-gradient-warm {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-300 to-brand-500;
+  .h1-hero {
+    font-size: 62px;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    line-height: 1.04;
+    margin: 0;
   }
 
-  /* ── Layout ── */
+  .h2-section {
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+
+  .text-brand-gradient {
+    background: linear-gradient(100deg, #8B5CF6, #22D3EE);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .btn-brand {
+    @apply inline-flex items-center gap-2.5 text-[15px] font-semibold text-white no-underline rounded-btn;
+    background: linear-gradient(100deg, #8B5CF6, #22D3EE);
+    padding: 15px 28px;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s;
+  }
+
+  .btn-brand:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px -10px rgba(139, 92, 246, 0.55);
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center text-[15px] font-semibold text-text no-underline rounded-btn;
+    border: 1px solid #3D2C78;
+    padding: 15px 28px;
+    transition: border-color 0.3s, background 0.3s;
+  }
+
+  .btn-ghost:hover {
+    border-color: #8B5CF6;
+    background: rgba(139, 92, 246, 0.08);
+  }
+
+  .knot-card {
+    background: #110A26;
+    border: 1px solid #2D1F5E;
+    border-radius: 18px;
+    padding: 28px;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .knot-card:hover {
+    transform: translateY(-4px);
+    border-color: #4A39A0;
+  }
+
+  .icon-chip {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .icon-chip-cyan {
+    background: rgba(34, 211, 238, 0.08);
+    border: 1px solid rgba(34, 211, 238, 0.22);
+  }
+
+  .icon-chip-mid {
+    background: rgba(107, 127, 232, 0.1);
+    border: 1px solid rgba(107, 127, 232, 0.24);
+  }
+
+  .nav-link {
+    @apply font-mono text-[12.5px] text-muted no-underline transition-colors duration-200;
+  }
+
+  .nav-link:hover {
+    color: #EDEAFF;
+  }
+
+  .stack-chip {
+    @apply inline-flex items-center font-mono text-[13.5px] text-text;
+    gap: 9px;
+    border: 1px solid #2D1F5E;
+    border-radius: 100px;
+    padding: 11px 19px;
+    transition: border-color 0.3s;
+  }
+
+  .stack-chip:hover {
+    border-color: #8B5CF6;
+  }
+
+  /* ───────── Legacy (páginas de produto) — mapeadas à nova identidade ───────── */
   .container-section {
-    @apply max-w-7xl mx-auto px-5 sm:px-8 lg:px-12;
+    @apply mx-auto;
+    max-width: 1180px;
+    padding-left: 32px;
+    padding-right: 32px;
   }
 
   .section-padding {
-    @apply py-20 md:py-28 lg:py-32;
+    @apply py-20 md:py-24 lg:py-28;
   }
 
-  .section-shell {
-    @apply relative;
+  .heading-display {
+    @apply font-display font-black tracking-tight;
   }
 
-  .section-shell::before {
-    content: '';
-    position: absolute;
-    inset: 0 auto auto 50%;
-    width: min(88vw, 1120px);
-    height: 1px;
-    transform: translateX(-50%);
-    background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.16), transparent);
-    opacity: 0.65;
-    pointer-events: none;
+  .heading-section {
+    @apply font-display font-black text-3xl md:text-4xl lg:text-5xl tracking-tight;
   }
 
-  /* ── Cards ── */
-  .card-glass {
-    @apply relative bg-white/[0.03] backdrop-blur-xl border border-white/[0.06] rounded-2xl overflow-hidden;
-    @apply transition-all duration-500 ease-out;
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(100deg, #8B5CF6, #22D3EE);
   }
 
-  .card-glass::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(255,255,255,0.08), transparent 32%, transparent 68%, rgba(14,165,233,0.06));
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    pointer-events: none;
-  }
-
-  .card-glass:hover {
-    @apply bg-white/[0.06] border-brand-400/20;
-    box-shadow: 0 0 40px -10px rgba(124, 58, 237, 0.15);
-  }
-
-  .card-glass:hover::before {
-    opacity: 1;
-  }
-
-  /* ── Buttons ── */
   .btn-primary {
-    @apply relative inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl font-display font-semibold text-sm overflow-hidden isolate;
-    @apply bg-gradient-to-r from-brand-500 to-brand-400 text-white;
-    @apply hover:from-brand-400 hover:to-brand-300 hover:shadow-lg hover:shadow-brand-500/25;
-    @apply active:scale-[0.98] transition-all duration-300;
+    @apply relative inline-flex items-center gap-2.5 px-7 py-3.5 font-display font-semibold text-sm text-white no-underline rounded-btn;
+    background: linear-gradient(100deg, #8B5CF6, #22D3EE);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px -10px rgba(139, 92, 246, 0.55);
   }
 
   .btn-secondary {
-    @apply relative inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl font-display font-semibold text-sm overflow-hidden isolate;
-    @apply bg-white/[0.05] border border-white/10 text-slate-200;
-    @apply hover:bg-white/[0.08] hover:border-brand-400/30 hover:text-white;
-    @apply active:scale-[0.98] transition-all duration-300;
+    @apply relative inline-flex items-center gap-2.5 px-7 py-3.5 font-display font-semibold text-sm text-text no-underline rounded-btn;
+    border: 1px solid #3D2C78;
+    transition: border-color 0.3s, background 0.3s, transform 0.3s;
+  }
+
+  .btn-secondary:hover {
+    border-color: #8B5CF6;
+    background: rgba(139, 92, 246, 0.08);
   }
 
   .btn-whatsapp {
-    @apply relative inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl font-display font-semibold text-sm overflow-hidden isolate;
-    @apply bg-emerald-500 text-white;
-    @apply hover:bg-emerald-400 hover:shadow-lg hover:shadow-emerald-500/25;
-    @apply active:scale-[0.98] transition-all duration-300;
+    @apply relative inline-flex items-center gap-2.5 px-7 py-3.5 font-display font-semibold text-sm text-white no-underline rounded-btn;
+    background: linear-gradient(100deg, #8B5CF6, #22D3EE);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s;
   }
 
-  .btn-primary::before,
-  .btn-secondary::before,
-  .btn-whatsapp::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.24) 42%, transparent 70%);
-    transform: translateX(-130%);
-    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    pointer-events: none;
+  .btn-whatsapp:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px -10px rgba(139, 92, 246, 0.55);
   }
 
-  .btn-primary:hover::before,
-  .btn-secondary:hover::before,
-  .btn-whatsapp:hover::before {
-    transform: translateX(130%);
+  .card-glass {
+    @apply relative rounded-2xl overflow-hidden transition-all duration-500 ease-out;
+    background: #110A26;
+    border: 1px solid #2D1F5E;
   }
 
-  .btn-primary > *,
-  .btn-secondary > *,
-  .btn-whatsapp > * {
-    position: relative;
-    z-index: 1;
+  .card-glass:hover {
+    border-color: #4A39A0;
+    box-shadow: 0 24px 48px -28px rgba(139, 92, 246, 0.35);
   }
 
-  /* ── Inputs ── */
-  .input-field {
-    @apply w-full px-5 py-3.5 rounded-xl font-body text-sm;
-    @apply bg-white/[0.04] border border-white/[0.08] text-slate-200 placeholder-slate-500;
-    @apply focus:outline-none focus:border-brand-400/40 focus:bg-white/[0.06] focus:ring-1 focus:ring-brand-400/20;
-    @apply transition-all duration-300;
-  }
-
-  /* ── Badge ── */
   .badge-tech {
-    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-display font-medium;
-    @apply bg-brand-500/10 text-brand-300 border border-brand-500/20;
-    transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+    @apply inline-flex items-center font-mono text-text;
+    gap: 9px;
+    border: 1px solid #2D1F5E;
+    border-radius: 100px;
+    padding: 9px 16px;
+    font-size: 12.5px;
+    transition: border-color 0.3s;
   }
 
   .badge-tech:hover {
-    transform: translateY(-1px);
-    border-color: rgba(96, 165, 250, 0.3);
-    background-color: rgba(124, 58, 237, 0.14);
-  }
-
-  /* ── Divider ── */
-  .divider-gradient {
-    @apply h-px w-full bg-gradient-to-r from-transparent via-brand-500/20 to-transparent;
+    border-color: #8B5CF6;
   }
 }
 
 @layer utilities {
-  /* ── Noise Texture Overlay ── */
-  .noise-overlay::before {
-    content: '';
-    @apply absolute inset-0 opacity-[0.015] pointer-events-none;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
-  }
-
-  /* ── Glow Effects ── */
-  .glow-brand {
-    box-shadow: 0 0 80px -20px rgba(124, 58, 237, 0.3);
-  }
-
-  .glow-accent {
-    box-shadow: 0 0 80px -20px rgba(14, 165, 233, 0.3);
-  }
-
-  .ambient-orb {
-    position: absolute;
-    border-radius: 9999px;
-    filter: blur(90px);
-    pointer-events: none;
-    opacity: 0.18;
-  }
-
-  /* ── Scroll Animations ── */
   .reveal {
     opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(28px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
   }
 
-  .reveal.visible {
+  .reveal.is-visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
   }
-
-  .reveal-delay-1 { transition-delay: 0.1s; }
-  .reveal-delay-2 { transition-delay: 0.2s; }
-  .reveal-delay-3 { transition-delay: 0.3s; }
-  .reveal-delay-4 { transition-delay: 0.4s; }
-  .reveal-delay-5 { transition-delay: 0.5s; }
-  .reveal-delay-6 { transition-delay: 0.6s; }
 }
 
-/* ── Custom Scrollbar ── */
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a1a;
+  background: #06030F;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(124, 58, 237, 0.3);
-  border-radius: 3px;
+  background: rgba(139, 92, 246, 0.3);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(124, 58, 237, 0.5);
+  background: rgba(139, 92, 246, 0.5);
+}
+
+/* Hero & section responsive tweaks */
+@media (max-width: 900px) {
+  .h1-hero {
+    font-size: 44px;
+  }
+  .h2-section {
+    font-size: 32px;
+  }
 }
