@@ -2,7 +2,6 @@
 import { defineAsyncComponent, provide, ref, watch } from 'vue'
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
-import AnimatedBackground from './components/AnimatedBackground.vue'
 import { useI18n } from './utils/i18n'
 import productsData from './data/products.json'
 import technologiesData from './data/technologies.json'
@@ -40,8 +39,6 @@ watch(currentLang, (newLang) => {
 
 <template>
   <div class="min-h-screen flex flex-col relative bg-void text-text">
-    <AnimatedBackground />
-
     <div class="relative z-10 flex flex-col min-h-screen">
       <Header
         :current-lang="currentLang"

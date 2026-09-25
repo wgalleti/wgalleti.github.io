@@ -1,0 +1,188 @@
+/* ═══════════════════════════════════════════
+   Home "Sistemas & IA" — movimento e 3D
+   Todas as animações param com prefers-reduced-motion.
+   ═══════════════════════════════════════════ */
+
+.home-shell {
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 1024px) {
+  .home-shell { padding-left: 160px; padding-right: 120px; }
+}
+
+.mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
+.h-eyebrow {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  color: #22D3EE;
+}
+
+.h-title {
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  font-size: clamp(44px, 7vw, 76px);
+}
+.h-title-xl {
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+  font-size: clamp(48px, 7.4vw, 80px);
+}
+
+.h-chip {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 12px;
+  padding: 7px 12px;
+  border-radius: 100px;
+  border: 1px solid #2D1F5E;
+  color: #B6AED6;
+  white-space: nowrap;
+}
+
+.h-grad-text {
+  background: linear-gradient(100deg, #A78BFA, #22D3EE);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.h-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 58px;
+  padding: 0 30px;
+  border-radius: 100px;
+  background: linear-gradient(100deg, #8B5CF6, #22D3EE);
+  color: #0A0618;
+  font-size: 16px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform .4s cubic-bezier(.16,1,.3,1), box-shadow .4s;
+}
+.h-btn-primary:hover {
+  color: #0A0618;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px -12px rgba(139, 92, 246, 0.6);
+}
+.h-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  height: 58px;
+  padding: 0 28px;
+  border-radius: 100px;
+  border: 1px solid #3D2C78;
+  color: #EDEAFF;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color .3s, background-color .3s;
+}
+.h-btn-ghost:hover { border-color: #8B5CF6; background: rgba(139, 92, 246, 0.08); }
+
+/* ── Linha lateral (conecta as seções) ── */
+.h-spine-flow {
+  background: linear-gradient(#8B5CF6, #6B7FE8 50%, #22D3EE);
+  -webkit-mask: repeating-linear-gradient(to bottom, #000 0 2px, transparent 2px 16px);
+  mask: repeating-linear-gradient(to bottom, #000 0 2px, transparent 2px 16px);
+  animation: h-maskflow 1s linear infinite;
+}
+@keyframes h-maskflow {
+  to { -webkit-mask-position: 0 16px; mask-position: 0 16px; }
+}
+.h-spine-dot { animation: h-fall 16s linear infinite; }
+@keyframes h-fall { from { top: 0; } to { top: 100%; } }
+
+/* ── Movimento ── */
+.h-fl { animation: h-fl 6s ease-in-out infinite; }
+@keyframes h-fl { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+
+.h-lay { transform: translateZ(var(--z)); animation: h-lay 5s ease-in-out infinite; }
+@keyframes h-lay {
+  0%, 100% { transform: translateZ(var(--z)); }
+  50% { transform: translateZ(calc(var(--z) * 1.45)); }
+}
+
+.h-dash { animation: h-dash 1s linear infinite; }
+@keyframes h-dash { to { stroke-dashoffset: -16; } }
+
+.h-mv { animation: h-mv var(--d, 4s) linear infinite; }
+@keyframes h-mv { from { offset-distance: 0%; } to { offset-distance: 100%; } }
+
+.h-ping { animation: h-ping 2.6s cubic-bezier(.16,1,.3,1) infinite; }
+@keyframes h-ping { 0% { transform: scale(1); opacity: .8; } 100% { transform: scale(3.4); opacity: 0; } }
+
+.h-scan { animation: h-scan 3.4s ease-in-out infinite; }
+@keyframes h-scan { 0%, 100% { top: 6%; } 50% { top: 90%; } }
+
+.h-mq { animation: h-mq 40s linear infinite; }
+.h-mq2 { animation: h-mq 52s linear infinite reverse; }
+.h-mq3 { animation: h-mq 60s linear infinite; }
+@keyframes h-mq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+.h-draw { stroke-dasharray: 100; animation: h-draw 6s cubic-bezier(.16,1,.3,1) infinite; }
+@keyframes h-draw {
+  0% { stroke-dashoffset: 100; }
+  45%, 85% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -100; }
+}
+
+.h-spa { animation: h-spa 9s linear infinite; }
+@keyframes h-spa { from { transform: rotateX(72deg) rotateZ(0deg); } to { transform: rotateX(72deg) rotateZ(360deg); } }
+.h-spb { animation: h-spb 13s linear infinite; }
+@keyframes h-spb {
+  from { transform: rotateY(70deg) rotateX(20deg) rotateZ(0deg); }
+  to { transform: rotateY(70deg) rotateX(20deg) rotateZ(-360deg); }
+}
+
+.h-toast { animation: h-toast 4.5s ease-in-out infinite; }
+@keyframes h-toast {
+  0%, 12% { opacity: 0; transform: translateY(10px); }
+  22%, 78% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-6px); }
+}
+
+.h-glow { animation: h-glow 4s ease-in-out infinite; }
+@keyframes h-glow { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
+
+.h-tilt { transition: transform .6s cubic-bezier(.16,1,.3,1), border-color .3s; }
+@media (hover: hover) and (min-width: 1024px) {
+  .h-tilt:hover {
+    transform: perspective(900px) rotateX(5deg) rotateY(-6deg) translateY(-6px);
+    border-color: #5B47C2;
+  }
+}
+
+/* Perspectivas 3D só a partir de telas largas */
+@media (min-width: 1280px) {
+  .h-3d-left { transform: rotateY(16deg); }
+  .h-3d-center { transform: translateZ(60px); }
+  .h-3d-right { transform: rotateY(-16deg); }
+}
+.h-shot { transform: rotateY(-18deg) rotateX(10deg); transform-origin: left center; }
+
+.h-fade-x {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent);
+}
+
+/* Reveal ao rolar */
+.h-reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+.h-reveal.is-visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .h-fl, .h-lay, .h-dash, .h-mv, .h-ping, .h-scan, .h-mq, .h-mq2, .h-mq3, .h-draw,
+  .h-spa, .h-spb, .h-toast, .h-glow, .h-spine-flow, .h-spine-dot { animation: none !important; }
+  .h-draw { stroke-dashoffset: 0; }
+  .h-toast { opacity: 1; }
+  .h-reveal { opacity: 1; transform: none; transition: none; }
+  .h-tilt { transition: none; }
+}

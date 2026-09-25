@@ -1,3 +1,5 @@
+import { homeCopy } from './homeCopy'
+
 // i18n — strings do redesign "a Linha" (PT/EN)
 // Identidade: William Galleti — desenvolvedor freelancer.
 // "Todo problema é um nó. Eu desato com código."
@@ -209,6 +211,10 @@ export const terminalPhrases = {
     'I want to stop typing invoices by hand',
   ],
 }
+
+// Textos da home nova sobrescrevem/estendem os anteriores.
+Object.assign(translations.pt, homeCopy.pt)
+Object.assign(translations.en, homeCopy.en)
 
 export const getTranslation = (lang, key) => {
   const langData = translations[lang] || translations.pt
